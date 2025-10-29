@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mua Nhà Thông Minh - Tài Chính Gia Đình</title>
-    <meta name="description" content="Hướng dẫn chi tiết về mua nhà, vay ngân hàng và đầu tư bất động sản.">
+    <title>Bất Động Sản - Tài Chính Gia Đình</title>
+    <meta name="description" content="Hướng dẫn mua nhà và đầu tư bất động sản thông minh cho gia đình trẻ.">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/course.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
                 <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
                 <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
             </ul>
         </div>
     </nav>
@@ -29,10 +30,10 @@
             <div class="breadcrumb">
                 <a href="../index.html">Trang chủ</a> / 
                 <a href="../index.html#courses">Khóa học</a> / 
-                <span>Mua nhà thông minh</span>
+                <span>Bất động sản</span>
             </div>
-            <h1>🏠 Mua Nhà Thông Minh</h1>
-            <p class="course-subtitle">Quyết định tài chính lớn nhất của cuộc đời</p>
+            <h1>🏠 Bất Động Sản</h1>
+            <p class="course-subtitle">Mua nhà và đầu tư BĐS thông minh</p>
             <div class="course-meta">
                 <span class="course-level">Nâng Cao</span>
                 <span class="course-duration">10 bài học</span>
@@ -42,42 +43,132 @@
     </section>
 
     <div class="course-container">
-        <div class="course-main">
-            <div class="lesson-content">
-                <h2>Khóa Học Mua Nhà Thông Minh</h2>
-                
-                <div class="content-section">
-                    <h3>📚 Nội dung khóa học</h3>
-                    <ul class="content-list">
-                        <li>✅ Kế hoạch tài chính mua nhà chi tiết</li>
-                        <li>✅ Đánh giá khả năng vay và lựa chọn gói vay phù hợp</li>
-                        <li>✅ Cách chọn địa điểm và dự án uy tín</li>
-                        <li>✅ Thẩm định pháp lý và giấy tờ quan trọng</li>
-                        <li>✅ Thương lượng giá và ký hợp đồng</li>
-                        <li>✅ Đầu tư bất động sản cho người mới bắt đầu</li>
-                    </ul>
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
                 </div>
-
-                <div class="content-section">
-                    <h3>🎯 Mục tiêu khóa học</h3>
-                    <p>Giúp bạn:</p>
-                    <ul class="content-list">
-                        <li>Lập kế hoạch mua nhà từ A-Z</li>
-                        <li>Hiểu rõ quy trình vay mua nhà</li>
-                        <li>Tránh được những rủi ro khi mua nhà</li>
-                        <li>Ra quyết định thông minh và tiết kiệm chi phí</li>
-                        <li>Chuẩn bị tài chính cho tương lai</li>
-                    </ul>
-                </div>
-
-                <div class="action-section">
-                    <h3>🚀 Coming Soon!</h3>
-                    <p>Khóa học đang được hoàn thiện. Đăng ký để nhận thông báo sớm nhất!</p>
-                    <a href="../index.html#contact" class="btn btn-primary">Đăng Ký Ngay</a>
+                <span class="progress-text">0/10 bài học hoàn thành</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Mua Nhà Hay Thuê Nhà?</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Chuẩn Bị Tài Chính</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Chọn Vị Trí Đất Vàng</h4>
+                            <span class="lesson-duration">45 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Thẩm Định Pháp Lý</h4>
+                            <span class="lesson-duration">50 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Vay Ngân Hàng Thông Minh</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: Mua Nhà Hay Thuê Nhà?</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏠 Quyết Định Quan Trọng Nhất</h3>
+                    <p>
+                        Đối với cặp đôi 28-35 tuổi, quyết định mua hay thuê nhà ảnh hưởng lớn đến tài chính 10-20 năm tới.
+                        Không có câu trả lời đúng sai tuyệt đối, mà phụ thuộc vào hoàn cảnh cụ thể.
+                    </p>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>✅ Nên Mua Nhà Khi:</h3>
+                    <ul>
+                        <li>Đã có vốn tự có ít nhất 20-30% giá trị nhà</li>
+                        <li>Thu nhập ổn định, khoản vay không quá 40% thu nhập</li>
+                        <li>Dự định ở ổn định ít nhất 5-7 năm</li>
+                        <li>Giá nhà/thu nhập ở mức hợp lý (dưới 8 lần thu nhập năm)</li>
+                        <li>Có quỹ dự phòng đủ 6-12 tháng chi phí</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🏢 Nên Thuê Nhà Khi:</h3>
+                    <ul>
+                        <li>Chưa có đủ vốn tự có 20-30%</li>
+                        <li>Công việc thường xuyên di chuyển, chưa ổn định</li>
+                        <li>Tiền thuê nhà < 30% chi phí mua nhà (lãi vay + bảo trì)</li>
+                        <li>Muốn dồn tiền đầu tư vào kênh lợi nhuận cao hơn</li>
+                        <li>Đang trong giai đoạn phát triển sự nghiệp cần linh hoạt</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>📊 Ví Dụ So Sánh</h4>
+                    <p><strong>Mua nhà:</strong> Nhà 3 tỷ, vay 2 tỷ, lãi 9%/năm, trả 20 năm = 18 triệu/tháng + 2 triệu bảo trì = 20 triệu/tháng</p>
+                    <p><strong>Thuê nhà:</strong> 8 triệu/tháng, đầu tư 1 tỷ (vốn tự có) + 12 triệu/tháng với lợi nhuận 10%/năm</p>
+                    <p><strong>Kết quả sau 20 năm:</strong></p>
+                    <ul>
+                        <li>Mua nhà: Có nhà 3 tỷ (tăng giá 5%/năm → 8 tỷ)</li>
+                        <li>Thuê + đầu tư: Có 8.3 tỷ (từ đầu tư) - tổng chi thuê 1.9 tỷ = 6.4 tỷ</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Kiểm Tra Kiến Thức</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Vốn tự có tối thiểu nên là bao nhiêu % để mua nhà an toàn?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 10%</label>
+                            <label><input type="radio" name="q1" value="b"> B. 20-30%</label>
+                            <label><input type="radio" name="q1" value="c"> C. 50%</label>
+                            <label><input type="radio" name="q1" value="d"> D. 100%</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
+            </div>
+        </div>
     </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Cần Tư Vấn Về Bất Động Sản?</h2>
+            <p>Đội ngũ chuyên gia sẵn sàng hỗ trợ bạn</p>
+            <a href="../index.html#contact" class="btn btn-primary">Liên Hệ Ngay</a>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -94,5 +185,22 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Chính xác! Tuyệt vời!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Chưa đúng. Hãy thử lại!</p>';
+        }
+    }
+
+    function toggleLanguage() {
+        alert('Tính năng đa ngôn ngữ đang được phát triển. Coming soon!');
+    }
+    </script>
 </body>
 </html>

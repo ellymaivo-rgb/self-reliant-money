@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đầu Tư An Toàn - Tài Chính Gia Đình</title>
-    <meta name="description" content="Khóa học đầu tư an toàn dành cho gia đình trẻ - từ tiết kiệm đến chứng khoán.">
+    <title>Đầu Tư Cơ Bản - Tài Chính Gia Đình</title>
+    <meta name="description" content="Tìm hiểu các kênh đầu tư phù hợp và an toàn cho gia đình trẻ.">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/course.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
                 <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
                 <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
             </ul>
         </div>
     </nav>
@@ -29,10 +30,10 @@
             <div class="breadcrumb">
                 <a href="../index.html">Trang chủ</a> / 
                 <a href="../index.html#courses">Khóa học</a> / 
-                <span>Đầu tư an toàn</span>
+                <span>Đầu tư cơ bản</span>
             </div>
-            <h1>💰 Đầu Tư An Toàn</h1>
-            <p class="course-subtitle">Khám phá các kênh đầu tư phù hợp với gia đình trẻ</p>
+            <h1>� Đầu Tư Cơ Bản</h1>
+            <p class="course-subtitle">Xây dựng danh mục đầu tư an toàn và hiệu quả</p>
             <div class="course-meta">
                 <span class="course-level">Trung Bình</span>
                 <span class="course-duration">8 bài học</span>
@@ -42,42 +43,208 @@
     </section>
 
     <div class="course-container">
-        <div class="course-main">
-            <div class="lesson-content">
-                <h2>Khóa Học Đầu Tư An Toàn</h2>
-                
-                <div class="content-section">
-                    <h3>📚 Nội dung khóa học</h3>
-                    <ul class="content-list">
-                        <li>✅ Hiểu về các loại hình đầu tư: tiết kiệm, trái phiếu, cổ phiếu, quỹ đầu tư</li>
-                        <li>✅ Nguyên tắc đa dạng hóa danh mục đầu tư</li>
-                        <li>✅ Quản lý rủi ro và bảo vệ vốn</li>
-                        <li>✅ Chiến lược đầu tư dài hạn cho gia đình</li>
-                        <li>✅ Cách đọc báo cáo tài chính cơ bản</li>
-                        <li>✅ Tâm lý đầu tư và tránh những sai lầm phổ biến</li>
-                    </ul>
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
                 </div>
-
-                <div class="content-section">
-                    <h3>🎯 Bạn sẽ học được gì?</h3>
-                    <p>Sau khóa học này, bạn sẽ:</p>
-                    <ul class="content-list">
-                        <li>Hiểu rõ các kênh đầu tư phổ biến tại Việt Nam</li>
-                        <li>Biết cách phân bổ tài sản phù hợp với mức độ rủi ro</li>
-                        <li>Có khả năng đánh giá cơ hội đầu tư</li>
-                        <li>Xây dựng danh mục đầu tư cân bằng</li>
-                        <li>Tự tin ra quyết định đầu tư thông minh</li>
-                    </ul>
-                </div>
-
-                <div class="action-section">
-                    <h3>🚀 Sẵn sàng bắt đầu?</h3>
-                    <p>Khóa học này sẽ được cập nhật đầy đủ sớm. Đăng ký để nhận thông báo khi khóa học ra mắt!</p>
-                    <a href="../index.html#contact" class="btn btn-primary">Đăng Ký Nhận Thông Báo</a>
+                <span class="progress-text">0/8 bài học hoàn thành</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Tại Sao Phải Đầu Tư?</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Nguyên Tắc Đầu Tư An Toàn</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Chứng Khoán Cơ Bản</h4>
+                            <span class="lesson-duration">45 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Quỹ Đầu Tư & ETF</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Trái Phiếu & Tiền Gửi</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Vàng & Bất Động Sản</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="7">
+                        <span class="lesson-number">7</span>
+                        <div class="lesson-info">
+                            <h4>Phân Bổ Danh Mục</h4>
+                            <span class="lesson-duration">45 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="8">
+                        <span class="lesson-number">8</span>
+                        <div class="lesson-info">
+                            <h4>Quản Lý Rủi Ro</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: Tại Sao Phải Đầu Tư?</h2>
+                
+                <div class="lesson-section">
+                    <h3>🎯 Lạm Phát Ăn Mòn Tiền Tiết Kiệm</h3>
+                    <p>
+                        Nếu bạn chỉ để tiền trong tài khoản tiết kiệm với lãi suất 4-5%/năm, 
+                        trong khi lạm phát hàng năm ở Việt Nam dao động 3-4%, thực tế số tiền 
+                        của bạn chỉ tăng rất ít về giá trị thực.
+                    </p>
+                    <div class="example-box">
+                        <strong>Ví dụ:</strong> 100 triệu đồng hôm nay, sau 10 năm với lạm phát 4%/năm,
+                        sẽ chỉ còn sức mua tương đương 67 triệu.
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💡 Sức Mạnh Của Lãi Kép</h3>
+                    <p>
+                        Đầu tư sớm giúp bạn tận dụng sức mạnh của lãi kép. Với lợi nhuận trung bình 
+                        8-10%/năm, số tiền của bạn có thể tăng gấp đôi sau 7-9 năm.
+                    </p>
+                    <ul>
+                        <li>Đầu tư 10 triệu/tháng từ 28 tuổi → 5.8 tỷ ở tuổi 55</li>
+                        <li>Đầu tư 10 triệu/tháng từ 35 tuổi → 3.2 tỷ ở tuổi 55</li>
+                        <li>Chênh lệch 7 năm = thiệt hại 2.6 tỷ đồng!</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>� Mục Tiêu Tài Chính Dài Hạn</h3>
+                    <p>Đầu tư giúp bạn đạt được các mục tiêu quan trọng:</p>
+                    <ul>
+                        <li>Mua nhà sau 5-7 năm</li>
+                        <li>Quỹ học đại học cho con (cần 1-2 tỷ)</li>
+                        <li>Hưu trí thoải mái với 5-10 tỷ đồng</li>
+                        <li>Tự do tài chính sớm hơn</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Kiểm Tra Kiến Thức</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Với lạm phát 4%/năm, bạn cần lợi nhuận đầu tư tối thiểu bao nhiêu để giữ được giá trị tiền?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 2%/năm</label>
+                            <label><input type="radio" name="q1" value="b"> B. 4%/năm</label>
+                            <label><input type="radio" name="q1" value="c"> C. 6%/năm</label>
+                            <label><input type="radio" name="q1" value="d"> D. 8%/năm</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2">
+                <h2>Bài 2: Nguyên Tắc Đầu Tư An Toàn</h2>
+                
+                <div class="lesson-section">
+                    <h3>🛡️ 5 Nguyên Tắc Vàng</h3>
+                    <ol>
+                        <li><strong>Đầu tư chỉ số tiền dư thừa:</strong> Đảm bảo đã có quỹ khẩn cấp 6 tháng chi phí</li>
+                        <li><strong>Hiểu rõ trước khi đầu tư:</strong> Không bao giờ đầu tư vào thứ bạn không hiểu</li>
+                        <li><strong>Đa dạng hóa:</strong> Không bỏ tất cả trứng vào một giỏ</li>
+                        <li><strong>Đầu tư dài hạn:</strong> Tối thiểu 5 năm để giảm rủi ro ngắn hạn</li>
+                        <li><strong>Kiểm soát cảm xúc:</strong> Không mua vì FOMO, không bán vì hoảng sợ</li>
+                    </ol>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>⚠️ Rủi Ro vs Lợi Nhuận</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Kênh Đầu Tư</th>
+                            <th>Rủi Ro</th>
+                            <th>Lợi Nhuận Kỳ Vọng</th>
+                            <th>Phù Hợp</th>
+                        </tr>
+                        <tr>
+                            <td>Tiết kiệm ngân hàng</td>
+                            <td>Rất thấp</td>
+                            <td>4-6%/năm</td>
+                            <td>Quỹ khẩn cấp</td>
+                        </tr>
+                        <tr>
+                            <td>Trái phiếu chính phủ</td>
+                            <td>Thấp</td>
+                            <td>5-7%/năm</td>
+                            <td>Đầu tư bảo thủ</td>
+                        </tr>
+                        <tr>
+                            <td>Quỹ đầu tư (Fund)</td>
+                            <td>Trung bình</td>
+                            <td>8-12%/năm</td>
+                            <td>Đầu tư dài hạn</td>
+                        </tr>
+                        <tr>
+                            <td>Chứng khoán</td>
+                            <td>Cao</td>
+                            <td>10-15%/năm</td>
+                            <td>Người có kinh nghiệm</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Bài Tập Thực Hành</h3>
+                    <p><strong>Tình huống:</strong> Bạn 30 tuổi, có 200 triệu tiết kiệm, thu nhập 25 triệu/tháng, chi tiêu 18 triệu/tháng.</p>
+                    <p><strong>Nhiệm vụ:</strong> Xác định số tiền nên giữ làm quỹ khẩn cấp và số tiền có thể đầu tư?</p>
+                    <textarea class="exercise-input" placeholder="Viết câu trả lời của bạn..."></textarea>
+                    <button class="btn btn-secondary">Gửi Bài</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
+            </div>
+        </div>
     </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Sẵn Sàng Bắt Đầu Đầu Tư?</h2>
+            <p>Tham gia khóa học và nhận hướng dẫn chi tiết từ chuyên gia</p>
+            <a href="../index.html#contact" class="btn btn-primary">Đăng Ký Ngay</a>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
@@ -94,5 +261,22 @@
     </footer>
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Chính xác! Tuyệt vời!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Chưa đúng. Hãy thử lại!</p>';
+        }
+    }
+
+    function toggleLanguage() {
+        alert('Tính năng đa ngôn ngữ đang được phát triển. Sắp ra mắt!');
+    }
+    </script>
 </body>
 </html>
