@@ -1,3 +1,9 @@
+.DS_Store
+node_modules/
+.env
+# build / distro
+dist/
+build/
 
 # Logs
 logs

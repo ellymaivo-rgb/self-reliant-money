@@ -1,3 +1,45 @@
+# Tài Chính Gia Đình — Static Site
+
+This repository contains a small static website. The course file is at `courses/budgeting.html` and the root `index.html` redirects there.
+
+Quick deploy options (pick one):
+
+1) Netlify Drop (fastest, no git required)
+
+   - Zip the site folder (the project root) or drag the folder to Netlify Drop: https://app.netlify.com/drop
+   - Netlify will give you a public URL instantly. You can then set a custom domain if desired.
+
+2) GitHub Pages (recommended if you use GitHub)
+
+   - Create a new GitHub repository (empty) on https://github.com/new
+   - Run the following locally in this project folder (macOS / zsh):
+
+```bash
+# initialize git, commit, and push
+git init
+git add .
+git commit -m "Initial site commit"
+# create repository on GitHub then add remote (replace URL below)
+git remote add origin git@github.com:<your-username>/<your-repo>.git
+git branch -M main
+git push -u origin main
+```
+
+   - Then in the repository settings -> Pages, choose `main` branch (root) and save. After a minute the site will be live at `https://<your-username>.github.io/<your-repo>/`.
+
+3) Netlify / Vercel with Git (CI)
+
+   - Connect your GitHub repo from the Netlify or Vercel dashboard and configure the build to deploy from the `main` branch. No build command is required for plain static HTML.
+
+Verification
+
+- After deployment, open the published URL and verify that the redirect from `/` goes to `/courses/budgeting.html` and that static assets (CSS/JS) load correctly.
+
+Notes
+
+- If you prefer I can prepare the git repo here and attempt a push — but I will need the remote repo URL (and you must be comfortable using your SSH/key or HTTP credentials locally). Otherwise, follow the above steps locally and tell me when you'd like me to help with DNS or custom domain + HTTPS.
+
+If you want, I can also create a ZIP of the project for easy drag-and-drop deploy. Tell me which option you want next.
 # 💰 Tài Chính Gia Đình - Vietnamese Finance Education Website
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-green)](https://[USERNAME].github.io/TestBusiness)
