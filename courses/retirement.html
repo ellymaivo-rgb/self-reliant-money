@@ -20,6 +20,7 @@
                 <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
                 <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
             </ul>
         </div>
     </nav>
@@ -42,38 +43,63 @@
     </section>
 
     <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+                <span class="progress-text">0/9 bài học hoàn thành</span>
+            </div>
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1"><span class="lesson-number">1</span><div class="lesson-info"><h4>FIRE là gì?</h4><span class="lesson-duration">25 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="2"><span class="lesson-number">2</span><div class="lesson-info"><h4>Tính Số Vàng Nghỉ Hưu</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="3"><span class="lesson-number">3</span><div class="lesson-info"><h4>Chiến Lược Tiết Kiệm</h4><span class="lesson-duration">40 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="4"><span class="lesson-number">4</span><div class="lesson-info"><h4>Danh Mục Hưu Trí</h4><span class="lesson-duration">45 phút</span></div></div>
+                </div>
+            </div>
+        </div>
         <div class="course-main">
-            <div class="lesson-content">
-                <h2>Khóa Học Nghỉ Hưu Sớm</h2>
-                
-                <div class="content-section">
-                    <h3>📚 Nội dung khóa học</h3>
-                    <ul class="content-list">
-                        <li>✅ Hiểu về phong trào FIRE (Financial Independence, Retire Early)</li>
-                        <li>✅ Tính toán con số nghỉ hưu của bạn</li>
-                        <li>✅ Chiến lược tiết kiệm tích cực</li>
-                        <li>✅ Xây dựng nguồn thu nhập thụ động</li>
-                        <li>✅ Đầu tư dài hạn cho nghỉ hưu</li>
-                        <li>✅ Lối sống tối giản và tài chính bền vững</li>
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: FIRE là gì?</h2>
+                <div class="lesson-section">
+                    <h3>🔥 Nguyên tắc cốt lõi</h3>
+                    <ul>
+                        <li>Tỷ lệ tiết kiệm cao (40-60%)</li>
+                        <li>Đầu tư dài hạn, chi phí thấp</li>
+                        <li>Tối ưu chi tiêu và lối sống</li>
                     </ul>
                 </div>
-
-                <div class="content-section">
-                    <h3>🎯 Mục tiêu khóa học</h3>
-                    <ul class="content-list">
-                        <li>Xác định mục tiêu tự do tài chính cá nhân</li>
-                        <li>Lập kế hoạch nghỉ hưu chi tiết</li>
-                        <li>Tạo nhiều nguồn thu nhập</li>
-                        <li>Đầu tư thông minh cho tương lai</li>
-                        <li>Đạt được sự cân bằng giữa hiện tại và tương lai</li>
-                    </ul>
+                <div class="quiz-section">
+                    <h3>📝 Quiz</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Tỷ lệ rút an toàn phổ biến là bao nhiêu?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 2%</label>
+                            <label><input type="radio" name="q1" value="b"> B. 3%</label>
+                            <label><input type="radio" name="q1" value="c"> C. 4%</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1','c')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display:none"></div>
                 </div>
-
-                <div class="action-section">
-                    <h3>🚀 Coming Soon</h3>
-                    <p>Khóa học đang được phát triển. Đăng ký để không bỏ lỡ!</p>
-                    <a href="../index.html#contact" class="btn btn-primary">Đăng Ký Ngay</a>
+            </div>
+            <div class="lesson-content" id="lesson-2">
+                <h2>Bài 2: Tính Số Vàng Nghỉ Hưu</h2>
+                <div class="lesson-section">
+                    <h3>🧮 Công thức 25x</h3>
+                    <p>Nhu cầu chi tiêu hàng năm × 25 = Số tiền cần có để rút 4%/năm.</p>
                 </div>
+                <div class="exercise-section">
+                    <h3>✏️ Bài Tập</h3>
+                    <p>Nếu gia đình cần 600 triệu/năm, số tiền cần để nghỉ hưu là bao nhiêu?</p>
+                    <textarea class="exercise-input" placeholder="Câu trả lời..."></textarea>
+                    <button class="btn btn-secondary">Gửi Bài</button>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -92,6 +118,16 @@
         </div>
     </footer>
 
-    <script src="../scripts/main.js"></script>
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/course.js"></script>
+        <script src="../scripts/i18n.js"></script>
+        <script>
+            function checkAnswer(q,correct){
+                const sel=document.querySelector(`input[name="${q}"]:checked`);
+                const res=document.querySelector('.quiz-result');
+                res.style.display='block';
+                res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+        </script>
 </body>
 </html>

@@ -20,6 +20,7 @@
                 <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
                 <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
             </ul>
         </div>
     </nav>
@@ -35,45 +36,136 @@
             <p class="course-subtitle">Lá chắn tài chính cho gia đình bạn</p>
             <div class="course-meta">
                 <span class="course-level">Cơ Bản</span>
-                <span class="course-duration">6 bài học</span>
-                <span class="course-time">3 giờ</span>
+                <span class="course-duration">8 bài học</span>
+                <span class="course-time">4 giờ</span>
             </div>
         </div>
     </section>
 
     <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/8 bài học hoàn thành</span>
+            </div>
+
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Tổng Quan Về Bảo Hiểm</h4>
+                            <span class="lesson-duration">25 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Quỹ Khẩn Cấp vs Bảo Hiểm</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Nhân Thọ</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Y Tế</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Tài Sản</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Đọc Hợp Đồng Bảo Hiểm</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="7">
+                        <span class="lesson-number">7</span>
+                        <div class="lesson-info">
+                            <h4>Lỗi Phổ Biến Cần Tránh</h4>
+                            <span class="lesson-duration">25 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="8">
+                        <span class="lesson-number">8</span>
+                        <div class="lesson-info">
+                            <h4>Xây Dựng Bức Tường Bảo Vệ</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="course-main">
-            <div class="lesson-content">
-                <h2>Khóa Học Bảo Hiểm & Bảo Vệ</h2>
-                
-                <div class="content-section">
-                    <h3>📚 Nội dung khóa học</h3>
-                    <ul class="content-list">
-                        <li>✅ Tại sao cần bảo hiểm? Vai trò của bảo hiểm trong kế hoạch tài chính</li>
-                        <li>✅ Bảo hiểm nhân thọ: Chọn sản phẩm phù hợp</li>
-                        <li>✅ Bảo hiểm y tế: So sánh các gói bảo hiểm</li>
-                        <li>✅ Bảo hiểm tài sản: Nhà, xe, tài sản cá nhân</li>
-                        <li>✅ Xây dựng quỹ khẩn cấp</li>
-                        <li>✅ Cách đọc hợp đồng bảo hiểm</li>
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: Tổng Quan Về Bảo Hiểm</h2>
+                <div class="lesson-section">
+                    <h3>🎯 Mục đích của bảo hiểm</h3>
+                    <p>Bảo hiểm là công cụ chuyển giao rủi ro tài chính từ cá nhân sang công ty bảo hiểm, giúp gia đình không rơi vào khủng hoảng khi biến cố xảy ra.</p>
+                </div>
+                <div class="lesson-section">
+                    <h3>🧱 Các lớp bảo vệ</h3>
+                    <ul>
+                        <li>Quỹ khẩn cấp 6-12 tháng chi phí</li>
+                        <li>Bảo hiểm y tế chất lượng</li>
+                        <li>Bảo hiểm nhân thọ (nếu gia đình có người phụ thuộc)</li>
+                        <li>Bảo hiểm tài sản lớn: nhà, xe</li>
                     </ul>
                 </div>
+                <div class="quiz-section">
+                    <h3>📝 Kiểm Tra Kiến Thức</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Tại sao cần quỹ khẩn cấp trước khi mua bảo hiểm?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. Để tiết kiệm phí bảo hiểm</label>
+                            <label><input type="radio" name="q1" value="b"> B. Để xử lý chi phí nhỏ, bảo hiểm cho rủi ro lớn</label>
+                            <label><input type="radio" name="q1" value="c"> C. Không cần thiết</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1','b')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display:none"></div>
+                </div>
+            </div>
 
-                <div class="content-section">
-                    <h3>🎯 Sau khóa học, bạn sẽ:</h3>
-                    <ul class="content-list">
-                        <li>Hiểu rõ các loại bảo hiểm cần thiết cho gia đình</li>
-                        <li>Biết cách chọn sản phẩm bảo hiểm phù hợp</li>
-                        <li>Tránh được những bẫy trong hợp đồng bảo hiểm</li>
-                        <li>Xây dựng hệ thống bảo vệ tài chính toàn diện</li>
-                        <li>Chuẩn bị quỹ khẩn cấp cho gia đình</li>
+            <div class="lesson-content" id="lesson-2">
+                <h2>Bài 2: Quỹ Khẩn Cấp vs Bảo Hiểm</h2>
+                <div class="lesson-section">
+                    <h3>💡 Khác nhau thế nào?</h3>
+                    <ul>
+                        <li>Quỹ khẩn cấp: xử lý sự cố nhỏ, ngay lập tức</li>
+                        <li>Bảo hiểm: bảo vệ rủi ro lớn, xác suất thấp nhưng thiệt hại cao</li>
                     </ul>
                 </div>
-
-                <div class="action-section">
-                    <h3>🚀 Đang cập nhật</h3>
-                    <p>Nội dung chi tiết đang được hoàn thiện. Hãy đăng ký để nhận thông báo!</p>
-                    <a href="../index.html#contact" class="btn btn-primary">Đăng Ký</a>
+                <div class="exercise-section">
+                    <h3>✏️ Bài Tập</h3>
+                    <p>Gia đình bạn chi 20 triệu/tháng. Hãy tính mức quỹ khẩn cấp cần có.</p>
+                    <textarea class="exercise-input" placeholder="Câu trả lời..."></textarea>
+                    <button class="btn btn-secondary">Gửi Bài</button>
                 </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -92,6 +184,16 @@
         </div>
     </footer>
 
-    <script src="../scripts/main.js"></script>
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/course.js"></script>
+        <script src="../scripts/i18n.js"></script>
+        <script>
+            function checkAnswer(question, correct){
+                const sel=document.querySelector(`input[name="${question}"]:checked`);
+                const res=document.querySelector('.quiz-result');
+                res.style.display='block';
+                res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+        </script>
 </body>
 </html>

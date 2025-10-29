@@ -20,6 +20,7 @@
                 <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
                 <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
             </ul>
         </div>
     </nav>
@@ -42,38 +43,69 @@
     </section>
 
     <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+                <span class="progress-text">0/7 bài học hoàn thành</span>
+            </div>
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1"><span class="lesson-number">1</span><div class="lesson-info"><h4>Chi Phí Nuôi Con</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="2"><span class="lesson-number">2</span><div class="lesson-info"><h4>Quỹ Giáo Dục</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="3"><span class="lesson-number">3</span><div class="lesson-info"><h4>Bảo Hiểm Cho Trẻ</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="4"><span class="lesson-number">4</span><div class="lesson-info"><h4>Dạy Con Về Tiền</h4><span class="lesson-duration">35 phút</span></div></div>
+                </div>
+            </div>
+        </div>
         <div class="course-main">
-            <div class="lesson-content">
-                <h2>Khóa Học Tài Chính Con Cái</h2>
-                
-                <div class="content-section">
-                    <h3>📚 Nội dung khóa học</h3>
-                    <ul class="content-list">
-                        <li>✅ Ước tính chi phí nuôi con từ 0-18 tuổi</li>
-                        <li>✅ Lập kế hoạch quỹ giáo dục cho con</li>
-                        <li>✅ Bảo hiểm cho trẻ em: Cần và không cần</li>
-                        <li>✅ Dạy con về tiền bạc từ sớm</li>
-                        <li>✅ Đầu tư cho tương lai con (quỹ học bổng, đại học)</li>
-                        <li>✅ Cân bằng chi tiêu cho con và tiết kiệm gia đình</li>
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: Ước Tính Chi Phí Nuôi Con</h2>
+                <div class="lesson-section">
+                    <h3>👶 Từ 0-6 tuổi</h3>
+                    <ul>
+                        <li>Sữa, bỉm, y tế: 3-5 triệu/tháng</li>
+                        <li>Gửi trẻ/giúp việc: 3-8 triệu/tháng</li>
                     </ul>
                 </div>
-
-                <div class="content-section">
-                    <h3>🎯 Bạn sẽ học được:</h3>
-                    <ul class="content-list">
-                        <li>Lập kế hoạch tài chính cho việc có con</li>
-                        <li>Xây dựng quỹ giáo dục dài hạn</li>
-                        <li>Dạy con về giá trị đồng tiền</li>
-                        <li>Tối ưu hóa chi phí nuôi con</li>
-                        <li>Chuẩn bị cho tương lai của con</li>
+                <div class="lesson-section">
+                    <h3>� 6-18 tuổi</h3>
+                    <ul>
+                        <li>Học phí, ngoại khóa: 2-10 triệu/tháng</li>
+                        <li>Thiết bị, sinh hoạt: 2-5 triệu/tháng</li>
                     </ul>
                 </div>
-
-                <div class="action-section">
-                    <h3>🚀 Sắp ra mắt</h3>
-                    <p>Khóa học đang được xây dựng. Đăng ký để nhận thông báo khi có nội dung mới!</p>
-                    <a href="../index.html#contact" class="btn btn-primary">Đăng Ký</a>
+                <div class="quiz-section">
+                    <h3>📝 Quiz</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Quỹ khẩn cấp cho gia đình 2 con nên bằng mấy tháng chi phí?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 1-2 tháng</label>
+                            <label><input type="radio" name="q1" value="b"> B. 3-6 tháng</label>
+                            <label><input type="radio" name="q1" value="c"> C. 6-12 tháng</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1','c')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display:none"></div>
                 </div>
+            </div>
+            <div class="lesson-content" id="lesson-2">
+                <h2>Bài 2: Quỹ Giáo Dục Cho Con</h2>
+                <div class="lesson-section">
+                    <h3>🎯 Mục tiêu</h3>
+                    <p>Tính toán chi phí đại học (600 triệu - 1.2 tỷ) và bắt đầu tiết kiệm sớm.</p>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Bài Tập</h3>
+                    <p>Lập kế hoạch tiết kiệm 5 triệu/tháng trong 15 năm với lãi suất 8%/năm.</p>
+                    <textarea class="exercise-input" placeholder="Câu trả lời..."></textarea>
+                    <button class="btn btn-secondary">Gửi Bài</button>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -92,6 +124,16 @@
         </div>
     </footer>
 
-    <script src="../scripts/main.js"></script>
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/course.js"></script>
+        <script src="../scripts/i18n.js"></script>
+        <script>
+            function checkAnswer(q,correct){
+                const sel=document.querySelector(`input[name="${q}"]:checked`);
+                const res=document.querySelector('.quiz-result');
+                res.style.display='block';
+                res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+        </script>
 </body>
 </html>
