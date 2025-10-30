@@ -461,7 +461,7 @@ h3 .logo-icon,
 .feature-icon:before {
     content: "✓";
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1rem;
