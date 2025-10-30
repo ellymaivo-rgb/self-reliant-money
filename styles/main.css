@@ -45,9 +45,11 @@ body {
 }
 
 .nav-logo .logo-icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.4rem;
+    height: 1.4rem;
     display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
 }
 
 .nav-logo h2 {
@@ -58,12 +60,13 @@ body {
 }
 
 /* Logo in footer and other places */
-h3 .logo-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+h3 .logo-icon,
+.logo-icon {
+    width: 1rem;
+    height: 1rem;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 0.3rem;
+    margin-right: 0.25rem;
 }
 
 .nav-menu {
