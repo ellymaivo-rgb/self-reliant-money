@@ -38,10 +38,32 @@ body {
     align-items: center;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo .logo-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: inline-block;
+}
+
 .nav-logo h2 {
     color: #2c5aa0;
     font-size: 1.4rem;
     font-weight: 700;
+    margin: 0;
+}
+
+/* Logo in footer and other places */
+h3 .logo-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
 }
 
 .nav-menu {
