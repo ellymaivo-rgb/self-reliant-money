@@ -1,7 +1,7 @@
 // Course-specific JavaScript functionality
 let currentLesson = 1;
 let completedLessons = [];
-const totalLessons = 6;
+let totalLessons = 6; // Default value, will be updated on page load
 
 // Notification system
 function showNotification(message, type = 'info') {
@@ -63,6 +63,22 @@ function trackEvent(eventName, eventData) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Auto-detect total lessons
+    totalLessons = document.querySelectorAll('.lesson-content').length;
+    
+    // Detect current lesson from active lesson or visible lesson
+    const activeLesson = document.querySelector('.lesson-item.active');
+    if (activeLesson) {
+        currentLesson = parseInt(activeLesson.dataset.lesson) || 1;
+    } else {
+        // Find visible lesson content
+        const visibleLesson = document.querySelector('.lesson-content:not([style*="display: none"])');
+        if (visibleLesson) {
+            const lessonId = visibleLesson.id.replace('lesson-', '');
+            currentLesson = parseInt(lessonId) || 1;
+        }
+    }
+    
     // Initialize course progress
     updateProgress();
     
@@ -105,7 +121,7 @@ function switchToLesson(lessonNumber) {
         // Track lesson view
         trackEvent('lesson_view', {
             lesson_number: lessonNumber,
-            course: 'budgeting'
+            course: window.location.pathname.split('/').pop().replace('.html', '')
         });
     }
 }
@@ -136,9 +152,33 @@ function updateNavigationButtons() {
     
     if (nextBtn) {
         if (currentLesson === totalLessons) {
-            nextBtn.textContent = 'Kết Thúc Khóa Học';
+            // Check if button already has arrows, preserve them
+            const hasLeftArrow = nextBtn.textContent.includes('←');
+            const hasRightArrow = nextBtn.textContent.includes('→');
+            
+            if (hasLeftArrow && hasRightArrow) {
+                nextBtn.textContent = '→ Kết Thúc Khóa Học ←';
+            } else if (hasRightArrow) {
+                nextBtn.textContent = 'Kết Thúc Khóa Học →';
+            } else if (hasLeftArrow) {
+                nextBtn.textContent = '← Kết Thúc Khóa Học';
+            } else {
+                nextBtn.textContent = 'Kết Thúc Khóa Học';
+            }
         } else {
-            nextBtn.textContent = 'Bài Tiếp Theo';
+            // Reset to original text for non-final lessons
+            const hasLeftArrow = nextBtn.textContent.includes('←');
+            const hasRightArrow = nextBtn.textContent.includes('→');
+            
+            if (hasLeftArrow && hasRightArrow) {
+                nextBtn.textContent = '→ Bài Tiếp Theo ←';
+            } else if (hasRightArrow) {
+                nextBtn.textContent = 'Bài Tiếp →';
+            } else if (hasLeftArrow) {
+                nextBtn.textContent = '← Bài Tiếp Theo';
+            } else {
+                nextBtn.textContent = 'Bài Tiếp Theo';
+            }
         }
     }
 }
