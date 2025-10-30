@@ -328,21 +328,21 @@
 }
 
 .rule-percentage {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 700;
     color: #2c5aa0;
     text-align: center;
-    min-width: 180px;
+    min-width: 220px;
     background: white;
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 5px solid #2c5aa0;
+    border: 6px solid #2c5aa0;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(44, 90, 160, 0.3);
+    box-shadow: 0 8px 25px rgba(44, 90, 160, 0.4);
 }
 
 .rule-content h4 {
@@ -732,9 +732,9 @@
     }
     
     .rule-percentage {
-        width: 150px;
-        height: 150px;
-        font-size: 3rem;
+        width: 180px;
+        height: 180px;
+        font-size: 3.5rem;
     }
     
     .lesson-navigation {
@@ -765,8 +765,8 @@
     }
     
     .rule-percentage {
-        width: 120px;
-        height: 120px;
-        font-size: 2.5rem;
+        width: 140px;
+        height: 140px;
+        font-size: 3rem;
     }
 }
