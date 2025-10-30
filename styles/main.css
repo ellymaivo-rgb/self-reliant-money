@@ -40,7 +40,7 @@ body {
 
 .nav-logo h2 {
     color: #2c5aa0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
@@ -640,7 +640,7 @@ body {
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
     
     .courses-grid {
@@ -685,7 +685,7 @@ body {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero-stats {
@@ -719,7 +719,7 @@ body {
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     
     .hero-description {
