@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo Hiểm & Bảo Vệ - Tài Chính Gia Đình</title>
+    <meta name="description" content="Tìm hiểu về các loại bảo hiểm cần thiết để bảo vệ gia đình khỏi rủi ro tài chính.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2>💰 Tài Chính Gia Đình</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Trang Chủ</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / 
+                <a href="../index.html#courses">Khóa học</a> / 
+                <span>Bảo hiểm & bảo vệ</span>
+            </div>
+            <h1>🛡️ Bảo Hiểm & Bảo Vệ</h1>
+            <p class="course-subtitle">Lá chắn tài chính cho gia đình bạn</p>
+            <div class="course-meta">
+                <span class="course-level">Cơ Bản</span>
+                <span class="course-duration">6 bài học</span>
+                <span class="course-time">3.5 giờ</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 bài học hoàn thành</span>
+            </div>
+
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Tại Sao Cần Bảo Hiểm?</h4>
+                            <span class="lesson-duration">25 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Nhân Thọ</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Y Tế</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Bảo Hiểm Tài Sản</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Lựa Chọn & So Sánh</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Quản Lý Hợp Đồng</h4>
+                            <span class="lesson-duration">40 phút</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content" id="lesson-1">
+                <h2>Bài 1: Tại Sao Cần Bảo Hiểm?</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Bảo hiểm không phải để làm giàu, mà để không trở nên nghèo khi gặp rủi ro. 
+                        Tìm hiểu tại sao bảo hiểm là "lá chắn" quan trọng cho gia đình.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>⚡ Rủi Ro Tài Chính Thường Gặp</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h4>Ốm Đau Bệnh Tật</h4>
+                            <p>Chi phí y tế có thể lên tới hàng trăm triệu</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Mất Thu Nhập</h4>
+                            <p>Tai nạn, bệnh tật khiến không thể làm việc</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Tử Vong</h4>
+                            <p>Gia đình mất trụ cột kinh tế chính</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Thiệt Hại Tài Sản</h4>
+                            <p>Cháy nổ, trộm cắp, tai nạn xe</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h3>💰 Chi Phí Y Tế Thực Tế</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Bệnh Lý</th>
+                            <th>Chi Phí Điều Trị</th>
+                            <th>Thời Gian</th>
+                        </tr>
+                        <tr>
+                            <td>Phẫu thuật tim</td>
+                            <td>300-800 triệu</td>
+                            <td>3-6 tháng</td>
+                        </tr>
+                        <tr>
+                            <td>Ung thư</td>
+                            <td>500-1.5 tỷ</td>
+                            <td>1-3 năm</td>
+                        </tr>
+                        <tr>
+                            <td>Tai nạn nghiêm trọng</td>
+                            <td>200-600 triệu</td>
+                            <td>6-12 tháng</td>
+                        </tr>
+                        <tr>
+                            <td>Sinh con khó</td>
+                            <td>50-200 triệu</td>
+                            <td>1-3 tháng</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tip-section">
+                    <h3>🛡️ Nguyên Tắc "4 Lớp Bảo Vệ"</h3>
+                    <ol class="steps-list">
+                        <li><strong>Lớp 1:</strong> Quỹ khẩn cấp 6 tháng chi phí</li>
+                        <li><strong>Lớp 2:</strong> Bảo hiểm y tế chất lượng</li>
+                        <li><strong>Lớp 3:</strong> Bảo hiểm nhân thọ (nếu có người phụ thuộc)</li>
+                        <li><strong>Lớp 4:</strong> Bảo hiểm tài sản lớn (nhà, xe)</li>
+                    </ol>
+                </div>
+
+                        <div class="answer-feedback" id="q1-feedback"></div>
+                    </div>
+                </div>
+
+            <!-- Lesson 2 Content -->
+            <div class="lesson-content" id="lesson-2">
+                <h2>Bài 2: Bảo Hiểm Nhân Thọ</h2>
+                
+                <div class="lesson-intro">
+                    <p>Bảo hiểm nhân thọ bảo vệ gia đình khi bạn không còn có thể kiếm tiền. Tìm hiểu cách tính toán mức bảo hiểm phù hợp.</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎯 Ai Cần Bảo Hiểm Nhân Thọ?</h3>
+                    <div class="condition-check">
+                        <div class="check-item">
+                            <span class="check-icon">✅</span>
+                            <p><strong>Cần mua:</strong> Có vợ/chồng, con nhỏ, bố mẹ già phụ thuộc tài chính</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">✅</span>
+                            <p><strong>Cần mua:</strong> Có khoản nợ lớn (vay mua nhà, kinh doanh)</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">❌</span>
+                            <p><strong>Chưa cần:</strong> Độc thân, không ai phụ thuộc tài chính</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">❌</span>
+                            <p><strong>Chưa cần:</strong> Đã nghỉ hưu, có đủ tài sản cho gia đình</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculation-section">
+                    <h3>💰 Cách Tính Mức Bảo Hiểm</h3>
+                    <div class="formula-box">
+                        <h4>Công Thức Đơn Giản:</h4>
+                        <p><strong>Mức bảo hiểm = Thu nhập năm × 10-12 năm</strong></p>
+                        <p>Hoặc: <strong>Tổng chi phí gia đình 15-20 năm tới</strong></p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4>Ví Dụ Cụ Thể:</h4>
+                        <p><strong>Anh A:</strong> 30 tuổi, thu nhập 30 triệu/tháng, có vợ con</p>
+                        <ul>
+                            <li>Thu nhập năm: 30 × 12 = 360 triệu</li>
+                            <li>Mức bảo hiểm: 360 × 10 = 3.6 tỷ đồng</li>
+                            <li>Phí hàng năm: khoảng 18-25 triệu (0.5-0.7% thu nhập)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="types-section">
+                    <h3>📋 Các Loại Bảo Hiểm Nhân Thọ</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Loại</th>
+                            <th>Ưu Điểm</th>
+                            <th>Nhược Điểm</th>
+                            <th>Phù Hợp</th>
+                        </tr>
+                        <tr>
+                            <td>Term Life</td>
+                            <td>Phí rẻ, mức bảo hiểm cao</td>
+                            <td>Không hoàn phí</td>
+                            <td>Gia đình trẻ</td>
+                        </tr>
+                        <tr>
+                            <td>Whole Life</td>
+                            <td>Bảo hiểm + tiết kiệm</td>
+                            <td>Phí cao, lợi nhuận thấp</td>
+                            <td>Người bảo thủ</td>
+                        </tr>
+                        <tr>
+                            <td>Universal Life</td>
+                            <td>Linh hoạt điều chỉnh</td>
+                            <td>Phức tạp, khó hiểu</td>
+                            <td>Người có kinh nghiệm</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>🧮 Máy Tính Mức Bảo Hiểm</h3>
+                    <div class="calculator-card">
+                        <div class="input-group">
+                            <label for="monthly-income-life">Thu nhập hàng tháng (VNĐ):</label>
+                            <input type="number" id="monthly-income-life" placeholder="Nhập thu nhập">
+                        </div>
+                        <div class="input-group">
+                            <label for="years-support">Số năm cần hỗ trợ gia đình:</label>
+                            <input type="number" id="years-support" value="10" min="5" max="20">
+                        </div>
+                        
+                        <div id="life-insurance-results" class="results-grid" >
+                            <div class="result-item">
+                                <h4>Mức Bảo Hiểm Đề Xuất</h4>
+                                <span id="insurance-amount" class="result-amount"></span>
+                            </div>
+                            <div class="result-item">
+                                <h4>Phí Ước Tính/Năm</h4>
+                                <span id="annual-premium" class="result-amount"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                        <div class="answer-feedback" id="q2-feedback"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 3 Content -->
+            <div class="lesson-content" id="lesson-3">
+                <h2>Bài 3: Bảo Hiểm Y Tế</h2>
+                
+                <div class="lesson-intro">
+                    <p>Bảo hiểm y tế là ưu tiên số 1. Tìm hiểu cách chọn gói bảo hiểm y tế phù hợp và tránh những "bẫy" thường gặp.</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🏥 Hệ Thống Y Tế Việt Nam</h3>
+                    <div class="healthcare-pyramid">
+                        <div class="pyramid-level level-1">
+                            <h4>Bảo Hiểm Y Tế Xã Hội (BHYT)</h4>
+                            <p>Chi trả cơ bản, xếp hàng lâu, bệnh viện công</p>
+                        </div>
+                        <div class="pyramid-level level-2">
+                            <h4>Bảo Hiểm Y Tế Tự Nguyện</h4>
+                            <p>Bổ sung BHYT, nhanh hơn, bệnh viện tư</p>
+                        </div>
+                        <div class="pyramid-level level-3">
+                            <h4>Bảo Hiểm Y Tế Cao Cấp</h4>
+                            <p>VIP, bệnh viện quốc tế, điều trị nước ngoài</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h3>⚖️ So Sánh Các Gói Bảo Hiểm Y Tế</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Gói</th>
+                            <th>Phí/Năm</th>
+                            <th>Hạn Mức</th>
+                            <th>Đặc Điểm</th>
+                        </tr>
+                        <tr>
+                            <td>Cơ Bản</td>
+                            <td>2-5 triệu</td>
+                            <td>100-300 triệu</td>
+                            <td>Bệnh viện công + tư cơ bản</td>
+                        </tr>
+                        <tr>
+                            <td>Nâng Cao</td>
+                            <td>8-15 triệu</td>
+                            <td>500-1 tỷ</td>
+                            <td>Bệnh viện tư, phòng riêng</td>
+                        </tr>
+                        <tr>
+                            <td>Cao Cấp</td>
+                            <td>20-40 triệu</td>
+                            <td>2-5 tỷ</td>
+                            <td>Bệnh viện quốc tế, checkup</td>
+                        </tr>
+                        <tr>
+                            <td>Siêu Cao Cấp</td>
+                            <td>50-100 triệu</td>
+                            <td>Không giới hạn</td>
+                            <td>Điều trị nước ngoài</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tips-section">
+                    <h3>💡 Lưu Ý Khi Mua Bảo Hiểm Y Tế</h3>
+                    <div class="tip-grid">
+                        <div class="tip-item">
+                            <h4>✅ Nên Làm</h4>
+                            <ul>
+                                <li>Mua sớm khi còn khỏe mạnh</li>
+                                <li>Đọc kỹ điều khoản loại trừ</li>
+                                <li>Chọn gói có nội trú + ngoại trú</li>
+                                <li>Ưu tiên mạng lưới bệnh viện rộng</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h4>❌ Tránh</h4>
+                            <ul>
+                                <li>Che giấu tiền sử bệnh</li>
+                                <li>Chọn gói quá rẻ, hạn mức thấp</li>
+                                <li>Bỏ qua điều khoản chờ</li>
+                                <li>Mua nhiều gói trùng lắp</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practical-section">
+                    <h3>🏥 Quy Trình Sử Dụng Bảo Hiểm Y Tế</h3>
+                    <ol class="process-steps">
+                        <li>
+                            <strong>Khi Ốm:</strong>
+                            <p>Gọi hotline công ty bảo hiểm → Xác nhận bệnh viện trong mạng lưới</p>
+                        </li>
+                        <li>
+                            <strong>Nhập Viện:</strong>
+                            <p>Xuất trình thẻ bảo hiểm → Ký thư bảo lãnh (nếu có)</p>
+                        </li>
+                        <li>
+                            <strong>Điều Trị:</strong>
+                            <p>Giữ tất cả hóa đơn → Thông báo các thủ thuật lớn</p>
+                        </li>
+                        <li>
+                            <strong>Thanh Toán:</strong>
+                            <p>Cashless (thanh toán trực tiếp) hoặc Reimbursement (hoàn tiền)</p>
+                        </li>
+                    </ol>
+                </div>
+
+                        <div class="answer-feedback" id="q3-feedback"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 4 Content -->
+            <div class="lesson-content" id="lesson-4">
+                <h2>Bài 4: Bảo Hiểm Tài Sản</h2>
+                
+                <div class="lesson-intro">
+                    <p>Bảo vệ những tài sản lớn nhất của gia đình: nhà cửa, xe cộ, và tài sản có giá trị cao khác.</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🏠 Bảo Hiểm Nhà Ở</h3>
+                    <p>Tại Việt Nam, bảo hiểm nhà ở chưa phổ biến nhưng rất quan trọng:</p>
+                    <ul class="content-list">
+                        <li>✅ <strong>Cháy nổ:</strong> Nguyên nhân gây thiệt hại lớn nhất</li>
+                        <li>✅ <strong>Thiên tai:</strong> Bão, lũ, động đất</li>
+                        <li>✅ <strong>Trộm cắp:</strong> Tài sản bên trong nhà</li>
+                        <li>✅ <strong>Thiệt hại bên thứ 3:</strong> Làm hỏng nhà hàng xóm</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3>🚗 Bảo Hiểm Xe Cộ</h3>
+                    <div class="insurance-types">
+                        <div class="insurance-type">
+                            <h4>Bảo Hiểm Bắt Buộc (TNDS)</h4>
+                            <ul>
+                                <li>Bồi thường thiệt hại cho người khác</li>
+                                <li>Bắt buộc theo luật</li>
+                                <li>Phí: 400-600k/năm</li>
+                            </ul>
+                        </div>
+                        <div class="insurance-type">
+                            <h4>Bảo Hiểm Tự Nguyện (Vật Chất)</h4>
+                            <ul>
+                                <li>Bảo vệ xe của chính mình</li>
+                                <li>Cháy nổ, tai nạn, trộm cắp</li>
+                                <li>Phí: 1-3% giá trị xe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculation-section">
+                    <h3>💰 Cách Tính Phí Bảo Hiểm Xe</h3>
+                    <div class="formula-box">
+                        <p><strong>Phí bảo hiểm = Giá trị xe × Tỷ lệ phí × Hệ số điều chỉnh</strong></p>
+                        <p><em>Hệ số điều chỉnh phụ thuộc: tuổi xe, lịch sử tai nạn, kinh nghiệm lái xe</em></p>
+                    </div>
+                    
+                    <table class="fee-table">
+                        <tr>
+                            <th>Loại Xe</th>
+                            <th>Tỷ Lệ Phí</th>
+                            <th>Ví Dụ (Xe 500tr)</th>
+                        </tr>
+                        <tr>
+                            <td>Xe dưới 5 chỗ</td>
+                            <td>1.5-2.5%</td>
+                            <td>7.5-12.5 triệu</td>
+                        </tr>
+                        <tr>
+                            <td>Xe từ 6-24 chỗ</td>
+                            <td>2.0-3.0%</td>
+                            <td>10-15 triệu</td>
+                        </tr>
+                        <tr>
+                            <td>Xe tải</td>
+                            <td>2.5-3.5%</td>
+                            <td>12.5-17.5 triệu</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="tips-section">
+                    <h3>💡 Mẹo Tiết Kiệm Phí Bảo Hiểm</h3>
+                    <div class="saving-tips">
+                        <div class="tip-item">
+                            <h4>🏠 Bảo Hiểm Nhà</h4>
+                            <ul>
+                                <li>Lắp đặt hệ thống báo cháy</li>
+                                <li>Sử dụng vật liệu chống cháy</li>
+                                <li>Khu vực an ninh tốt</li>
+                                <li>Mua combo nhà + nội thất</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🚗 Bảo Hiểm Xe</h4>
+                            <ul>
+                                <li>Không có tai nạn trong 12 tháng</li>
+                                <li>Tài xế kinh nghiệm, tuổi 30-55</li>
+                                <li>Garage riêng, khu an ninh</li>
+                                <li>Khấu trừ cao để giảm phí</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h3>📋 Case Study: Gia Đình Anh B</h3>
+                    <div class="case-box">
+                        <p><strong>Tình huống:</strong> Nhà 3 tỷ, xe 800 triệu, thu nhập 40 triệu/tháng</p>
+                        <table class="case-table">
+                            <tr>
+                                <th>Loại Bảo Hiểm</th>
+                                <th>Mức Bảo Hiểm</th>
+                                <th>Phí/Năm</th>
+                                <th>% Thu Nhập</th>
+                            </tr>
+                            <tr>
+                                <td>Bảo hiểm nhà</td>
+                                <td>3 tỷ</td>
+                                <td>3 triệu</td>
+                                <td>0.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Bảo hiểm xe</td>
+                                <td>800 triệu</td>
+                                <td>12 triệu</td>
+                                <td>2.5%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tổng</strong></td>
+                                <td><strong>3.8 tỷ</strong></td>
+                                <td><strong>15 triệu</strong></td>
+                                <td><strong>3.1%</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                        <div class="answer-feedback" id="q4-feedback"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 5 Content -->
+            <div class="lesson-content" id="lesson-5">
+                <h2>Bài 5: Lựa Chọn & So Sánh</h2>
+                
+                <div class="lesson-intro">
+                    <p>Học cách so sánh và lựa chọn công ty bảo hiểm, gói bảo hiểm phù hợp với nhu cầu và ngân sách.</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🏢 Top Công Ty Bảo Hiểm Uy Tín</h3>
+                    <div class="company-grid">
+                        <div class="company-item">
+                            <h4>Bảo Việt</h4>
+                            <p>Lớn nhất, mạng lưới rộng, dịch vụ ổn định</p>
+                            <span class="rating">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="company-item">
+                            <h4>PVI</h4>
+                            <p>Chuyên xe cộ, phí cạnh tranh</p>
+                            <span class="rating">⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="company-item">
+                            <h4>Prudential</h4>
+                            <p>Quốc tế, sản phẩm đa dạng</p>
+                            <span class="rating">⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="company-item">
+                            <h4>AIA</h4>
+                            <p>Dịch vụ khách hàng tốt</p>
+                            <span class="rating">⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-criteria">
+                    <h3>⚖️ 8 Tiêu Chí So Sánh Bảo Hiểm</h3>
+                    <div class="criteria-grid">
+                        <div class="criteria-item">
+                            <span class="criteria-number">1</span>
+                            <h4>Uy Tín Công Ty</h4>
+                            <p>Lịch sử, xếp hạng tín nhiệm, tài chính</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">2</span>
+                            <h4>Phạm Vi Bảo Hiểm</h4>
+                            <p>Những rủi ro nào được bảo hiểm</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">3</span>
+                            <h4>Hạn Mức Bảo Hiểm</h4>
+                            <p>Mức bồi thường tối đa</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">4</span>
+                            <h4>Phí Bảo Hiểm</h4>
+                            <p>Chi phí hàng năm, cách thanh toán</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">5</span>
+                            <h4>Điều Khoản Loại Trừ</h4>
+                            <p>Những trường hợp không bồi thường</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">6</span>
+                            <h4>Thời Gian Chờ</h4>
+                            <p>Bao lâu sau khi mua mới được bảo hiểm</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">7</span>
+                            <h4>Quy Trình Bồi Thường</h4>
+                            <p>Thủ tục, thời gian xử lý claim</p>
+                        </div>
+                        <div class="criteria-item">
+                            <span class="criteria-number">8</span>
+                            <h4>Dịch Vụ Khách Hàng</h4>
+                            <p>Tư vấn, hỗ trợ 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-section">
+                    <h3>📋 Checklist Trước Khi Mua</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-column">
+                            <h4>✅ Cần Làm</h4>
+                            <ul class="checklist">
+                                <li>☐ Đọc kỹ điều khoản hợp đồng</li>
+                                <li>☐ So sánh ít nhất 3 công ty</li>
+                                <li>☐ Khai báo trung thực sức khỏe</li>
+                                <li>☐ Hiểu rõ quy trình claim</li>
+                                <li>☐ Hỏi về chính sách gia hạn</li>
+                                <li>☐ Kiểm tra uy tín công ty</li>
+                            </ul>
+                        </div>
+                        <div class="checklist-column">
+                            <h4>❌ Cần Tránh</h4>
+                            <ul class="checklist">
+                                <li>☐ Mua vì áp lực bán hàng</li>
+                                <li>☐ Chỉ nhìn vào phí rẻ</li>
+                                <li>☐ Che giấu bệnh lý</li>
+                                <li>☐ Không đọc điều khoản</li>
+                                <li>☐ Mua quá nhiều loại</li>
+                                <li>☐ Tin lời hứa miệng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="worksheet-section">
+                    <h3>📊 Bảng So Sánh Bảo Hiểm</h3>
+                    <div class="worksheet-intro">
+                        <p>Sử dụng bảng này để so sánh các gói bảo hiểm:</p>
+                    </div>
+                    <table class="comparison-worksheet">
+                        <tr>
+                            <th>Tiêu Chí</th>
+                            <th>Công Ty A</th>
+                            <th>Công Ty B</th>
+                            <th>Công Ty C</th>
+                        </tr>
+                        <tr>
+                            <td>Phí/năm</td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                        </tr>
+                        <tr>
+                            <td>Hạn mức</td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian chờ</td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                        </tr>
+                        <tr>
+                            <td>Mạng lưới BV</td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                        </tr>
+                        <tr>
+                            <td>Dịch vụ (1-10)</td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                            <td class="editable"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                        <div class="answer-feedback" id="q5-feedback"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 6 Content -->
+            <div class="lesson-content" id="lesson-6">
+                <h2>Bài 6: Quản Lý Hợp Đồng</h2>
+                
+                <div class="lesson-intro">
+                    <p>Bài học cuối cùng - học cách quản lý hợp đồng bảo hiểm hiệu quả và xử lý khi cần bồi thường.</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>📄 Đọc Hiểu Hợp Đồng Bảo Hiểm</h3>
+                    <div class="contract-sections">
+                        <div class="section-item">
+                            <h4>1. Trang Bìa Hợp Đồng</h4>
+                            <ul>
+                                <li>Tên người được bảo hiểm</li>
+                                <li>Loại bảo hiểm và mức bảo hiểm</li>
+                                <li>Thời hạn bảo hiểm</li>
+                                <li>Phí bảo hiểm</li>
+                            </ul>
+                        </div>
+                        <div class="section-item">
+                            <h4>2. Điều Khoản Bảo Hiểm</h4>
+                            <ul>
+                                <li>Định nghĩa các thuật ngữ</li>
+                                <li>Phạm vi bảo hiểm</li>
+                                <li>Trách nhiệm bên bảo hiểm</li>
+                                <li>Quyền và nghĩa vụ bên mua</li>
+                            </ul>
+                        </div>
+                        <div class="section-item">
+                            <h4>3. Điều Khoản Loại Trừ</h4>
+                            <ul>
+                                <li>Những rủi ro không bảo hiểm</li>
+                                <li>Điều kiện loại trừ</li>
+                                <li>Trường hợp không chi trả</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="claim-process">
+                    <h3>🔄 Quy Trình Bồi Thường</h3>
+                    <div class="process-timeline">
+                        <div class="process-step">
+                            <span class="step-number">1</span>
+                            <h4>Báo Cáo Sự Cố</h4>
+                            <p>Thông báo cho công ty bảo hiểm trong 24-48h</p>
+                            <ul>
+                                <li>Gọi hotline</li>
+                                <li>Gửi email hoặc app</li>
+                                <li>Cung cấp thông tin cơ bản</li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">2</span>
+                            <h4>Nộp Hồ Sơ</h4>
+                            <p>Chuẩn bị và nộp đầy đủ giấy tờ</p>
+                            <ul>
+                                <li>Đơn yêu cầu bồi thường</li>
+                                <li>Hợp đồng bảo hiểm</li>
+                                <li>Giấy tờ chứng minh</li>
+                                <li>Hóa đơn chi phí</li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">3</span>
+                            <h4>Thẩm Định</h4>
+                            <p>Công ty xem xét và đánh giá</p>
+                            <ul>
+                                <li>Kiểm tra tính hợp lệ</li>
+                                <li>Thẩm định thiệt hại</li>
+                                <li>Xác minh thông tin</li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <span class="step-number">4</span>
+                            <h4>Chi Trả</h4>
+                            <p>Nhận tiền bồi thường</p>
+                            <ul>
+                                <li>Thông báo kết quả</li>
+                                <li>Chuyển khoản hoặc tiền mặt</li>
+                                <li>Thời gian: 15-30 ngày</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document-management">
+                    <h3>📂 Quản Lý Hồ Sơ Bảo Hiểm</h3>
+                    <div class="management-tips">
+                        <div class="tip-section">
+                            <h4>📱 Lưu Trữ Số</h4>
+                            <ul>
+                                <li>Chụp ảnh/scan tất cả giấy tờ</li>
+                                <li>Lưu trữ trên cloud (Google Drive, iCloud)</li>
+                                <li>Tạo folder riêng cho mỗi hợp đồng</li>
+                                <li>Backup định kỳ</li>
+                            </ul>
+                        </div>
+                        <div class="tip-section">
+                            <h4>📋 Theo Dõi Định Kỳ</h4>
+                            <ul>
+                                <li>Đặt nhắc lịch gia hạn</li>
+                                <li>Review hợp đồng hàng năm</li>
+                                <li>Cập nhật thông tin thay đổi</li>
+                                <li>So sánh với sản phẩm mới</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annual-review">
+                    <h3>🔄 Đánh Giá Hàng Năm</h3>
+                    <div class="review-checklist">
+                        <h4>Checklist Đánh Giá:</h4>
+                        <ul class="review-list">
+                            <li>☐ Mức bảo hiểm còn phù hợp không?</li>
+                            <li>☐ Thu nhập có thay đổi đáng kể?</li>
+                            <li>☐ Gia đình có thành viên mới?</li>
+                            <li>☐ Tình trạng sức khỏe thay đổi?</li>
+                            <li>☐ Có sản phẩm mới tốt hơn?</li>
+                            <li>☐ Phí bảo hiểm có tăng nhiều?</li>
+                            <li>☐ Dịch vụ công ty có tốt?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="emergency-contacts">
+                    <h3>📞 Danh Sách Liên Hệ Khẩn Cấp</h3>
+                    <table class="contact-table">
+                        <tr>
+                            <th>Công Ty</th>
+                            <th>Hotline</th>
+                            <th>Email</th>
+                            <th>Website</th>
+                        </tr>
+                        <tr>
+                            <td>Bảo Việt</td>
+                            <td>1900 558 899</td>
+                            <td>cskh@baoviet.com.vn</td>
+                            <td>baoviet.com.vn</td>
+                        </tr>
+                        <tr>
+                            <td>Prudential</td>
+                            <td>1800 1779</td>
+                            <td>customer.vn@prudential.com</td>
+                            <td>prudential.com.vn</td>
+                        </tr>
+                        <tr>
+                            <td>PVI</td>
+                            <td>1900 545 416</td>
+                            <td>pvi@pvi.com.vn</td>
+                            <td>pvi.com.vn</td>
+                        </tr>
+                    </table>
+                </div>
+
+                        <div class="answer-feedback" id="q6-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>🎉 Chúc Mừng Hoàn Thành Khóa Học!</h3>
+                    <p>Bạn đã nắm vững kiến thức về bảo hiểm. Bắt đầu xây dựng "lá chắn tài chính" cho gia đình ngay hôm nay!</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>💰 Tài Chính Gia Đình</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/course.js"></script>
+        <script>
+            function calculateLifeInsurance() {
+                const monthlyIncome = parseFloat(document.getElementById('monthly-income-life').value);
+                const yearsSupport = parseFloat(document.getElementById('years-support').value);
+                
+                if (!monthlyIncome || !yearsSupport) {
+                    alert('Vui lòng nhập đầy đủ thông tin!');
+                    return;
+                }
+                
+                const annualIncome = monthlyIncome * 12;
+                const insuranceAmount = annualIncome * yearsSupport;
+                const annualPremium = insuranceAmount * 0.006; // Ước tính 0.6% mức bảo hiểm
+                
+                document.getElementById('insurance-amount').textContent = 
+                    new Intl.NumberFormat('vi-VN').format(insuranceAmount) + ' đ';
+                document.getElementById('annual-premium').textContent = 
+                    new Intl.NumberFormat('vi-VN').format(annualPremium) + ' đ';
+                
+                document.getElementById('life-insurance-results').style.display = 'grid';
+            }
+
+            function toggleLanguage() {
+                alert('Tính năng đa ngôn ngữ đang được phát triển. Sắp ra mắt!');
+            }
+        </script>
+</body>
+</html>
