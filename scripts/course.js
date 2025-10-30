@@ -160,33 +160,40 @@ function updateNavigationButtons() {
     }
     
     if (nextBtn) {
+        // Detect language from page
+        const isEnglish = document.documentElement.lang === 'en' || window.location.pathname.includes('/en/');
+        
         if (currentLesson === totalLessons) {
             // Check if button already has arrows, preserve them
             const hasLeftArrow = nextBtn.textContent.includes('←');
             const hasRightArrow = nextBtn.textContent.includes('→');
             
+            const finishText = isEnglish ? 'Complete Course' : 'Kết Thúc Khóa Học';
+            
             if (hasLeftArrow && hasRightArrow) {
-                nextBtn.textContent = '→ Kết Thúc Khóa Học ←';
+                nextBtn.textContent = `→ ${finishText} ←`;
             } else if (hasRightArrow) {
-                nextBtn.textContent = 'Kết Thúc Khóa Học →';
+                nextBtn.textContent = `${finishText} →`;
             } else if (hasLeftArrow) {
-                nextBtn.textContent = '← Kết Thúc Khóa Học';
+                nextBtn.textContent = `← ${finishText}`;
             } else {
-                nextBtn.textContent = 'Kết Thúc Khóa Học';
+                nextBtn.textContent = finishText;
             }
         } else {
             // Reset to original text for non-final lessons
             const hasLeftArrow = nextBtn.textContent.includes('←');
             const hasRightArrow = nextBtn.textContent.includes('→');
             
+            const nextText = isEnglish ? 'Next Lesson' : 'Bài Tiếp Theo';
+            
             if (hasLeftArrow && hasRightArrow) {
-                nextBtn.textContent = '→ Bài Tiếp Theo ←';
+                nextBtn.textContent = `→ ${nextText} ←`;
             } else if (hasRightArrow) {
-                nextBtn.textContent = 'Bài Tiếp →';
+                nextBtn.textContent = `${nextText} →`;
             } else if (hasLeftArrow) {
-                nextBtn.textContent = '← Bài Tiếp Theo';
+                nextBtn.textContent = `← ${nextText}`;
             } else {
-                nextBtn.textContent = 'Bài Tiếp Theo';
+                nextBtn.textContent = nextText;
             }
         }
     }
@@ -203,7 +210,11 @@ function nextLesson() {
         switchToLesson(currentLesson + 1);
     } else {
         // Course completed - redirect to main page
-        showNotification('🎉 Chúc mừng! Bạn đã hoàn thành khóa học này!', 'success');
+        const isEnglish = document.documentElement.lang === 'en' || window.location.pathname.includes('/en/');
+        const completionMessage = isEnglish ? 
+            '🎉 Congratulations! You have completed this course!' : 
+            '🎉 Chúc mừng! Bạn đã hoàn thành khóa học này!';
+        showNotification(completionMessage, 'success');
         trackEvent('course_completed', {
             course: window.location.pathname.split('/').pop().replace('.html', ''),
             completion_time: Date.now()
@@ -235,7 +246,11 @@ function updateProgress() {
     }
     
     if (progressText) {
-        progressText.textContent = `${completedLessons.length}/${totalLessons} bài học hoàn thành`;
+        const isEnglish = document.documentElement.lang === 'en' || window.location.pathname.includes('/en/');
+        const progressText = isEnglish ? 
+            `${completedLessons.length}/${totalLessons} lessons completed` : 
+            `${completedLessons.length}/${totalLessons} bài học hoàn thành`;
+        progressTextElement.textContent = progressText;
     }
 }
 
