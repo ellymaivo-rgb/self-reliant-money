@@ -149,7 +149,14 @@ function updateNavigationButtons() {
     
     if (prevBtn) {
         prevBtn.disabled = currentLesson === 1;
-        prevBtn.style.display = currentLesson === 1 ? 'none' : 'inline-block';
+        prevBtn.style.display = 'inline-block';
+        if (currentLesson === 1) {
+            prevBtn.style.opacity = '0.5';
+            prevBtn.style.cursor = 'not-allowed';
+        } else {
+            prevBtn.style.opacity = '1';
+            prevBtn.style.cursor = 'pointer';
+        }
     }
     
     if (nextBtn) {
