@@ -232,8 +232,18 @@ h3 .logo-icon,
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: #2c3e50;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #64748b;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-subtitle {
@@ -298,6 +308,13 @@ h3 .logo-icon,
     padding: 2rem;
     transition: all 0.3s ease;
     position: relative;
+}
+
+.course-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
 }
 
 .course-card:hover {
