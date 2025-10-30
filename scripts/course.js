@@ -137,10 +137,8 @@ function updateNavigationButtons() {
     if (nextBtn) {
         if (currentLesson === totalLessons) {
             nextBtn.textContent = 'Kết Thúc Khóa Học';
-            nextBtn.style.background = '#10b981';
         } else {
             nextBtn.textContent = 'Bài Tiếp Theo';
-            nextBtn.style.background = '#3b82f6';
         }
     }
 }
