@@ -778,63 +778,6 @@
     <script src="../scripts/main.js"></script>
     <script src="../scripts/course.js"></script>
     <script>
-    function checkAnswer(question, correct) {
-        const selected = document.querySelector(`input[name="${question}"]:checked`);
-        const result = document.querySelector('.quiz-result');
-        result.style.display = 'block';
-        if (selected && selected.value === correct) {
-            result.innerHTML = '<p style="color: green;">✅ Chính xác! Tuyệt vời!</p>';
-        } else {
-            result.innerHTML = '<p style="color: red;">❌ Chưa đúng. Hãy thử lại!</p>';
-        }
-    }
-
-    function showLesson(lessonNumber) {
-        // Hide all lessons
-        document.querySelectorAll('.lesson-content').forEach(content => {
-            content.style.display = 'none';
-        });
-        
-        // Show selected lesson
-        const targetLesson = document.getElementById(`lesson-${lessonNumber}`);
-        if (targetLesson) {
-            targetLesson.style.display = 'block';
-            
-            // Update sidebar active state
-            document.querySelectorAll('.lesson-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            const activeItem = document.querySelector(`[data-lesson="${lessonNumber}"]`);
-            if (activeItem) {
-                activeItem.classList.add('active');
-            }
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    }
-
-    function nextLesson() {
-        const currentActive = document.querySelector('.lesson-item.active');
-        if (currentActive) {
-            const currentNumber = parseInt(currentActive.dataset.lesson);
-            if (currentNumber < 6) {
-                showLesson(currentNumber + 1);
-            }
-        }
-    }
-
-    function prevLesson() {
-        const currentActive = document.querySelector('.lesson-item.active');
-        if (currentActive) {
-            const currentNumber = parseInt(currentActive.dataset.lesson);
-            if (currentNumber > 1) {
-                showLesson(currentNumber - 1);
-            }
-        }
-    }
-
     function calculateAffordability() {
         const income = parseFloat(document.getElementById('monthly-income').value) || 0;
         const savings = parseFloat(document.getElementById('current-savings').value) || 0;
@@ -868,10 +811,6 @@
             maxHousePrice.toFixed(0) + ' triệu VNĐ';
         document.querySelector('#additional-savings .result-value').textContent = 
             additionalSavings > 0 ? additionalSavings.toFixed(0) + ' triệu VNĐ' : 'Đủ vốn để mua';
-    }
-
-    function toggleLanguage() {
-        alert('Tính năng đa ngôn ngữ đang được phát triển. Coming soon!');
     }
     </script>
 </body>
