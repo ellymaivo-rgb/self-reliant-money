@@ -632,44 +632,6 @@
         }
     }
 
-    function showLesson(lessonNumber) {
-        document.querySelectorAll('.lesson-content').forEach(content => {
-            content.style.display = 'none';
-        });
-        const targetLesson = document.getElementById(`lesson-${lessonNumber}`);
-        if (targetLesson) {
-            targetLesson.style.display = 'block';
-            document.querySelectorAll('.lesson-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            const activeItem = document.querySelector(`[data-lesson="${lessonNumber}"]`);
-            if (activeItem) {
-                activeItem.classList.add('active');
-            }
-            window.scrollTo(0, 0);
-        }
-    }
-
-    function nextLesson() {
-        const currentActive = document.querySelector('.lesson-item.active');
-        if (currentActive) {
-            const currentNumber = parseInt(currentActive.dataset.lesson);
-            if (currentNumber < 6) {
-                showLesson(currentNumber + 1);
-            }
-        }
-    }
-
-    function prevLesson() {
-        const currentActive = document.querySelector('.lesson-item.active');
-        if (currentActive) {
-            const currentNumber = parseInt(currentActive.dataset.lesson);
-            if (currentNumber > 1) {
-                showLesson(currentNumber - 1);
-            }
-        }
-    }
-
     function toggleLanguage() {
         alert('Tính năng đa ngôn ngữ đang được phát triển. Sắp ra mắt!');
     }
