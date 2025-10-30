@@ -449,6 +449,13 @@ h3 .logo-icon,
 .feature-icon {
     font-size: 1rem;
     color: #10b981;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
 }
 
 .feature span:last-child {
