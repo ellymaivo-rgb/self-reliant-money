@@ -3,9 +3,71 @@ let currentLesson = 1;
 let completedLessons = [];
 const totalLessons = 6;
 
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(n => n.remove());
+    
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <span>${message}</span>
+        <button onclick="this.parentElement.remove()">×</button>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-weight: 500;
+        animation: slideIn 0.3s ease-out;
+    `;
+    
+    // Add animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
+}
+
+// Analytics tracking
+function trackEvent(eventName, eventData) {
+    console.log('Event:', eventName, eventData);
+    // Add Google Analytics or other tracking here
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize course progress
     updateProgress();
+    
+    // Update navigation buttons on load
+    updateNavigationButtons();
     
     // Lesson navigation
     document.querySelectorAll('.lesson-item').forEach(item => {
@@ -64,19 +126,21 @@ function updateSidebar() {
 }
 
 function updateNavigationButtons() {
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-lesson');
+    const nextBtn = document.querySelector('.next-lesson');
     
     if (prevBtn) {
         prevBtn.disabled = currentLesson === 1;
+        prevBtn.style.display = currentLesson === 1 ? 'none' : 'inline-block';
     }
     
     if (nextBtn) {
-        nextBtn.disabled = currentLesson === totalLessons;
         if (currentLesson === totalLessons) {
-            nextBtn.textContent = 'Hoàn Thành Khóa Học';
+            nextBtn.textContent = 'Kết Thúc Khóa Học';
+            nextBtn.style.background = '#10b981';
         } else {
-            nextBtn.textContent = 'Bài Tiếp Theo →';
+            nextBtn.textContent = 'Bài Tiếp Theo';
+            nextBtn.style.background = '#3b82f6';
         }
     }
 }
@@ -91,12 +155,17 @@ function nextLesson() {
     if (currentLesson < totalLessons) {
         switchToLesson(currentLesson + 1);
     } else {
-        // Course completed
-        showNotification('🎉 Chúc mừng! Bạn đã hoàn thành khóa học Ngân Sách Gia Đình!', 'success');
+        // Course completed - redirect to main page
+        showNotification('🎉 Chúc mừng! Bạn đã hoàn thành khóa học này!', 'success');
         trackEvent('course_completed', {
-            course: 'budgeting',
+            course: window.location.pathname.split('/').pop().replace('.html', ''),
             completion_time: Date.now()
         });
+        
+        // Redirect to main page after 2 seconds
+        setTimeout(() => {
+            window.location.href = '../index.html';
+        }, 2000);
     }
     
     updateProgress();
