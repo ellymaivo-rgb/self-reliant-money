@@ -15,7 +15,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 /* Navigation */
@@ -88,7 +88,7 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -649,6 +649,14 @@ body {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-container {
+        padding: 0 30px;
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -707,7 +715,7 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 25px;
     }
     
     .hero-title {
