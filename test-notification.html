@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Notification</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; }
+        button { padding: 10px 20px; font-size: 16px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Test Notification System</h1>
+    <button onclick="testSuccess()">Test Success Notification</button>
+    <button onclick="testError()">Test Error Notification</button>
+    <button onclick="testCompletion()">Test Course Completion</button>
+
+    <script src="scripts/course.js"></script>
+    <script>
+        function testSuccess() {
+            showNotification('🎉 Test thành công!', 'success');
+        }
+
+        function testError() {
+            showNotification('❌ Test lỗi!', 'error');
+        }
+
+        function testCompletion() {
+            showNotification('🎉 Chúc mừng! Bạn đã hoàn thành khóa học này!', 'success');
+            setTimeout(() => {
+                alert('Sẽ chuyển về trang chủ (nhưng đây là test)');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
