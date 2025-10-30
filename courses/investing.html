@@ -55,42 +55,42 @@
             <div class="course-outline">
                 <h3>Nội Dung Khóa Học</h3>
                 <div class="lesson-list">
-                    <div class="lesson-item active" data-lesson="1">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
                         <span class="lesson-number">1</span>
                         <div class="lesson-info">
                             <h4>Tại Sao Phải Đầu Tư?</h4>
                             <span class="lesson-duration">30 phút</span>
                         </div>
                     </div>
-                    <div class="lesson-item" data-lesson="2">
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
                         <span class="lesson-number">2</span>
                         <div class="lesson-info">
                             <h4>Nguyên Tắc Đầu Tư An Toàn</h4>
                             <span class="lesson-duration">35 phút</span>
                         </div>
                     </div>
-                    <div class="lesson-item" data-lesson="3">
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
                         <span class="lesson-number">3</span>
                         <div class="lesson-info">
                             <h4>Chứng Khoán Cơ Bản</h4>
                             <span class="lesson-duration">45 phút</span>
                         </div>
                     </div>
-                    <div class="lesson-item" data-lesson="4">
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
                         <span class="lesson-number">4</span>
                         <div class="lesson-info">
                             <h4>Quỹ Đầu Tư & ETF</h4>
                             <span class="lesson-duration">40 phút</span>
                         </div>
                     </div>
-                    <div class="lesson-item" data-lesson="5">
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
                         <span class="lesson-number">5</span>
                         <div class="lesson-info">
                             <h4>Trái Phiếu & Tiền Gửi</h4>
                             <span class="lesson-duration">35 phút</span>
                         </div>
                     </div>
-                    <div class="lesson-item" data-lesson="6">
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
                         <span class="lesson-number">6</span>
                         <div class="lesson-info">
                             <h4>Vàng & Bất Động Sản</h4>
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-            <div class="lesson-content" id="lesson-2">
+            <div class="lesson-content" id="lesson-2" style="display: none;">
                 <h2>Bài 2: Nguyên Tắc Đầu Tư An Toàn</h2>
                 
                 <div class="lesson-section">
@@ -217,7 +217,7 @@
                 </div>
             </div>
 
-            <div class="lesson-content" id="lesson-3">
+            <div class="lesson-content" id="lesson-3" style="display: none;">
                 <h2>Bài 3: Cổ Phiếu - Sở Hữu Doanh Nghiệp</h2>
                 <div class="lesson-section">
                     <h3>📈 Cổ phiếu là gì?</h3>
@@ -281,7 +281,7 @@
                 </div>
             </div>
 
-            <div class="lesson-content" id="lesson-4">
+            <div class="lesson-content" id="lesson-4" style="display: none;">
                 <h2>Bài 4: Quỹ Đầu Tư - Ủy Thác Chuyên Gia</h2>
                 <div class="lesson-section">
                     <h3>🏦 Quỹ đầu tư là gì?</h3>
@@ -365,7 +365,7 @@
                 </div>
             </div>
 
-            <div class="lesson-content" id="lesson-5">
+            <div class="lesson-content" id="lesson-5" style="display: none;">
                 <h2>Bài 5: Bất Động Sản - Tài Sản Hữu Hình</h2>
                 <div class="lesson-section">
                     <h3>🏠 Đầu tư bất động sản: Ưu & nhược điểm</h3>
@@ -462,7 +462,7 @@
                 </div>
             </div>
 
-            <div class="lesson-content" id="lesson-6">
+            <div class="lesson-content" id="lesson-6" style="display: none;">
                 <h2>Bài 6: Xây Dựng Danh Mục Đầu Tư Cân Bằng</h2>
                 <div class="lesson-section">
                     <h3>⚖️ Nguyên tắc phân bổ tài sản</h3>
@@ -590,8 +590,8 @@
             </div>
 
             <div class="lesson-navigation">
-                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
-                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -629,6 +629,44 @@
             result.innerHTML = '<p style="color: green;">✅ Chính xác! Tuyệt vời!</p>';
         } else {
             result.innerHTML = '<p style="color: red;">❌ Chưa đúng. Hãy thử lại!</p>';
+        }
+    }
+
+    function showLesson(lessonNumber) {
+        document.querySelectorAll('.lesson-content').forEach(content => {
+            content.style.display = 'none';
+        });
+        const targetLesson = document.getElementById(`lesson-${lessonNumber}`);
+        if (targetLesson) {
+            targetLesson.style.display = 'block';
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            const activeItem = document.querySelector(`[data-lesson="${lessonNumber}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+            window.scrollTo(0, 0);
+        }
+    }
+
+    function nextLesson() {
+        const currentActive = document.querySelector('.lesson-item.active');
+        if (currentActive) {
+            const currentNumber = parseInt(currentActive.dataset.lesson);
+            if (currentNumber < 6) {
+                showLesson(currentNumber + 1);
+            }
+        }
+    }
+
+    function prevLesson() {
+        const currentActive = document.querySelector('.lesson-item.active');
+        if (currentActive) {
+            const currentNumber = parseInt(currentActive.dataset.lesson);
+            if (currentNumber > 1) {
+                showLesson(currentNumber - 1);
+            }
         }
     }
 

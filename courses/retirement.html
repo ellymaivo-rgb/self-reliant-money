@@ -52,12 +52,12 @@
             <div class="course-outline">
                 <h3>Nội Dung Khóa Học</h3>
                 <div class="lesson-list">
-                    <div class="lesson-item active" data-lesson="1"><span class="lesson-number">1</span><div class="lesson-info"><h4>FIRE là gì?</h4><span class="lesson-duration">25 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="2"><span class="lesson-number">2</span><div class="lesson-info"><h4>Tính Số Vàng Nghỉ Hưu</h4><span class="lesson-duration">35 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="3"><span class="lesson-number">3</span><div class="lesson-info"><h4>Chiến Lược Tiết Kiệm</h4><span class="lesson-duration">40 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="4"><span class="lesson-number">4</span><div class="lesson-info"><h4>Danh Mục Hưu Trí</h4><span class="lesson-duration">45 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="5"><span class="lesson-number">5</span><div class="lesson-info"><h4>Bảo Hiểm Hưu Trí</h4><span class="lesson-duration">30 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="6"><span class="lesson-number">6</span><div class="lesson-info"><h4>Kế Hoạch Tài Chính Hưu Trí</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)"><span class="lesson-number">1</span><div class="lesson-info"><h4>FIRE là gì?</h4><span class="lesson-duration">25 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)"><span class="lesson-number">2</span><div class="lesson-info"><h4>Tính Số Vàng Nghỉ Hưu</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)"><span class="lesson-number">3</span><div class="lesson-info"><h4>Chiến Lược Tiết Kiệm</h4><span class="lesson-duration">40 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)"><span class="lesson-number">4</span><div class="lesson-info"><h4>Danh Mục Hưu Trí</h4><span class="lesson-duration">45 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)"><span class="lesson-number">5</span><div class="lesson-info"><h4>Bảo Hiểm Hưu Trí</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)"><span class="lesson-number">6</span><div class="lesson-info"><h4>Kế Hoạch Tài Chính Hưu Trí</h4><span class="lesson-duration">35 phút</span></div></div>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                     <div class="quiz-result" style="display:none"></div>
                 </div>
             </div>
-            <div class="lesson-content" id="lesson-2">
+            <div class="lesson-content" id="lesson-2" style="display: none;">
                 <h2>Bài 2: Tính Số Vàng Nghỉ Hưu</h2>
                 <div class="lesson-section">
                     <h3>🧮 Công thức 25x</h3>
@@ -99,7 +99,7 @@
                     <button class="btn btn-secondary">Gửi Bài</button>
                 </div>
             </div>
-            <div class="lesson-content" id="lesson-3">
+            <div class="lesson-content" id="lesson-3" style="display: none;">
                 <h2>Bài 3: Chiến Lược Tiết Kiệm Hưu Trí</h2>
                 <div class="lesson-section">
                     <h3>📊 Các phương pháp tiết kiệm</h3>
@@ -116,7 +116,7 @@
                     <button class="btn btn-secondary">Lưu Kế Hoạch</button>
                 </div>
             </div>
-            <div class="lesson-content" id="lesson-4">
+            <div class="lesson-content" id="lesson-4" style="display: none;">
                 <h2>Bài 4: Danh Mục Đầu Tư Hưu Trí</h2>
                 <div class="lesson-section">
                     <h3>💼 Cấu trúc danh mục theo độ tuổi</h3>
@@ -133,7 +133,7 @@
                     <button class="btn btn-secondary">Phân Tích</button>
                 </div>
             </div>
-            <div class="lesson-content" id="lesson-5">
+            <div class="lesson-content" id="lesson-5" style="display: none;">
                 <h2>Bài 5: Bảo Hiểm Hưu Trí</h2>
                 <div class="lesson-section">
                     <h3>🛡️ Các loại bảo hiểm cần thiết</h3>
@@ -150,7 +150,7 @@
                     <button class="btn btn-secondary">Tính Toán</button>
                 </div>
             </div>
-            <div class="lesson-content" id="lesson-6">
+            <div class="lesson-content" id="lesson-6" style="display: none;">
                 <h2>Bài 6: Kế Hoạch Tài Chính Hưu Trí Tổng Thể</h2>
                 <div class="lesson-section">
                     <h3>🎯 Roadmap hoàn chỉnh</h3>
@@ -169,8 +169,8 @@
                 </div>
             </div>
             <div class="lesson-navigation">
-                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
-                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -198,6 +198,44 @@
                 const res=document.querySelector('.quiz-result');
                 res.style.display='block';
                 res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+
+            function showLesson(lessonNumber) {
+                document.querySelectorAll('.lesson-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                const targetLesson = document.getElementById(`lesson-${lessonNumber}`);
+                if (targetLesson) {
+                    targetLesson.style.display = 'block';
+                    document.querySelectorAll('.lesson-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    const activeItem = document.querySelector(`[data-lesson="${lessonNumber}"]`);
+                    if (activeItem) {
+                        activeItem.classList.add('active');
+                    }
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            function nextLesson() {
+                const currentActive = document.querySelector('.lesson-item.active');
+                if (currentActive) {
+                    const currentNumber = parseInt(currentActive.dataset.lesson);
+                    if (currentNumber < 6) {
+                        showLesson(currentNumber + 1);
+                    }
+                }
+            }
+
+            function prevLesson() {
+                const currentActive = document.querySelector('.lesson-item.active');
+                if (currentActive) {
+                    const currentNumber = parseInt(currentActive.dataset.lesson);
+                    if (currentNumber > 1) {
+                        showLesson(currentNumber - 1);
+                    }
+                }
             }
         </script>
 </body>
