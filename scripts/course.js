@@ -137,6 +137,8 @@ function updateSidebar() {
         
         if (completedLessons.includes(lessonNum)) {
             item.classList.add('completed');
+        } else {
+            item.classList.remove('completed');
         }
     });
 }
@@ -207,6 +209,7 @@ function nextLesson() {
     }
     
     updateProgress();
+    updateSidebar(); // Make sure sidebar is updated after lesson completion
 }
 
 function prevLesson() {
