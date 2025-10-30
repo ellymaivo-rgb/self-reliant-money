@@ -441,7 +441,7 @@ h3 .logo-icon,
 
 .feature {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
     margin-bottom: 1rem;
 }
@@ -456,12 +456,13 @@ h3 .logo-icon,
     text-align: center;
     flex-shrink: 0;
     position: relative;
+    margin-top: 0.2rem;
 }
 
 .feature-icon:before {
     content: "✓";
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1rem;
