@@ -52,12 +52,12 @@
             <div class="course-outline">
                 <h3>Nội Dung Khóa Học</h3>
                 <div class="lesson-list">
-                    <div class="lesson-item active" data-lesson="1"><span class="lesson-number">1</span><div class="lesson-info"><h4>Chi Phí Nuôi Con</h4><span class="lesson-duration">30 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="2"><span class="lesson-number">2</span><div class="lesson-info"><h4>Quỹ Giáo Dục</h4><span class="lesson-duration">35 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="3"><span class="lesson-number">3</span><div class="lesson-info"><h4>Bảo Hiểm Cho Trẻ</h4><span class="lesson-duration">30 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="4"><span class="lesson-number">4</span><div class="lesson-info"><h4>Dạy Con Về Tiền</h4><span class="lesson-duration">35 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="5"><span class="lesson-number">5</span><div class="lesson-info"><h4>Đầu Tư Cho Tương Lai</h4><span class="lesson-duration">30 phút</span></div></div>
-                    <div class="lesson-item" data-lesson="6"><span class="lesson-number">6</span><div class="lesson-info"><h4>Quyền Lợi Pháp Lý</h4><span class="lesson-duration">25 phút</span></div></div>
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)"><span class="lesson-number">1</span><div class="lesson-info"><h4>Chi Phí Nuôi Con</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)"><span class="lesson-number">2</span><div class="lesson-info"><h4>Quỹ Giáo Dục</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)"><span class="lesson-number">3</span><div class="lesson-info"><h4>Bảo Hiểm Cho Trẻ</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)"><span class="lesson-number">4</span><div class="lesson-info"><h4>Dạy Con Về Tiền</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)"><span class="lesson-number">5</span><div class="lesson-info"><h4>Đầu Tư Cho Tương Lai</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)"><span class="lesson-number">6</span><div class="lesson-info"><h4>Quyền Lợi Pháp Lý</h4><span class="lesson-duration">25 phút</span></div></div>
                 </div>
             </div>
         </div>
@@ -174,8 +174,8 @@
                 </div>
             </div>
             <div class="lesson-navigation">
-                <button class="btn btn-secondary prev-lesson">← Bài Trước</button>
-                <button class="btn btn-primary next-lesson">Bài Tiếp →</button>
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()">Bài Tiếp →</button>
             </div>
         </div>
     </div>
@@ -203,6 +203,52 @@
                 const res=document.querySelector('.quiz-result');
                 res.style.display='block';
                 res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+
+            function showLesson(lessonNumber) {
+                // Hide all lessons
+                document.querySelectorAll('.lesson-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Show selected lesson
+                const targetLesson = document.getElementById(`lesson-${lessonNumber}`);
+                if (targetLesson) {
+                    targetLesson.style.display = 'block';
+                    
+                    // Update sidebar active state
+                    document.querySelectorAll('.lesson-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    const activeItem = document.querySelector(`[data-lesson="${lessonNumber}"]`);
+                    if (activeItem) {
+                        activeItem.classList.add('active');
+                    }
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            function nextLesson() {
+                const currentActive = document.querySelector('.lesson-item.active');
+                if (currentActive) {
+                    const currentNumber = parseInt(currentActive.dataset.lesson);
+                    if (currentNumber < 6) {
+                        showLesson(currentNumber + 1);
+                    }
+                }
+            }
+
+            function prevLesson() {
+                const currentActive = document.querySelector('.lesson-item.active');
+                if (currentActive) {
+                    const currentNumber = parseInt(currentActive.dataset.lesson);
+                    if (currentNumber > 1) {
+                        showLesson(currentNumber - 1);
+                    }
+                }
             }
         </script>
 </body>
