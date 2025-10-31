@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Investing - Family Finance</title>
+    <meta name="description" content="Discover suitable and safe investment channels for young families.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/investing.html'">🌐 VI</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Basic investing</span>
+            </div>
+            <h1>📊 Basic Investing</h1>
+            <p class="course-subtitle">Build a safe and effective investment portfolio</p>
+            <div class="course-meta">
+                <span class="course-level">Intermediate</span>
+                <span class="course-duration">6 lessons</span>
+                <span class="course-time">5 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Why Should You Invest?</h4>
+                            <span class="lesson-duration">30 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Safe Investment Principles</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Stock Market Basics</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Mutual Funds & ETFs</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Real Estate Investment</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Building Balanced Portfolio</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Lesson 1: Why Should You Invest?</h2>
+                
+                <div class="lesson-section">
+                    <h3>🎯 Inflation Erodes Your Savings</h3>
+                    <p>
+                        If you only keep money in savings accounts with 4-5% annual interest, 
+                        while annual inflation is around 3-4%, your money only grows very little in real value.
+                    </p>
+                    <div class="example-box">
+                        <strong>Example:</strong> $10,000 today, after 10 years with 4% annual inflation,
+                        will only have purchasing power equivalent to $6,700.
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💡 The Power of Compound Interest</h3>
+                    <p>
+                        Early investment helps you leverage the power of compound interest. With average returns of 
+                        8-10% annually, your money can double every 7-9 years.
+                    </p>
+                    <ul>
+                        <li>Invest $500/month from age 28 → $580,000 at age 55</li>
+                        <li>Invest $500/month from age 35 → $320,000 at age 55</li>
+                        <li>7-year difference = $260,000 loss!</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Long-term Financial Goals</h3>
+                    <p>Investment helps you achieve important goals:</p>
+                    <ul>
+                        <li>Buy a house in 5-7 years</li>
+                        <li>Children's college fund ($100,000-200,000)</li>
+                        <li>Comfortable retirement with $500,000-1,000,000</li>
+                        <li>Financial freedom earlier</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Knowledge Check</h3>
+                    <div class="quiz-question">
+                        <p><strong>Question 1:</strong> With 4% annual inflation, what minimum investment return do you need to maintain purchasing power?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 2% annually</label>
+                            <label><input type="radio" name="q1" value="b"> B. 4% annually</label>
+                            <label><input type="radio" name="q1" value="c"> C. 6% annually</label>
+                            <label><input type="radio" name="q1" value="d"> D. 8% annually</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: Safe Investment Principles</h2>
+                
+                <div class="lesson-section">
+                    <h3>🛡️ 5 Golden Rules</h3>
+                    <ol>
+                        <li><strong>Invest only surplus money:</strong> Ensure you have 6-month emergency fund</li>
+                        <li><strong>Understand before investing:</strong> Never invest in what you don't understand</li>
+                        <li><strong>Diversify:</strong> Don't put all eggs in one basket</li>
+                        <li><strong>Long-term investment:</strong> Minimum 5 years to reduce short-term risks</li>
+                        <li><strong>Control emotions:</strong> Don't buy due to FOMO, don't sell due to panic</li>
+                    </ol>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>⚠️ Risk vs Return</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Investment Channel</th>
+                            <th>Risk</th>
+                            <th>Expected Return</th>
+                            <th>Suitable For</th>
+                        </tr>
+                        <tr>
+                            <td>Bank savings</td>
+                            <td>Very low</td>
+                            <td>4-6% annually</td>
+                            <td>Emergency fund</td>
+                        </tr>
+                        <tr>
+                            <td>Government bonds</td>
+                            <td>Low</td>
+                            <td>5-7% annually</td>
+                            <td>Conservative investment</td>
+                        </tr>
+                        <tr>
+                            <td>Mutual funds</td>
+                            <td>Medium</td>
+                            <td>8-12% annually</td>
+                            <td>Long-term investment</td>
+                        </tr>
+                        <tr>
+                            <td>Stocks</td>
+                            <td>High</td>
+                            <td>10-15% annually</td>
+                            <td>Experienced investors</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Practical Exercise</h3>
+                    <p><strong>Scenario:</strong> You're 30 years old, have $20,000 savings, income $2,500/month, expenses $1,800/month.</p>
+                    <p><strong>Task:</strong> Determine how much to keep as emergency fund and how much you can invest?</p>
+                    <textarea class="exercise-input" placeholder="Write your answer..."></textarea>
+                    <button class="btn btn-secondary">Submit</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: Stocks - Owning Businesses</h2>
+                <div class="lesson-section">
+                    <h3>📈 What are stocks?</h3>
+                    <p>Stocks are certificates proving you own a portion of a company. When the company grows and increases profits, your stock value also increases.</p>
+                    
+                    <div class="stock-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <div class="benefit-content">
+                                <h4>High long-term returns</h4>
+                                <p>History shows stocks provide 8-12% annually long-term</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📊</span>
+                            <div class="benefit-content">
+                                <h4>Regular dividends</h4>
+                                <p>Many companies pay 3-6% annual dividends to shareholders</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🛡️</span>
+                            <div class="benefit-content">
+                                <h4>Inflation protection</h4>
+                                <p>Value increases over time, protecting purchasing power</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 How to choose stocks for beginners</h3>
+                    <div class="stock-selection">
+                        <div class="selection-criteria">
+                            <h4>✅ Basic criteria</h4>
+                            <ul>
+                                <li><strong>Large companies:</strong> S&P 500, Apple, Microsoft...</li>
+                                <li><strong>Stable industries:</strong> Banking, consumer goods, utilities</li>
+                                <li><strong>Consistent profits:</strong> Stable growth for 3-5 years</li>
+                                <li><strong>Low debt:</strong> Debt-to-equity ratio < 50%</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="beginner-strategy">
+                            <h4>🚀 Dollar Cost Averaging (DCA) Strategy</h4>
+                            <p>Instead of buying once, divide money into regular purchases:</p>
+                            <ul>
+                                <li>Buy $200-300 worth of stocks monthly</li>
+                                <li>Choose 2-3 reliable stock symbols</li>
+                                <li>Reduce risk from price volatility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Exercise</h3>
+                    <p>Choose 3 stocks from S&P 500 that you understand their business. Explain your reasons.</p>
+                    <textarea class="exercise-input" placeholder="3 stock symbols and reasons for choosing..."></textarea>
+                    <button class="btn btn-secondary">Analyze</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Mutual Funds - Expert Management</h2>
+                <div class="lesson-section">
+                    <h3>🏦 What are mutual funds?</h3>
+                    <p>Mutual funds pool money from many investors for professional management. Perfect for busy people or those without experience.</p>
+                    
+                    <div class="fund-types">
+                        <div class="fund-type">
+                            <h4>📊 Stock Funds</h4>
+                            <ul>
+                                <li>Invest mainly in stocks</li>
+                                <li>High profit potential</li>
+                                <li>Higher risk</li>
+                                <li>Management fee: 1.5-2.5% annually</li>
+                            </ul>
+                        </div>
+                        <div class="fund-type">
+                            <h4>🏛️ Bond Funds</h4>
+                            <ul>
+                                <li>Invest in bonds</li>
+                                <li>Stable returns</li>
+                                <li>Lower risk</li>
+                                <li>Management fee: 0.5-1.5% annually</li>
+                            </ul>
+                        </div>
+                        <div class="fund-type">
+                            <h4>⚖️ Balanced Funds</h4>
+                            <ul>
+                                <li>Combine stocks + bonds</li>
+                                <li>Moderate risk-return</li>
+                                <li>Suitable for beginners</li>
+                                <li>Management fee: 1-2% annually</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 How to choose mutual funds</h3>
+                    <div class="fund-selection">
+                        <div class="selection-step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Determine goals</h4>
+                                <ul>
+                                    <li>Short-term (< 3 years): Bond funds</li>
+                                    <li>Medium-term (3-7 years): Balanced funds</li>
+                                    <li>Long-term (> 7 years): Stock funds</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="selection-step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Compare performance</h4>
+                                <ul>
+                                    <li>Review 3-5 year returns</li>
+                                    <li>Compare with market index</li>
+                                    <li>Include management fees</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="selection-step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Choose reputable companies</h4>
+                                <ul>
+                                    <li>Vanguard, Fidelity, BlackRock</li>
+                                    <li>Charles Schwab, T. Rowe Price</li>
+                                    <li>Experience > 5 years</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Exercise</h3>
+                    <p>Compare 3 stock mutual funds on performance and fees. Choose the most suitable one.</p>
+                    <textarea class="exercise-input" placeholder="Compare funds and make selection..."></textarea>
+                    <button class="btn btn-secondary">Compare</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Real Estate - Tangible Assets</h2>
+                <div class="lesson-section">
+                    <h3>🏠 Real estate investment: Pros & cons</h3>
+                    <div class="real-estate-analysis">
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>✅ Advantages</h4>
+                                <ul>
+                                    <li>Tangible assets, easy to understand</li>
+                                    <li>Good inflation protection</li>
+                                    <li>Can rent for income</li>
+                                    <li>Easy bank financing</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>❌ Disadvantages</h4>
+                                <ul>
+                                    <li>Requires large initial capital</li>
+                                    <li>Poor liquidity (hard to sell quickly)</li>
+                                    <li>High transaction costs (2-10%)</li>
+                                    <li>Complex legal risks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Real estate investment options</h3>
+                    <div class="real-estate-options">
+                        <div class="option-card">
+                            <h4>🏘️ Buy to live</h4>
+                            <p><strong>Priority #1</strong> for young couples</p>
+                            <ul>
+                                <li>No rent payments</li>
+                                <li>Build long-term assets</li>
+                                <li>Stable lifestyle</li>
+                            </ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>🏢 Buy to rent</h4>
+                            <p>Requires large capital, much experience</p>
+                            <ul>
+                                <li>Rental income 4-8% annually</li>
+                                <li>Price appreciation 5-10% annually</li>
+                                <li>Risks: Hard to rent, price decline</li>
+                            </ul>
+                        </div>
+                        <div class="option-card">
+                            <h4>📜 REITs</h4>
+                            <p>Real estate investment with small money</p>
+                            <ul>
+                                <li>Start from $1,000</li>
+                                <li>High liquidity</li>
+                                <li>Regular dividend payments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💡 Strategy for young couples</h3>
+                    <div class="strategy-timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-age">25-30 years old</span>
+                            <div class="timeline-content">
+                                <h4>Accumulation phase</h4>
+                                <ul>
+                                    <li>Focus on saving for first home</li>
+                                    <li>Invest in stocks/funds for rapid growth</li>
+                                    <li>Don't borrow for investment real estate yet</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-age">30-35 years old</span>
+                            <div class="timeline-content">
+                                <h4>Home buying phase</h4>
+                                <ul>
+                                    <li>Buy home to live in (60-70% loan)</li>
+                                    <li>Maintain stock/fund investments</li>
+                                    <li>Consider REITs if have surplus money</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Exercise</h3>
+                    <p>Calculate: With $6,000 monthly income, when can you buy a $300,000 apartment?</p>
+                    <textarea class="exercise-input" placeholder="Savings plan and home buying strategy..."></textarea>
+                    <button class="btn btn-secondary">Calculate</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Lesson 6: Building Balanced Investment Portfolio</h2>
+                <div class="lesson-section">
+                    <h3>⚖️ Asset allocation principles</h3>
+                    <p>Diversification reduces risk while maintaining returns. "Don't put all eggs in one basket"</p>
+                    
+                    <div class="asset-allocation">
+                        <div class="allocation-model">
+                            <h4>🚀 Aggressive model (25-35 years old)</h4>
+                            <div class="allocation-chart">
+                                <div class="allocation-item">
+                                    <span class="allocation-color stocks"></span>
+                                    <span class="allocation-label">Stocks/Stock funds: 60%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color bonds"></span>
+                                    <span class="allocation-label">Bonds/Savings: 20%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color real-estate"></span>
+                                    <span class="allocation-label">Real estate: 15%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color emergency"></span>
+                                    <span class="allocation-label">Emergency fund: 5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="allocation-model">
+                            <h4>🛡️ Conservative model (35-45 years old)</h4>
+                            <div class="allocation-chart">
+                                <div class="allocation-item">
+                                    <span class="allocation-color stocks"></span>
+                                    <span class="allocation-label">Stocks/Stock funds: 40%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color bonds"></span>
+                                    <span class="allocation-label">Bonds/Savings: 35%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color real-estate"></span>
+                                    <span class="allocation-label">Real estate: 20%</span>
+                                </div>
+                                <div class="allocation-item">
+                                    <span class="allocation-color emergency"></span>
+                                    <span class="allocation-label">Emergency fund: 5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Portfolio rebalancing</h3>
+                    <div class="rebalancing-guide">
+                        <div class="rebalancing-why">
+                            <h4>Why rebalance?</h4>
+                            <p>Over time, asset proportions change due to price movements. Need to adjust back to original ratios.</p>
+                        </div>
+                        
+                        <div class="rebalancing-when">
+                            <h4>⏰ When to rebalance?</h4>
+                            <ul>
+                                <li><strong>Periodically:</strong> Every 6 months or annually</li>
+                                <li><strong>Threshold-based:</strong> When deviation > 5% from target</li>
+                                <li><strong>Life events:</strong> Income changes, goal changes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="rebalancing-example">
+                            <h4>📝 Rebalancing example</h4>
+                            <p><strong>Target:</strong> 60% stocks, 40% bonds</p>
+                            <p><strong>Current:</strong> 70% stocks (price increase), 30% bonds</p>
+                            <p><strong>Action:</strong> Sell some stocks, buy more bonds</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 10-year investment roadmap</h3>
+                    <div class="investment-roadmap">
+                        <div class="roadmap-phase">
+                            <h4>Year 1-2: Foundation building</h4>
+                            <ul>
+                                <li>Build complete emergency fund</li>
+                                <li>Open investment account</li>
+                                <li>Start DCA $200-300/month</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-phase">
+                            <h4>Year 3-5: Acceleration</h4>
+                            <ul>
+                                <li>Increase investment to $500-1000/month</li>
+                                <li>Diversify into funds, bonds</li>
+                                <li>Prepare for first home purchase</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-phase">
+                            <h4>Year 6-10: Completion</h4>
+                            <ul>
+                                <li>Own stable home</li>
+                                <li>Investment portfolio $50,000-100,000</li>
+                                <li>Passive income $200-500/month</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>🎉 Final Project</h3>
+                    <div class="final-project">
+                        <h4>Create 5-year investment plan for your family</h4>
+                        <ol>
+                            <li>Define specific financial goals</li>
+                            <li>Allocate investment ratios by age</li>
+                            <li>Choose suitable investment products</li>
+                            <li>Set monthly investment schedule</li>
+                            <li>Schedule review and rebalancing</li>
+                        </ol>
+                        <p><strong>Congratulations! You're ready to start your investment journey! 🚀</strong></p>
+                    </div>
+                    <textarea class="exercise-input" placeholder="Your 5-year investment plan..."></textarea>
+                    <button class="btn btn-primary">Complete Course</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Investing?</h2>
+            <p>Join our course and get detailed guidance from experts</p>
+            <a href="../index.html#contact" class="btn btn-primary">Register Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Correct! Excellent!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Not quite right. Try again!</p>';
+        }
+    }
+
+    function toggleLanguage() {
+        alert('Multi-language feature is under development. Coming soon!');
+    }
+    </script>
+</body>
+</html>

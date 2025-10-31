@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance - Family Finance</title>
+    <meta name="description" content="Choose appropriate insurance to protect your family from financial risks.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/insurance.html'">🌐 VI</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Insurance</span>
+            </div>
+            <h1>🛡️ Insurance</h1>
+            <p class="course-subtitle">Financial protection for your family</p>
+            <div class="course-meta">
+                <span class="course-level">Beginner</span>
+                <span class="course-duration">5 lessons</span>
+                <span class="course-time">4 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/5 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Why Insurance Matters</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Health Insurance Essentials</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Life Insurance Guide</h4>
+                            <span class="lesson-duration">55 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Property & Auto Insurance</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Building Your Insurance Plan</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Lesson 1: Why Insurance Matters</h2>
+                
+                <div class="lesson-section">
+                    <h3>🛡️ Insurance as Financial Protection</h3>
+                    <p>
+                        Insurance is your family's financial safety net. It protects you from catastrophic 
+                        expenses that could derail your financial goals and put your family at risk.
+                    </p>
+                    
+                    <div class="risk-scenarios">
+                        <div class="scenario-item">
+                            <span class="scenario-icon">🏥</span>
+                            <div class="scenario-content">
+                                <h4>Medical Emergency</h4>
+                                <p>Heart surgery: $100,000+ without insurance vs $5,000 with good coverage</p>
+                            </div>
+                        </div>
+                        <div class="scenario-item">
+                            <span class="scenario-icon">💼</span>
+                            <div class="scenario-content">
+                                <h4>Income Loss</h4>
+                                <p>Primary earner disability: Family needs 60-80% income replacement</p>
+                            </div>
+                        </div>
+                        <div class="scenario-item">
+                            <span class="scenario-icon">🏠</span>
+                            <div class="scenario-content">
+                                <h4>Property Damage</h4>
+                                <p>House fire: $200,000+ rebuild cost could bankrupt uninsured family</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>⚖️ Insurance Priority Hierarchy</h3>
+                    <div class="priority-levels">
+                        <div class="priority-tier">
+                            <h4>🚨 Level 1: Essential (Must Have)</h4>
+                            <ul>
+                                <li>Health insurance</li>
+                                <li>Auto insurance (if you drive)</li>
+                                <li>Renters/homeowners insurance</li>
+                                <li>Term life insurance (if dependents)</li>
+                            </ul>
+                        </div>
+                        <div class="priority-tier">
+                            <h4>⭐ Level 2: Important (Should Have)</h4>
+                            <ul>
+                                <li>Disability insurance</li>
+                                <li>Umbrella liability insurance</li>
+                                <li>Higher coverage limits</li>
+                            </ul>
+                        </div>
+                        <div class="priority-tier">
+                            <h4>💡 Level 3: Optional (Nice to Have)</h4>
+                            <ul>
+                                <li>Extended warranties</li>
+                                <li>Travel insurance</li>
+                                <li>Identity theft protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Knowledge Check</h3>
+                    <div class="quiz-question">
+                        <p><strong>What's the primary purpose of insurance?</strong></p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. Make money through investments</label>
+                            <label><input type="radio" name="q1" value="b"> B. Protect against financial catastrophe</label>
+                            <label><input type="radio" name="q1" value="c"> C. Reduce all small expenses</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: Health Insurance Essentials</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏥 Understanding Health Insurance</h3>
+                    <p>Health insurance is the most critical insurance for families. Medical bills are the #1 cause of bankruptcy in America.</p>
+                    
+                    <div class="health-insurance-types">
+                        <div class="insurance-type">
+                            <h4>🏢 Employer-Sponsored Plans</h4>
+                            <ul>
+                                <li>Usually cheapest option</li>
+                                <li>Employer pays 70-80% of premium</li>
+                                <li>Limited to employer's choices</li>
+                                <li>May not cover family optimally</li>
+                            </ul>
+                        </div>
+                        <div class="insurance-type">
+                            <h4>🛒 Marketplace Plans (ACA)</h4>
+                            <ul>
+                                <li>More plan options</li>
+                                <li>Subsidies available based on income</li>
+                                <li>Essential health benefits required</li>
+                                <li>Cannot deny for pre-existing conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Key Terms & Costs</h3>
+                    <table class="health-terms-table">
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                            <th>Impact</th>
+                        </tr>
+                        <tr>
+                            <td>Premium</td>
+                            <td>Monthly payment</td>
+                            <td>Budget for this fixed cost</td>
+                        </tr>
+                        <tr>
+                            <td>Deductible</td>
+                            <td>You pay first $X per year</td>
+                            <td>Higher deductible = lower premium</td>
+                        </tr>
+                        <tr>
+                            <td>Copay</td>
+                            <td>Fixed cost per visit</td>
+                            <td>$25-50 typical for office visits</td>
+                        </tr>
+                        <tr>
+                            <td>Out-of-pocket max</td>
+                            <td>Maximum you pay per year</td>
+                            <td>Catastrophic protection limit</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Plan Comparison Exercise</h3>
+                    <p>Compare these plans for a family of 4 with moderate healthcare usage:</p>
+                    <p><strong>Plan A:</strong> $800/month, $2,000 deductible, $8,000 max out-of-pocket</p>
+                    <p><strong>Plan B:</strong> $1,200/month, $500 deductible, $6,000 max out-of-pocket</p>
+                    <textarea class="exercise-input" placeholder="Which plan would you choose and why?"></textarea>
+                    <button class="btn btn-secondary">Compare</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: Life Insurance Guide</h2>
+                
+                <div class="lesson-section">
+                    <h3>💙 Life Insurance Purpose</h3>
+                    <p>Life insurance replaces income when the primary earner dies, ensuring family can maintain their lifestyle and meet financial obligations.</p>
+                    
+                    <div class="life-insurance-needs">
+                        <div class="need-category">
+                            <h4>💰 Income Replacement</h4>
+                            <ul>
+                                <li>Replace 70-80% of lost income</li>
+                                <li>Duration: Until children independent</li>
+                                <li>Consider inflation and raises</li>
+                            </ul>
+                        </div>
+                        <div class="need-category">
+                            <h4>🎓 Education Funding</h4>
+                            <ul>
+                                <li>College costs: $25,000-75,000 per child</li>
+                                <li>Private school tuition</li>
+                                <li>Educational support expenses</li>
+                            </ul>
+                        </div>
+                        <div class="need-category">
+                            <h4>🏠 Debt Coverage</h4>
+                            <ul>
+                                <li>Mortgage balance</li>
+                                <li>Credit cards and loans</li>
+                                <li>Final expenses ($10,000-15,000)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Term vs Whole Life Comparison</h3>
+                    <table class="life-insurance-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Term Life</th>
+                            <th>Whole Life</th>
+                        </tr>
+                        <tr>
+                            <td>Cost</td>
+                            <td>Very affordable</td>
+                            <td>10-20x more expensive</td>
+                        </tr>
+                        <tr>
+                            <td>Coverage period</td>
+                            <td>10, 20, 30 years</td>
+                            <td>Lifetime</td>
+                        </tr>
+                        <tr>
+                            <td>Cash value</td>
+                            <td>None</td>
+                            <td>Builds slowly</td>
+                        </tr>
+                        <tr>
+                            <td>Best for</td>
+                            <td>Young families</td>
+                            <td>Specific estate planning</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="recommendation-box">
+                        <h4>💡 Expert Recommendation</h4>
+                        <p><strong>Buy term life insurance and invest the difference.</strong> Term is 90% cheaper, allowing you to invest the savings for better returns than whole life's cash value.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🧮 How Much Coverage Do You Need?</h3>
+                    <div class="coverage-calculator">
+                        <h4>Simple Formula:</h4>
+                        <div class="formula-box">
+                            <p><strong>Coverage = (Annual Income × 10) + Debts + Education Costs</strong></p>
+                        </div>
+                        
+                        <div class="example-calculation">
+                            <h4>Example for $60,000 income family:</h4>
+                            <ul>
+                                <li>Income replacement: $60,000 × 10 = $600,000</li>
+                                <li>Mortgage balance: $200,000</li>
+                                <li>College fund (2 kids): $100,000</li>
+                                <li><strong>Total needed: $900,000</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Property & Auto Insurance</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏠 Homeowners/Renters Insurance</h3>
+                    <div class="property-insurance-types">
+                        <div class="insurance-option">
+                            <h4>🏡 Homeowners Insurance</h4>
+                            <ul>
+                                <li><strong>Dwelling coverage:</strong> Rebuild cost (not market value)</li>
+                                <li><strong>Personal property:</strong> Contents replacement</li>
+                                <li><strong>Liability:</strong> Injuries on your property</li>
+                                <li><strong>Additional living:</strong> Hotel costs during repairs</li>
+                            </ul>
+                        </div>
+                        <div class="insurance-option">
+                            <h4>🏢 Renters Insurance</h4>
+                            <ul>
+                                <li><strong>Personal property:</strong> Your belongings</li>
+                                <li><strong>Liability:</strong> Accidents you cause</li>
+                                <li><strong>Additional living:</strong> Temporary housing</li>
+                                <li><strong>Very affordable:</strong> $15-30/month typical</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🚗 Auto Insurance Essentials</h3>
+                    <div class="auto-coverage-types">
+                        <div class="coverage-item">
+                            <h4>🚨 Required by Law</h4>
+                            <ul>
+                                <li><strong>Liability:</strong> Damage you cause to others</li>
+                                <li><strong>Minimum limits:</strong> Often insufficient</li>
+                                <li><strong>Recommendation:</strong> 100/300/100 minimums</li>
+                            </ul>
+                        </div>
+                        <div class="coverage-item">
+                            <h4>🛡️ Optional but Important</h4>
+                            <ul>
+                                <li><strong>Collision:</strong> Damage to your car</li>
+                                <li><strong>Comprehensive:</strong> Theft, weather, vandalism</li>
+                                <li><strong>Uninsured motorist:</strong> Protection from others without insurance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Money-Saving Strategies</h3>
+                    <div class="savings-tips">
+                        <div class="tip-item">
+                            <h4>📦 Bundle Policies</h4>
+                            <p>Combine auto + home/renters for 10-25% discount</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>📈 Raise Deductibles</h4>
+                            <p>$500 → $1,000 deductible can save 15-30% on premiums</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🛡️ Maintain Good Credit</h4>
+                            <p>Insurance scores heavily impact rates</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🔍 Shop Around</h4>
+                            <p>Compare quotes annually - rates vary significantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Building Your Complete Insurance Plan</h2>
+                
+                <div class="lesson-section">
+                    <h3>📋 Family Insurance Checklist</h3>
+                    <div class="insurance-checklist">
+                        <div class="checklist-section">
+                            <h4>✅ Essential Coverage</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Health insurance with family coverage
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Term life insurance (10x annual income)
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Auto insurance with adequate liability
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Homeowners/renters insurance
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-section">
+                            <h4>⭐ Additional Protection</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Disability insurance (60% income replacement)
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Umbrella liability policy ($1M minimum)
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Emergency fund (reduces insurance needs)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Sample Family Insurance Budget</h3>
+                    <div class="budget-example">
+                        <h4>Family of 4, $75,000 household income:</h4>
+                        <table class="budget-table">
+                            <tr>
+                                <th>Insurance Type</th>
+                                <th>Monthly Cost</th>
+                                <th>Coverage</th>
+                            </tr>
+                            <tr>
+                                <td>Health Insurance</td>
+                                <td>$450</td>
+                                <td>Family plan, $2,500 deductible</td>
+                            </tr>
+                            <tr>
+                                <td>Term Life</td>
+                                <td>$75</td>
+                                <td>$750,000 on breadwinner</td>
+                            </tr>
+                            <tr>
+                                <td>Auto Insurance</td>
+                                <td>$120</td>
+                                <td>Two cars, 100/300/100 limits</td>
+                            </tr>
+                            <tr>
+                                <td>Homeowners</td>
+                                <td>$85</td>
+                                <td>$300,000 dwelling, $100k contents</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td><strong>$730</strong></td>
+                                <td><strong>12% of gross income</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Insurance Action Plan</h3>
+                    <div class="action-steps">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Assess Current Coverage</h4>
+                                <p>Review all existing policies for gaps and overlaps</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Get Multiple Quotes</h4>
+                                <p>Compare at least 3 insurers for each type of coverage</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Review Annually</h4>
+                                <p>Life changes require coverage adjustments</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <h4>Document Everything</h4>
+                                <p>Keep digital copies of all policies and contact info</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>🎉 Final Project</h3>
+                    <div class="final-project">
+                        <h4>Create Your Family Insurance Plan</h4>
+                        <ol>
+                            <li>Calculate your life insurance needs</li>
+                            <li>Research health insurance options</li>
+                            <li>Get quotes for auto and property insurance</li>
+                            <li>Set your total insurance budget</li>
+                            <li>Schedule annual policy reviews</li>
+                        </ol>
+                        <p><strong>Congratulations! Your family is now financially protected! 🛡️</strong></p>
+                    </div>
+                    <textarea class="exercise-input" placeholder="Your insurance plan and budget..."></textarea>
+                    <button class="btn btn-primary">Complete Course</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Protect Your Family?</h2>
+            <p>Get personalized insurance recommendations from our experts</p>
+            <a href="../index.html#contact" class="btn btn-primary">Get Protected</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Correct! Great job!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Not quite right. Try again!</p>';
+        }
+    }
+    </script>
+</body>
+</html>

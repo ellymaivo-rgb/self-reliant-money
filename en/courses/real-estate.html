@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate - Family Finance</title>
+    <meta name="description" content="Guide to buying homes and smart real estate investment for young families.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/real-estate.html'">🌐 VI</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Real estate</span>
+            </div>
+            <h1>🏠 Real Estate</h1>
+            <p class="course-subtitle">Smart home buying and real estate investment</p>
+            <div class="course-meta">
+                <span class="course-level">Advanced</span>
+                <span class="course-duration">6 lessons</span>
+                <span class="course-time">6 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Buy or Rent?</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Financial Preparation</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Choosing Prime Location</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Legal Due Diligence</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Smart Bank Financing</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Property Management</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Lesson 1: Buy or Rent?</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏠 The Great Housing Decision</h3>
+                    <p>
+                        One of the biggest financial decisions young couples face is whether to buy or rent. 
+                        This choice affects your lifestyle, wealth building, and financial flexibility for years.
+                    </p>
+                    
+                    <div class="comparison-grid">
+                        <div class="comparison-side">
+                            <h4>✅ Benefits of Buying</h4>
+                            <ul>
+                                <li>Build equity instead of paying landlord</li>
+                                <li>Stable housing costs (fixed mortgage)</li>
+                                <li>Freedom to renovate and customize</li>
+                                <li>Potential appreciation over time</li>
+                                <li>Tax benefits and deductions</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-side">
+                            <h4>✅ Benefits of Renting</h4>
+                            <ul>
+                                <li>Lower upfront costs</li>
+                                <li>More flexibility to move</li>
+                                <li>No maintenance responsibilities</li>
+                                <li>Can invest down payment elsewhere</li>
+                                <li>No property tax or insurance costs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 The 1% Rule Test</h3>
+                    <p>A simple test: If monthly rent is less than 1% of home purchase price, renting might be better financially.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> $300,000 home × 1% = $3,000/month<br>
+                        If rent is $2,500/month → Renting saves $500/month for investments
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Quick Assessment</h3>
+                    <div class="quiz-question">
+                        <p><strong>When is buying usually better than renting?</strong></p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. When you plan to move in 2 years</label>
+                            <label><input type="radio" name="q1" value="b"> B. When you plan to stay 5+ years</label>
+                            <label><input type="radio" name="q1" value="c"> C. When rent is very cheap</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: Financial Preparation</h2>
+                
+                <div class="lesson-section">
+                    <h3>💰 How Much House Can You Afford?</h3>
+                    <div class="affordability-rules">
+                        <div class="rule-item">
+                            <h4>🎯 28% Front-End Ratio</h4>
+                            <p>Monthly housing costs should not exceed 28% of gross monthly income</p>
+                            <div class="calculation">
+                                Monthly Income × 28% = Max Housing Payment
+                            </div>
+                        </div>
+                        <div class="rule-item">
+                            <h4>📊 36% Back-End Ratio</h4>
+                            <p>Total monthly debt payments should not exceed 36% of gross income</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Down Payment Strategy</h3>
+                    <table class="down-payment-table">
+                        <tr>
+                            <th>Down Payment</th>
+                            <th>Pros</th>
+                            <th>Cons</th>
+                            <th>Best For</th>
+                        </tr>
+                        <tr>
+                            <td>20%+</td>
+                            <td>No PMI, lower rates</td>
+                            <td>Longer saving time</td>
+                            <td>Strong financial position</td>
+                        </tr>
+                        <tr>
+                            <td>10-19%</td>
+                            <td>Moderate PMI, faster purchase</td>
+                            <td>Some PMI costs</td>
+                            <td>Balanced approach</td>
+                        </tr>
+                        <tr>
+                            <td>3-9%</td>
+                            <td>Quick homeownership</td>
+                            <td>Higher PMI, rates</td>
+                            <td>First-time buyers</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Calculate Your Budget</h3>
+                    <p>With $70,000 annual income, what's your maximum affordable home price?</p>
+                    <textarea class="exercise-input" placeholder="Show your calculation..."></textarea>
+                    <button class="btn btn-secondary">Calculate</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: Choosing Prime Location</h2>
+                
+                <div class="lesson-section">
+                    <h3>📍 Location Factor Hierarchy</h3>
+                    <div class="location-factors">
+                        <div class="factor-level">
+                            <h4>🏆 Tier 1: Must-Haves</h4>
+                            <ul>
+                                <li>Safe neighborhood with low crime</li>
+                                <li>Good school districts (affects resale)</li>
+                                <li>Reasonable commute to work</li>
+                                <li>Basic amenities nearby</li>
+                            </ul>
+                        </div>
+                        <div class="factor-level">
+                            <h4>⭐ Tier 2: Nice-to-Haves</h4>
+                            <ul>
+                                <li>Shopping and entertainment</li>
+                                <li>Public transportation access</li>
+                                <li>Parks and recreation</li>
+                                <li>Growing/appreciating area</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🔍 Research Methodology</h3>
+                    <div class="research-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Online Research</h4>
+                                <p>Use Zillow, Realtor.com, local websites for market data</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Drive the Neighborhood</h4>
+                                <p>Visit different times: morning, evening, weekends</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Talk to Locals</h4>
+                                <p>Current residents, shop owners, real estate agents</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Legal Due Diligence</h2>
+                
+                <div class="lesson-section">
+                    <h3>📋 Essential Documents Checklist</h3>
+                    <div class="documents-grid">
+                        <div class="doc-category">
+                            <h4>🏠 Property Documents</h4>
+                            <ul>
+                                <li>Clear title deed</li>
+                                <li>Property survey</li>
+                                <li>Home inspection report</li>
+                                <li>Appraisal report</li>
+                            </ul>
+                        </div>
+                        <div class="doc-category">
+                            <h4>💼 Financial Documents</h4>
+                            <ul>
+                                <li>Property tax records</li>
+                                <li>HOA documents (if applicable)</li>
+                                <li>Insurance quotes</li>
+                                <li>Utility records</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🔍 Red Flags to Avoid</h3>
+                    <div class="red-flags">
+                        <div class="flag-item">
+                            <span class="flag-icon">🚨</span>
+                            <div class="flag-content">
+                                <h4>Title Issues</h4>
+                                <p>Liens, easements, or unclear ownership history</p>
+                            </div>
+                        </div>
+                        <div class="flag-item">
+                            <span class="flag-icon">⚠️</span>
+                            <div class="flag-content">
+                                <h4>Structural Problems</h4>
+                                <p>Foundation issues, roof problems, major repairs needed</p>
+                            </div>
+                        </div>
+                        <div class="flag-item">
+                            <span class="flag-icon">💸</span>
+                            <div class="flag-content">
+                                <h4>Hidden Costs</h4>
+                                <p>High HOA fees, special assessments, zoning changes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Smart Bank Financing</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏦 Mortgage Types Comparison</h3>
+                    <table class="mortgage-table">
+                        <tr>
+                            <th>Loan Type</th>
+                            <th>Down Payment</th>
+                            <th>Interest Rate</th>
+                            <th>Best For</th>
+                        </tr>
+                        <tr>
+                            <td>Conventional</td>
+                            <td>3-20%</td>
+                            <td>Market rate</td>
+                            <td>Good credit, stable income</td>
+                        </tr>
+                        <tr>
+                            <td>FHA</td>
+                            <td>3.5%</td>
+                            <td>Competitive</td>
+                            <td>First-time buyers, lower credit</td>
+                        </tr>
+                        <tr>
+                            <td>VA</td>
+                            <td>0%</td>
+                            <td>Very competitive</td>
+                            <td>Military veterans</td>
+                        </tr>
+                        <tr>
+                            <td>USDA</td>
+                            <td>0%</td>
+                            <td>Low rates</td>
+                            <td>Rural areas, income limits</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Getting the Best Rate</h3>
+                    <div class="rate-tips">
+                        <div class="tip-item">
+                            <h4>📈 Improve Credit Score</h4>
+                            <p>Each 20-point increase can save 0.1-0.2% on rates</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>🏦 Shop Multiple Lenders</h4>
+                            <p>Get quotes from 3-5 lenders within 14 days</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>💵 Consider Points</h4>
+                            <p>Pay upfront to reduce rate if staying long-term</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Lesson 6: Property Management & Building Wealth</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏠 Maintaining Your Investment</h3>
+                    <div class="maintenance-guide">
+                        <div class="maintenance-schedule">
+                            <h4>📅 Regular Maintenance Schedule</h4>
+                            <ul>
+                                <li><strong>Monthly:</strong> HVAC filters, check leaks</li>
+                                <li><strong>Quarterly:</strong> Gutter cleaning, smoke detectors</li>
+                                <li><strong>Annually:</strong> HVAC service, roof inspection</li>
+                                <li><strong>Bi-annually:</strong> Deep cleaning, exterior maintenance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cost-budgeting">
+                            <h4>💰 Budgeting for Maintenance</h4>
+                            <p>Set aside 1-3% of home value annually for maintenance and repairs</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> $300,000 home = $3,000-9,000/year maintenance budget
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📈 Building Wealth Through Real Estate</h3>
+                    <div class="wealth-strategies">
+                        <div class="strategy-item">
+                            <h4>🏠 Primary Residence Strategy</h4>
+                            <ul>
+                                <li>Pay down mortgage to build equity</li>
+                                <li>Make strategic improvements for value</li>
+                                <li>Refinance when rates drop significantly</li>
+                                <li>Consider house hacking opportunities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-item">
+                            <h4>🏢 Investment Property Path</h4>
+                            <ul>
+                                <li>Start with primary residence</li>
+                                <li>Build equity and credit history</li>
+                                <li>Use equity for investment property down payment</li>
+                                <li>Scale gradually with experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 10-Year Real Estate Roadmap</h3>
+                    <div class="roadmap-timeline">
+                        <div class="timeline-phase">
+                            <h4>Years 1-3: Foundation</h4>
+                            <ul>
+                                <li>Save for down payment</li>
+                                <li>Improve credit score</li>
+                                <li>Research markets</li>
+                                <li>Buy primary residence</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-phase">
+                            <h4>Years 4-7: Building Equity</h4>
+                            <ul>
+                                <li>Make extra mortgage payments</li>
+                                <li>Strategic home improvements</li>
+                                <li>Build investment fund</li>
+                                <li>Consider refinancing</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-phase">
+                            <h4>Years 8-10: Expansion</h4>
+                            <ul>
+                                <li>Leverage equity for investment</li>
+                                <li>Consider rental property</li>
+                                <li>Diversify real estate holdings</li>
+                                <li>Plan for next property</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>🎉 Final Project</h3>
+                    <div class="final-project">
+                        <h4>Create Your Personal Home Buying Plan</h4>
+                        <ol>
+                            <li>Calculate your affordable price range</li>
+                            <li>Define your must-have location criteria</li>
+                            <li>Set your down payment savings timeline</li>
+                            <li>Research 3 target neighborhoods</li>
+                            <li>Connect with real estate and lending professionals</li>
+                        </ol>
+                        <p><strong>Congratulations! You're ready to become a smart homeowner! 🏠</strong></p>
+                    </div>
+                    <textarea class="exercise-input" placeholder="Your home buying plan..."></textarea>
+                    <button class="btn btn-primary">Complete Course</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Buy Your First Home?</h2>
+            <p>Get personalized guidance from our real estate experts</p>
+            <a href="../index.html#contact" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Correct! Well done!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Not quite right. Try again!</p>';
+        }
+    }
+    </script>
+</body>
+</html>
