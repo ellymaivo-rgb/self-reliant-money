@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background -->
+  <circle cx="50" cy="50" r="45" fill="#4A90A4"/>
+  
+  <!-- Chart bars - more defined and better proportioned -->
+  <rect x="22" y="55" width="12" height="25" fill="white" rx="2"/>
+  <rect x="36" y="45" width="12" height="35" fill="white" rx="2"/>
+  <rect x="50" y="35" width="12" height="45" fill="white" rx="2"/>
+  
+  <!-- Growth arrow - more prominent and cleaner -->
+  <path d="M 65 50 L 80 30 L 85 35 L 75 25 L 90 20 L 95 30 L 85 40 L 90 35 L 70 60 Z" fill="white"/>
+  
+  <!-- Curved arrow line connecting bars to arrow -->
+  <path d="M 60 45 Q 68 35 75 32" stroke="white" stroke-width="3" fill="none"/>
+</svg>
