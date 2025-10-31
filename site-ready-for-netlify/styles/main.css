@@ -315,7 +315,6 @@ h3 .logo-icon,
     justify-content: center !important;
 }
 
-.course-card *,
 .course-card h3,
 .course-card p,
 .course-card .btn,
@@ -325,8 +324,13 @@ h3 .logo-icon,
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    display: block !important;
-    width: 100% !important;
+}
+
+.course-card .btn-link,
+.course-card .btn,
+.course-card a {
+    display: inline-block !important;
+    width: auto !important;
 }
 
 .course-icon {
@@ -430,7 +434,6 @@ h3 .logo-icon,
     justify-content: center !important;
 }
 
-.tool-card *,
 .tool-card h3,
 .tool-card p,
 .tool-card .btn,
@@ -439,8 +442,13 @@ h3 .logo-icon,
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    display: block !important;
-    width: 100% !important;
+}
+
+.tool-card .btn-link,
+.tool-card .btn,
+.tool-card a {
+    display: inline-block !important;
+    width: auto !important;
 }
 
 .tool-card:hover {
@@ -926,4 +934,23 @@ textarea:focus {
         font-size: 12pt;
         line-height: 1.4;
     }
+}
+
+/* Button Link Styles */
+.btn-link {
+    display: inline-block;
+    color: #2c5aa0;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.btn-link:hover {
+    color: #1e3a8a;
+    background: rgba(44, 90, 160, 0.1);
+    transform: translateY(-1px);
 }
