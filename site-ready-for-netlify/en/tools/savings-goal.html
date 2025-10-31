@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goal Calculator - Family Finance</title>
+    <meta name="description" content="Plan and track your savings goals. Calculate how much to save monthly to reach financial targets.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/savings-goal.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Savings Goal Calculator</span>
+            </div>
+            <h1>🎯 Savings Goal Calculator</h1>
+            <p class="tool-subtitle">Plan and track your savings goals with compound interest calculations</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Savings Goal Details</h2>
+                    
+                    <div class="input-group">
+                        <label for="goalName">Goal Name</label>
+                        <input type="text" id="goalName" value="Emergency Fund" placeholder="e.g., Emergency Fund, Vacation, New Car">
+                        <small>What are you saving for?</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="targetAmount">Target Amount ($)</label>
+                        <input type="number" id="targetAmount" value="10000" min="0" step="100">
+                        <small>How much money do you need?</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentSavings">Current Savings ($)</label>
+                        <input type="number" id="currentSavings" value="2000" min="0" step="100">
+                        <small>How much have you already saved?</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="timeframe">Time to Goal (Years)</label>
+                        <input type="number" id="timeframe" value="2" min="0.1" max="50" step="0.1">
+                        <small>When do you need to reach this goal?</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="interestRate">Expected Return Rate (%)</label>
+                        <input type="number" id="interestRate" value="4" min="0" max="15" step="0.1">
+                        <small>Annual return on savings/investments (0% for regular savings, 4-8% for investments)</small>
+                    </div>
+
+                    <!-- Quick Goal Presets -->
+                    <div class="goal-presets">
+                        <h3>Quick Goal Presets</h3>
+                        <div class="preset-buttons">
+                            <button type="button" class="preset-btn" onclick="setGoalPreset('emergency', 15000, 0, 1, 2)">
+                                🚨 Emergency Fund
+                            </button>
+                            <button type="button" class="preset-btn" onclick="setGoalPreset('vacation', 5000, 0, 1.5, 3)">
+                                ✈️ Vacation Fund
+                            </button>
+                            <button type="button" class="preset-btn" onclick="setGoalPreset('house', 60000, 5000, 5, 6)">
+                                🏠 House Down Payment
+                            </button>
+                            <button type="button" class="preset-btn" onclick="setGoalPreset('car', 25000, 0, 3, 4)">
+                                🚗 New Car
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateSavingsGoal()">Calculate Savings Plan</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3 id="goalTitle">Your Savings Goal</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="monthlyRequired">$0</div>
+                                <div class="result-label">Monthly Savings Needed</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="totalToSave">$0</div>
+                                <div class="result-label">Total Amount to Save</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="progressPercentage">0%</div>
+                                <div class="result-label">Current Progress</div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span id="currentAmount">$2,000</span>
+                                <span id="targetGoal">$10,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-container">
+                            <canvas id="savingsChart"></canvas>
+                        </div>
+
+                        <!-- Milestone Breakdown -->
+                        <div class="milestone-section">
+                            <h4>Savings Milestones</h4>
+                            <div id="milestoneBreakdown"></div>
+                        </div>
+
+                        <!-- Alternative Scenarios -->
+                        <div class="scenario-analysis">
+                            <h4>What If Scenarios</h4>
+                            <div class="scenario-grid">
+                                <div class="scenario-card">
+                                    <h5>Save 6 Months Earlier</h5>
+                                    <div class="scenario-value" id="earlierMonthly">$0</div>
+                                    <div class="scenario-label">Monthly amount needed</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>Save 6 Months Later</h5>
+                                    <div class="scenario-value" id="laterMonthly">$0</div>
+                                    <div class="scenario-label">Monthly amount needed</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>Save $100 More/Month</h5>
+                                    <div class="scenario-value" id="extraTime">0 months</div>
+                                    <div class="scenario-label">Reach goal earlier</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Savings Goal Planning Tips</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🎯 SMART Goals</h3>
+                        <p>Make your savings goals Specific, Measurable, Achievable, Relevant, and Time-bound for better success.</p>
+                        <ul>
+                            <li>Specific: "Emergency fund" not "save money"</li>
+                            <li>Measurable: Set exact dollar amounts</li>
+                            <li>Achievable: Start with realistic targets</li>
+                            <li>Time-bound: Set clear deadlines</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>💡 Automation Strategy</h3>
+                        <p>Automate your savings to make reaching goals effortless and consistent.</p>
+                        <ul>
+                            <li>Set up automatic transfers on payday</li>
+                            <li>Use separate accounts for different goals</li>
+                            <li>Start small and increase gradually</li>
+                            <li>Pay yourself first before other expenses</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📈 Earning Returns</h3>
+                        <p>Choose the right savings vehicles based on your timeline and risk tolerance.</p>
+                        <ul>
+                            <li>Short-term (< 2 years): High-yield savings</li>
+                            <li>Medium-term (2-5 years): CDs, bonds</li>
+                            <li>Long-term (> 5 years): Index funds, ETFs</li>
+                            <li>Emergency funds: Keep liquid and safe</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🏆 Staying Motivated</h3>
+                        <p>Track progress and celebrate milestones to maintain momentum toward your goals.</p>
+                        <ul>
+                            <li>Visual progress tracking</li>
+                            <li>Celebrate quarter and half milestones</li>
+                            <li>Share goals with accountability partner</li>
+                            <li>Adjust goals if circumstances change</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Budget Calculator</h4>
+                        <p>Plan your monthly family budget</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Compound Calculator</h4>
+                        <p>See your investment growth over time</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🏠</div>
+                        <h4>Mortgage Calculator</h4>
+                        <p>Calculate home loan payments</p>
+                        <a href="mortgage-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Saving?</h2>
+            <p>Learn proven savings strategies through our comprehensive courses</p>
+            <a href="../courses/budgeting.html" class="btn btn-primary">Learn Savings Strategies</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Budget Calculator</a></li>
+                        <li><a href="compound-calculator.html">Compound Calculator</a></li>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/retirement.html">Retirement Planning</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function setGoalPreset(type, target, current, years, rate) {
+        const goalNames = {
+            'emergency': 'Emergency Fund',
+            'vacation': 'Family Vacation',
+            'house': 'House Down Payment',
+            'car': 'New Car'
+        };
+        
+        document.getElementById('goalName').value = goalNames[type];
+        document.getElementById('targetAmount').value = target;
+        document.getElementById('currentSavings').value = current;
+        document.getElementById('timeframe').value = years;
+        document.getElementById('interestRate').value = rate;
+        
+        calculateSavingsGoal();
+    }
+    
+    function calculateSavingsGoal() {
+        const goalName = document.getElementById('goalName').value || 'Your Goal';
+        const targetAmount = parseFloat(document.getElementById('targetAmount').value) || 0;
+        const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 0;
+        const timeframe = parseFloat(document.getElementById('timeframe').value) || 1;
+        const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 || 0;
+        
+        const totalToSave = targetAmount - currentSavings;
+        const months = timeframe * 12;
+        
+        // Calculate monthly payment needed with compound interest
+        let monthlyRequired;
+        if (interestRate > 0) {
+            const monthlyRate = interestRate / 12;
+            const futureValueOfCurrent = currentSavings * Math.pow(1 + monthlyRate, months);
+            const amountNeededFromPayments = targetAmount - futureValueOfCurrent;
+            
+            if (amountNeededFromPayments > 0) {
+                monthlyRequired = amountNeededFromPayments * monthlyRate / 
+                                (Math.pow(1 + monthlyRate, months) - 1);
+            } else {
+                monthlyRequired = 0;
+            }
+        } else {
+            monthlyRequired = totalToSave / months;
+        }
+        
+        const progressPercentage = targetAmount > 0 ? (currentSavings / targetAmount * 100) : 0;
+        
+        // Update results
+        document.getElementById('goalTitle').textContent = `${goalName} Plan`;
+        document.getElementById('monthlyRequired').textContent = formatCurrency(monthlyRequired);
+        document.getElementById('totalToSave').textContent = formatCurrency(totalToSave);
+        document.getElementById('progressPercentage').textContent = `${progressPercentage.toFixed(1)}%`;
+        document.getElementById('currentAmount').textContent = formatCurrency(currentSavings);
+        document.getElementById('targetGoal').textContent = formatCurrency(targetAmount);
+        
+        // Update progress bar
+        const progressFill = document.getElementById('progressFill');
+        progressFill.style.width = `${Math.min(progressPercentage, 100)}%`;
+        
+        // Calculate alternative scenarios
+        const earlierMonths = Math.max(months - 6, 1);
+        const laterMonths = months + 6;
+        
+        let earlierMonthly, laterMonthly;
+        if (interestRate > 0) {
+            const monthlyRate = interestRate / 12;
+            const futureValueOfCurrent = currentSavings * Math.pow(1 + monthlyRate, earlierMonths);
+            const amountNeededEarlier = targetAmount - futureValueOfCurrent;
+            earlierMonthly = amountNeededEarlier > 0 ? 
+                           amountNeededEarlier * monthlyRate / (Math.pow(1 + monthlyRate, earlierMonths) - 1) : 0;
+            
+            const futureValueOfCurrentLater = currentSavings * Math.pow(1 + monthlyRate, laterMonths);
+            const amountNeededLater = targetAmount - futureValueOfCurrentLater;
+            laterMonthly = amountNeededLater > 0 ? 
+                         amountNeededLater * monthlyRate / (Math.pow(1 + monthlyRate, laterMonths) - 1) : 0;
+        } else {
+            earlierMonthly = (targetAmount - currentSavings) / earlierMonths;
+            laterMonthly = (targetAmount - currentSavings) / laterMonths;
+        }
+        
+        // Calculate how much earlier $100 extra would get you there
+        const extraMonthly = monthlyRequired + 100;
+        let monthsWithExtra = months;
+        if (interestRate > 0 && extraMonthly > 0) {
+            const monthlyRate = interestRate / 12;
+            const futureValueOfCurrent = currentSavings;
+            // Solve for time using logarithms
+            const numerator = Math.log((targetAmount * monthlyRate / extraMonthly) + 1);
+            const denominator = Math.log(1 + monthlyRate);
+            monthsWithExtra = numerator / denominator;
+        } else if (extraMonthly > 0) {
+            monthsWithExtra = (targetAmount - currentSavings) / extraMonthly;
+        }
+        
+        const timeSaved = Math.max(months - monthsWithExtra, 0);
+        
+        document.getElementById('earlierMonthly').textContent = formatCurrency(earlierMonthly);
+        document.getElementById('laterMonthly').textContent = formatCurrency(laterMonthly);
+        document.getElementById('extraTime').textContent = `${timeSaved.toFixed(1)} months`;
+        
+        // Create chart and milestones
+        createSavingsChart(currentSavings, targetAmount, monthlyRequired, months, interestRate);
+        createMilestones(currentSavings, targetAmount, timeframe);
+    }
+    
+    function createSavingsChart(current, target, monthly, months, rate) {
+        const ctx = document.getElementById('savingsChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.savingsChart) {
+            window.savingsChart.destroy();
+        }
+        
+        const data = [];
+        const labels = [];
+        let balance = current;
+        const monthlyRate = rate / 12;
+        
+        // Add current balance
+        data.push(balance);
+        labels.push('Current');
+        
+        // Calculate balance for each quarter
+        for (let month = 1; month <= months; month++) {
+            balance = balance * (1 + monthlyRate) + monthly;
+            
+            if (month % 3 === 0 || month === months) {
+                data.push(balance);
+                labels.push(month === months ? 'Goal' : `Month ${month}`);
+            }
+        }
+        
+        window.savingsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Savings Balance',
+                    data: data,
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Target Amount',
+                    data: new Array(data.length).fill(target),
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    borderDash: [5, 5],
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return formatCurrency(value);
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function createMilestones(current, target, years) {
+        const container = document.getElementById('milestoneBreakdown');
+        const milestones = [0.25, 0.5, 0.75, 1.0];
+        const totalMonths = years * 12;
+        
+        let milestonesHTML = '<div class="milestones-grid">';
+        
+        milestones.forEach(percentage => {
+            const milestoneAmount = current + (target - current) * percentage;
+            const milestoneMonths = totalMonths * percentage;
+            const milestoneDate = new Date();
+            milestoneDate.setMonth(milestoneDate.getMonth() + milestoneMonths);
+            
+            const isReached = current >= milestoneAmount;
+            const statusClass = isReached ? 'reached' : 'pending';
+            const statusIcon = isReached ? '✅' : '🎯';
+            
+            milestonesHTML += `
+                <div class="milestone-card ${statusClass}">
+                    <div class="milestone-header">
+                        <span class="milestone-icon">${statusIcon}</span>
+                        <span class="milestone-percentage">${(percentage * 100).toFixed(0)}%</span>
+                    </div>
+                    <div class="milestone-amount">${formatCurrency(milestoneAmount)}</div>
+                    <div class="milestone-date">${milestoneDate.toLocaleDateString('en-US', {month: 'short', year: 'numeric'})}</div>
+                </div>
+            `;
+        });
+        
+        milestonesHTML += '</div>';
+        container.innerHTML = milestonesHTML;
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateSavingsGoal();
+        
+        // Add event listeners for real-time calculation
+        const inputs = ['goalName', 'targetAmount', 'currentSavings', 'timeframe', 'interestRate'];
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', calculateSavingsGoal);
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator - Family Finance</title>
+    <meta name="description" content="Calculate monthly mortgage payments, total interest, and affordability for your home purchase.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/mortgage-calculator.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Mortgage Calculator</span>
+            </div>
+            <h1>🏠 Mortgage Calculator</h1>
+            <p class="tool-subtitle">Calculate monthly payments, total costs, and affordability for your home purchase</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Mortgage Details</h2>
+                    
+                    <div class="input-group">
+                        <label for="homePrice">Home Price ($)</label>
+                        <input type="number" id="homePrice" value="400000" min="0" step="5000">
+                        <small>Purchase price of the home</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="downPayment">Down Payment ($)</label>
+                        <input type="number" id="downPayment" value="80000" min="0" step="1000">
+                        <small>Upfront payment (typically 10-20%)</small>
+                        <div class="percentage-display">
+                            <span id="downPaymentPercentage">20%</span> of home price
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="interestRate">Interest Rate (%)</label>
+                        <input type="number" id="interestRate" value="6.5" min="0" max="15" step="0.1">
+                        <small>Annual interest rate from your lender</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="loanTerm">Loan Term (Years)</label>
+                        <select id="loanTerm">
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="25">25 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                        <small>Length of the mortgage</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="propertyTax">Annual Property Tax ($)</label>
+                        <input type="number" id="propertyTax" value="4800" min="0" step="100">
+                        <small>Yearly property taxes</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="homeInsurance">Annual Home Insurance ($)</label>
+                        <input type="number" id="homeInsurance" value="1200" min="0" step="50">
+                        <small>Yearly homeowners insurance premium</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pmi">PMI (Monthly) ($)</label>
+                        <input type="number" id="pmi" value="200" min="0" step="25">
+                        <small>Private Mortgage Insurance (if down payment < 20%)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="hoaFees">HOA Fees (Monthly) ($)</label>
+                        <input type="number" id="hoaFees" value="0" min="0" step="25">
+                        <small>Homeowners Association fees</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateMortgage()">Calculate Mortgage</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Mortgage Payment Breakdown</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="monthlyPayment">$0</div>
+                                <div class="result-label">Total Monthly Payment</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="principalInterest">$0</div>
+                                <div class="result-label">Principal & Interest</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="loanAmount">$0</div>
+                                <div class="result-label">Loan Amount</div>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="mortgageChart"></canvas>
+                        </div>
+
+                        <div class="payment-breakdown">
+                            <h4>Monthly Payment Breakdown</h4>
+                            <div class="breakdown-items">
+                                <div class="breakdown-item">
+                                    <span class="item-label">Principal & Interest</span>
+                                    <span class="item-value" id="monthlyPI">$0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-label">Property Tax</span>
+                                    <span class="item-value" id="monthlyTax">$0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-label">Home Insurance</span>
+                                    <span class="item-value" id="monthlyInsurance">$0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-label">PMI</span>
+                                    <span class="item-value" id="monthlyPMI">$0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="item-label">HOA Fees</span>
+                                    <span class="item-value" id="monthlyHOA">$0</span>
+                                </div>
+                                <div class="breakdown-item total">
+                                    <span class="item-label">Total Monthly Payment</span>
+                                    <span class="item-value" id="totalMonthly">$0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="loan-summary">
+                            <h4>Loan Summary</h4>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <div class="summary-label">Total Interest Paid</div>
+                                    <div class="summary-value" id="totalInterest">$0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Total Cost of Loan</div>
+                                    <div class="summary-value" id="totalCost">$0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Total Payments Over Life</div>
+                                    <div class="summary-value" id="totalPayments">$0</div>
+                                </div>
+                                <div class="summary-item">
+                                    <div class="summary-label">Payoff Date</div>
+                                    <div class="summary-value" id="payoffDate">--</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Affordability Analysis -->
+                        <div class="affordability-section">
+                            <h4>Affordability Analysis</h4>
+                            <div class="input-group">
+                                <label for="monthlyIncome">Monthly Gross Income ($)</label>
+                                <input type="number" id="monthlyIncome" value="8000" min="0" step="100">
+                                <small>Enter your monthly income before taxes</small>
+                            </div>
+                            
+                            <div class="affordability-results">
+                                <div class="ratio-item">
+                                    <span class="ratio-label">Housing Payment Ratio</span>
+                                    <span class="ratio-value" id="housingRatio">0%</span>
+                                    <span class="ratio-status" id="housingStatus">Good</span>
+                                </div>
+                                <div class="ratio-explanation">
+                                    <small>Recommended: Keep housing costs under 28% of gross income</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Mortgage Planning Tips</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>💰 Down Payment Strategy</h3>
+                        <p>A larger down payment reduces your loan amount, monthly payments, and may eliminate PMI requirements.</p>
+                        <ul>
+                            <li>20% down eliminates PMI</li>
+                            <li>10% down is often acceptable</li>
+                            <li>First-time buyer programs may allow 3-5% down</li>
+                            <li>VA loans offer 0% down for veterans</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📊 Interest Rate Impact</h3>
+                        <p>Even small differences in interest rates significantly affect your total payment over the life of the loan.</p>
+                        <ul>
+                            <li>1% rate difference = ~$200/month on $300k loan</li>
+                            <li>Shop with multiple lenders</li>
+                            <li>Consider rate locks when rates are good</li>
+                            <li>Improve credit score for better rates</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🏠 Loan Term Considerations</h3>
+                        <p>Shorter terms mean higher monthly payments but less total interest paid over time.</p>
+                        <ul>
+                            <li>15-year: Higher payment, less total interest</li>
+                            <li>30-year: Lower payment, more total interest</li>
+                            <li>Consider extra principal payments</li>
+                            <li>Refinance when rates drop</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📋 Additional Costs</h3>
+                        <p>Factor in all homeownership costs beyond principal and interest payments.</p>
+                        <ul>
+                            <li>Property taxes (1-3% of home value annually)</li>
+                            <li>Homeowners insurance ($1,000-2,000 annually)</li>
+                            <li>PMI if down payment < 20%</li>
+                            <li>Maintenance & repairs (1-2% of home value)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Budget Calculator</h4>
+                        <p>Plan your monthly family budget</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Compound Calculator</h4>
+                        <p>See your investment growth over time</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h4>Savings Goal</h4>
+                        <p>Plan for specific financial goals</p>
+                        <a href="savings-goal.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Buy a Home?</h2>
+            <p>Learn comprehensive home buying strategies through our detailed course</p>
+            <a href="../courses/real-estate.html" class="btn btn-primary">Learn Real Estate</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Budget Calculator</a></li>
+                        <li><a href="compound-calculator.html">Compound Calculator</a></li>
+                        <li><a href="savings-goal.html">Savings Goal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/real-estate.html">Real Estate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function calculateMortgage() {
+        const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+        const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+        const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+        const loanTerm = parseInt(document.getElementById('loanTerm').value) || 30;
+        const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+        const homeInsurance = parseFloat(document.getElementById('homeInsurance').value) || 0;
+        const pmi = parseFloat(document.getElementById('pmi').value) || 0;
+        const hoaFees = parseFloat(document.getElementById('hoaFees').value) || 0;
+        const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+        
+        // Calculate loan amount
+        const loanAmount = homePrice - downPayment;
+        
+        // Calculate monthly interest rate
+        const monthlyRate = interestRate / 100 / 12;
+        const numberOfPayments = loanTerm * 12;
+        
+        // Calculate principal and interest payment
+        let monthlyPI = 0;
+        if (monthlyRate > 0) {
+            monthlyPI = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                       (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+        } else {
+            monthlyPI = loanAmount / numberOfPayments;
+        }
+        
+        // Calculate other monthly costs
+        const monthlyTax = propertyTax / 12;
+        const monthlyInsurance = homeInsurance / 12;
+        const monthlyPMI = downPayment < homePrice * 0.2 ? pmi : 0;
+        const monthlyHOA = hoaFees;
+        
+        // Total monthly payment
+        const totalMonthlyPayment = monthlyPI + monthlyTax + monthlyInsurance + monthlyPMI + monthlyHOA;
+        
+        // Calculate totals over life of loan
+        const totalInterest = (monthlyPI * numberOfPayments) - loanAmount;
+        const totalCost = loanAmount + totalInterest;
+        const totalPayments = totalMonthlyPayment * numberOfPayments;
+        
+        // Calculate payoff date
+        const currentDate = new Date();
+        const payoffDate = new Date(currentDate.getFullYear() + loanTerm, currentDate.getMonth(), currentDate.getDate());
+        
+        // Calculate down payment percentage
+        const downPaymentPercentage = homePrice > 0 ? (downPayment / homePrice * 100).toFixed(1) : 0;
+        
+        // Update results
+        document.getElementById('monthlyPayment').textContent = formatCurrency(totalMonthlyPayment);
+        document.getElementById('principalInterest').textContent = formatCurrency(monthlyPI);
+        document.getElementById('loanAmount').textContent = formatCurrency(loanAmount);
+        document.getElementById('downPaymentPercentage').textContent = `${downPaymentPercentage}%`;
+        
+        // Update breakdown
+        document.getElementById('monthlyPI').textContent = formatCurrency(monthlyPI);
+        document.getElementById('monthlyTax').textContent = formatCurrency(monthlyTax);
+        document.getElementById('monthlyInsurance').textContent = formatCurrency(monthlyInsurance);
+        document.getElementById('monthlyPMI').textContent = formatCurrency(monthlyPMI);
+        document.getElementById('monthlyHOA').textContent = formatCurrency(monthlyHOA);
+        document.getElementById('totalMonthly').textContent = formatCurrency(totalMonthlyPayment);
+        
+        // Update loan summary
+        document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
+        document.getElementById('totalCost').textContent = formatCurrency(totalCost);
+        document.getElementById('totalPayments').textContent = formatCurrency(totalPayments);
+        document.getElementById('payoffDate').textContent = payoffDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long'
+        });
+        
+        // Update affordability analysis
+        const housingRatio = monthlyIncome > 0 ? (totalMonthlyPayment / monthlyIncome * 100).toFixed(1) : 0;
+        document.getElementById('housingRatio').textContent = `${housingRatio}%`;
+        
+        const housingStatus = document.getElementById('housingStatus');
+        if (housingRatio <= 28) {
+            housingStatus.textContent = 'Excellent';
+            housingStatus.className = 'ratio-status excellent';
+        } else if (housingRatio <= 33) {
+            housingStatus.textContent = 'Good';
+            housingStatus.className = 'ratio-status good';
+        } else if (housingRatio <= 40) {
+            housingStatus.textContent = 'Caution';
+            housingStatus.className = 'ratio-status caution';
+        } else {
+            housingStatus.textContent = 'Too High';
+            housingStatus.className = 'ratio-status too-high';
+        }
+        
+        // Create chart
+        createMortgageChart(monthlyPI, monthlyTax, monthlyInsurance, monthlyPMI, monthlyHOA);
+    }
+    
+    function createMortgageChart(pi, tax, insurance, pmi, hoa) {
+        const ctx = document.getElementById('mortgageChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.mortgageChart) {
+            window.mortgageChart.destroy();
+        }
+        
+        const data = [];
+        const labels = [];
+        const colors = [];
+        
+        if (pi > 0) {
+            data.push(pi);
+            labels.push('Principal & Interest');
+            colors.push('#4A90A4');
+        }
+        if (tax > 0) {
+            data.push(tax);
+            labels.push('Property Tax');
+            colors.push('#f39c12');
+        }
+        if (insurance > 0) {
+            data.push(insurance);
+            labels.push('Home Insurance');
+            colors.push('#e74c3c');
+        }
+        if (pmi > 0) {
+            data.push(pmi);
+            labels.push('PMI');
+            colors.push('#9b59b6');
+        }
+        if (hoa > 0) {
+            data.push(hoa);
+            labels.push('HOA Fees');
+            colors.push('#1abc9c');
+        }
+        
+        window.mortgageChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors,
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = formatCurrency(context.parsed);
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    // Update down payment percentage in real time
+    function updateDownPaymentPercentage() {
+        const homePrice = parseFloat(document.getElementById('homePrice').value) || 0;
+        const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+        const percentage = homePrice > 0 ? (downPayment / homePrice * 100).toFixed(1) : 0;
+        document.getElementById('downPaymentPercentage').textContent = `${percentage}%`;
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateMortgage();
+        
+        // Add event listeners for real-time calculation
+        const inputs = [
+            'homePrice', 'downPayment', 'interestRate', 'loanTerm',
+            'propertyTax', 'homeInsurance', 'pmi', 'hoaFees', 'monthlyIncome'
+        ];
+        
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', function() {
+                    if (inputId === 'homePrice' || inputId === 'downPayment') {
+                        updateDownPaymentPercentage();
+                    }
+                    calculateMortgage();
+                });
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

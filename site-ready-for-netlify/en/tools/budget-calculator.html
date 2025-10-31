@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator - Family Finance</title>
+    <meta name="description" content="Create and manage a detailed family budget and track monthly expenses.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/budget-calculator.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Budget Calculator</span>
+            </div>
+            <h1>🧮 Budget Calculator</h1>
+            <p class="tool-subtitle">Create and manage a detailed budget using the 50/30/20 rule</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Monthly Income & Expenses</h2>
+                    
+                    <!-- Income Section -->
+                    <div class="input-section">
+                        <h3>💰 Monthly Income</h3>
+                        <div class="input-group">
+                            <label for="monthlyIncome">After-tax Monthly Income ($)</label>
+                            <input type="number" id="monthlyIncome" value="5000" min="0" step="100">
+                            <small>Enter your take-home pay after taxes</small>
+                        </div>
+                    </div>
+
+                    <!-- Needs (50%) Section -->
+                    <div class="input-section">
+                        <h3>🏠 Needs (50% recommended)</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="housing">Housing (rent/mortgage)</label>
+                                <input type="number" id="housing" value="1500" min="0" step="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="groceries">Groceries</label>
+                                <input type="number" id="groceries" value="400" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="utilities">Utilities</label>
+                                <input type="number" id="utilities" value="200" min="0" step="25">
+                            </div>
+                            <div class="input-group">
+                                <label for="transportation">Transportation</label>
+                                <input type="number" id="transportation" value="300" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="insurance">Insurance</label>
+                                <input type="number" id="insurance" value="250" min="0" step="25">
+                            </div>
+                            <div class="input-group">
+                                <label for="minimumPayments">Minimum Debt Payments</label>
+                                <input type="number" id="minimumPayments" value="150" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wants (30%) Section -->
+                    <div class="input-section">
+                        <h3>🎯 Wants (30% recommended)</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="dining">Dining Out</label>
+                                <input type="number" id="dining" value="300" min="0" step="25">
+                            </div>
+                            <div class="input-group">
+                                <label for="entertainment">Entertainment</label>
+                                <input type="number" id="entertainment" value="200" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="shopping">Shopping</label>
+                                <input type="number" id="shopping" value="300" min="0" step="25">
+                            </div>
+                            <div class="input-group">
+                                <label for="hobbies">Hobbies</label>
+                                <input type="number" id="hobbies" value="150" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="subscriptions">Subscriptions</label>
+                                <input type="number" id="subscriptions" value="50" min="0" step="10">
+                            </div>
+                            <div class="input-group">
+                                <label for="otherWants">Other Wants</label>
+                                <input type="number" id="otherWants" value="0" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savings (20%) Section -->
+                    <div class="input-section">
+                        <h3>💎 Savings & Investments (20% recommended)</h3>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="emergencyFund">Emergency Fund</label>
+                                <input type="number" id="emergencyFund" value="500" min="0" step="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="retirement401k">401(k)/Retirement</label>
+                                <input type="number" id="retirement401k" value="400" min="0" step="50">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="investments">Investments</label>
+                                <input type="number" id="investments" value="200" min="0" step="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="debtPaydown">Extra Debt Payment</label>
+                                <input type="number" id="debtPaydown" value="100" min="0" step="25">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="savingsGoals">Savings Goals</label>
+                                <input type="number" id="savingsGoals" value="0" min="0" step="25">
+                            </div>
+                            <div class="input-group">
+                                <label for="otherSavings">Other Savings</label>
+                                <input type="number" id="otherSavings" value="0" min="0" step="25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateBudget()">Calculate Budget</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Your Budget Analysis</h3>
+                        
+                        <!-- Summary Cards -->
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="totalIncome">$5,000</div>
+                                <div class="result-label">Monthly Income</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="totalExpenses">$0</div>
+                                <div class="result-label">Total Expenses</div>
+                            </div>
+                            <div class="result-card surplus" id="balanceCard">
+                                <div class="result-value" id="remainingBalance">$0</div>
+                                <div class="result-label" id="balanceLabel">Remaining</div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-container">
+                            <canvas id="budgetChart"></canvas>
+                        </div>
+
+                        <!-- 50/30/20 Analysis -->
+                        <div class="ratio-analysis">
+                            <h4>50/30/20 Rule Analysis</h4>
+                            <div class="ratio-cards">
+                                <div class="ratio-card needs">
+                                    <div class="ratio-header">
+                                        <span class="ratio-title">Needs</span>
+                                        <span class="ratio-percentage" id="needsPercentage">50%</span>
+                                    </div>
+                                    <div class="ratio-amounts">
+                                        <span id="needsActual">$2,500</span> / <span id="needsRecommended">$2,500</span>
+                                    </div>
+                                    <div class="ratio-status" id="needsStatus">✅ On Track</div>
+                                </div>
+                                
+                                <div class="ratio-card wants">
+                                    <div class="ratio-header">
+                                        <span class="ratio-title">Wants</span>
+                                        <span class="ratio-percentage" id="wantsPercentage">30%</span>
+                                    </div>
+                                    <div class="ratio-amounts">
+                                        <span id="wantsActual">$1,500</span> / <span id="wantsRecommended">$1,500</span>
+                                    </div>
+                                    <div class="ratio-status" id="wantsStatus">✅ On Track</div>
+                                </div>
+                                
+                                <div class="ratio-card savings">
+                                    <div class="ratio-header">
+                                        <span class="ratio-title">Savings</span>
+                                        <span class="ratio-percentage" id="savingsPercentage">20%</span>
+                                    </div>
+                                    <div class="ratio-amounts">
+                                        <span id="savingsActual">$1,000</span> / <span id="savingsRecommended">$1,000</span>
+                                    </div>
+                                    <div class="ratio-status" id="savingsStatus">✅ On Track</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Breakdown -->
+                        <div class="breakdown-table">
+                            <h4>Detailed Breakdown</h4>
+                            <div id="detailedBreakdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Budget Planning Tips</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🏠 The 50% Needs Rule</h3>
+                        <p>Essential expenses should not exceed 50% of your after-tax income. This includes housing, groceries, utilities, transportation, insurance, and minimum debt payments.</p>
+                        <ul>
+                            <li>Housing: Aim for 25-30% of income</li>
+                            <li>Transportation: Keep under 15%</li>
+                            <li>Food: Budget 10-15% for groceries</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🎯 The 30% Wants Rule</h3>
+                        <p>Non-essential spending like dining out, entertainment, and hobbies should stay within 30% of income.</p>
+                        <ul>
+                            <li>Track discretionary spending weekly</li>
+                            <li>Set limits for major want categories</li>
+                            <li>Use the envelope method for control</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>💰 The 20% Savings Rule</h3>
+                        <p>Always pay yourself first with at least 20% going to savings and debt reduction.</p>
+                        <ul>
+                            <li>Emergency fund: 3-6 months expenses</li>
+                            <li>Retirement: At least 10-15% of income</li>
+                            <li>Goals: House, vacation, education</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📊 Monthly Review Tips</h3>
+                        <p>Review and adjust your budget monthly to stay on track with your financial goals.</p>
+                        <ul>
+                            <li>Track actual vs. planned spending</li>
+                            <li>Identify spending patterns</li>
+                            <li>Adjust categories as needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Compound Calculator</h4>
+                        <p>See your investment growth over time</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🏠</div>
+                        <h4>Mortgage Calculator</h4>
+                        <p>Calculate home loan payments</p>
+                        <a href="mortgage-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h4>Savings Goal</h4>
+                        <p>Plan for specific financial goals</p>
+                        <a href="savings-goal.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Master Your Money</h2>
+            <p>Learn comprehensive budgeting strategies through our detailed courses</p>
+            <a href="../courses/budgeting.html" class="btn btn-primary">Learn Budgeting</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="compound-calculator.html">Compound Calculator</a></li>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="savings-goal.html">Savings Goal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/real-estate.html">Real Estate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function calculateBudget() {
+        const income = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+        
+        // Needs (50%)
+        const needs = [
+            'housing', 'groceries', 'utilities', 'transportation', 
+            'insurance', 'minimumPayments'
+        ];
+        const needsTotal = needs.reduce((sum, id) => 
+            sum + (parseFloat(document.getElementById(id).value) || 0), 0);
+        
+        // Wants (30%)
+        const wants = [
+            'dining', 'entertainment', 'shopping', 'hobbies', 
+            'subscriptions', 'otherWants'
+        ];
+        const wantsTotal = wants.reduce((sum, id) => 
+            sum + (parseFloat(document.getElementById(id).value) || 0), 0);
+        
+        // Savings (20%)
+        const savings = [
+            'emergencyFund', 'retirement401k', 'investments', 
+            'debtPaydown', 'savingsGoals', 'otherSavings'
+        ];
+        const savingsTotal = savings.reduce((sum, id) => 
+            sum + (parseFloat(document.getElementById(id).value) || 0), 0);
+        
+        const totalExpenses = needsTotal + wantsTotal + savingsTotal;
+        const remaining = income - totalExpenses;
+        
+        // Recommended amounts (50/30/20 rule)
+        const needsRecommended = income * 0.5;
+        const wantsRecommended = income * 0.3;
+        const savingsRecommended = income * 0.2;
+        
+        // Update summary cards
+        document.getElementById('totalIncome').textContent = formatCurrency(income);
+        document.getElementById('totalExpenses').textContent = formatCurrency(totalExpenses);
+        document.getElementById('remainingBalance').textContent = formatCurrency(remaining);
+        
+        // Update balance card styling
+        const balanceCard = document.getElementById('balanceCard');
+        const balanceLabel = document.getElementById('balanceLabel');
+        if (remaining >= 0) {
+            balanceCard.className = 'result-card surplus';
+            balanceLabel.textContent = 'Surplus';
+        } else {
+            balanceCard.className = 'result-card deficit';
+            balanceLabel.textContent = 'Deficit';
+        }
+        
+        // Update 50/30/20 analysis
+        updateRatioAnalysis('needs', needsTotal, needsRecommended, income);
+        updateRatioAnalysis('wants', wantsTotal, wantsRecommended, income);
+        updateRatioAnalysis('savings', savingsTotal, savingsRecommended, income);
+        
+        // Create chart
+        createBudgetChart(needsTotal, wantsTotal, savingsTotal);
+        
+        // Create detailed breakdown
+        createDetailedBreakdown(income, needsTotal, wantsTotal, savingsTotal);
+    }
+    
+    function updateRatioAnalysis(category, actual, recommended, income) {
+        const percentage = income > 0 ? (actual / income * 100).toFixed(1) : 0;
+        const isOnTrack = actual <= recommended;
+        
+        document.getElementById(`${category}Percentage`).textContent = `${percentage}%`;
+        document.getElementById(`${category}Actual`).textContent = formatCurrency(actual);
+        document.getElementById(`${category}Recommended`).textContent = formatCurrency(recommended);
+        
+        const statusElement = document.getElementById(`${category}Status`);
+        if (isOnTrack) {
+            statusElement.textContent = '✅ On Track';
+            statusElement.className = 'ratio-status on-track';
+        } else {
+            statusElement.textContent = '⚠️ Over Budget';
+            statusElement.className = 'ratio-status over-budget';
+        }
+    }
+    
+    function createBudgetChart(needs, wants, savings) {
+        const ctx = document.getElementById('budgetChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.budgetChart) {
+            window.budgetChart.destroy();
+        }
+        
+        window.budgetChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Needs (50%)', 'Wants (30%)', 'Savings (20%)'],
+                datasets: [{
+                    data: [needs, wants, savings],
+                    backgroundColor: [
+                        '#e74c3c',  // Red for needs
+                        '#f39c12',  // Orange for wants  
+                        '#27ae60'   // Green for savings
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = formatCurrency(context.parsed);
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function createDetailedBreakdown(income, needs, wants, savings) {
+        const container = document.getElementById('detailedBreakdown');
+        const total = needs + wants + savings;
+        
+        let tableHTML = `
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>% of Income</th>
+                        <th>Recommended</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="needs-row">
+                        <td>🏠 Needs</td>
+                        <td>${formatCurrency(needs)}</td>
+                        <td>${(needs/income*100).toFixed(1)}%</td>
+                        <td>50% (${formatCurrency(income*0.5)})</td>
+                        <td>${needs <= income*0.5 ? '✅' : '⚠️'}</td>
+                    </tr>
+                    <tr class="wants-row">
+                        <td>🎯 Wants</td>
+                        <td>${formatCurrency(wants)}</td>
+                        <td>${(wants/income*100).toFixed(1)}%</td>
+                        <td>30% (${formatCurrency(income*0.3)})</td>
+                        <td>${wants <= income*0.3 ? '✅' : '⚠️'}</td>
+                    </tr>
+                    <tr class="savings-row">
+                        <td>💰 Savings</td>
+                        <td>${formatCurrency(savings)}</td>
+                        <td>${(savings/income*100).toFixed(1)}%</td>
+                        <td>20% (${formatCurrency(income*0.2)})</td>
+                        <td>${savings >= income*0.2 ? '✅' : '⚠️'}</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td><strong>Total Expenses</strong></td>
+                        <td><strong>${formatCurrency(total)}</strong></td>
+                        <td><strong>${(total/income*100).toFixed(1)}%</strong></td>
+                        <td>100%</td>
+                        <td>${total <= income ? '✅' : '❌'}</td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
+        
+        container.innerHTML = tableHTML;
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateBudget();
+        
+        // Add event listeners for real-time calculation
+        const inputs = [
+            'monthlyIncome', 'housing', 'groceries', 'utilities', 'transportation',
+            'insurance', 'minimumPayments', 'dining', 'entertainment', 'shopping',
+            'hobbies', 'subscriptions', 'otherWants', 'emergencyFund', 'retirement401k',
+            'investments', 'debtPaydown', 'savingsGoals', 'otherSavings'
+        ];
+        
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', calculateBudget);
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
