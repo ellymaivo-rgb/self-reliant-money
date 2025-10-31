@@ -311,6 +311,20 @@ h3 .logo-icon,
     text-align: center;
 }
 
+.course-card h3 {
+    text-align: center;
+}
+
+.course-card p {
+    text-align: center;
+}
+
+.course-card .btn,
+.course-card .course-btn {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 .course-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -369,6 +383,7 @@ h3 .logo-icon,
     color: #64748b;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    text-align: center;
 }
 
 .course-features {
