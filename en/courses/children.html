@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Finance - Family Finance</title>
+    <meta name="description" content="Financial planning for raising children and securing their future.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/children.html'">🌐 VI</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Children's finance</span>
+            </div>
+            <h1>👶 Children's Finance</h1>
+            <p class="course-subtitle">Financial planning for raising children</p>
+            <div class="course-meta">
+                <span class="course-level">Intermediate</span>
+                <span class="course-duration">6 lessons</span>
+                <span class="course-time">5 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Cost of Raising Children</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Baby's First Year Budget</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Education Savings (529 Plans)</h4>
+                            <span class="lesson-duration">55 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Teaching Kids About Money</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Child Tax Benefits</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Protecting Your Children</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Lesson 1: The True Cost of Raising Children</h2>
+                
+                <div class="lesson-section">
+                    <h3>💰 Breaking Down the Numbers</h3>
+                    <p>
+                        According to USDA estimates, raising a child from birth to age 18 costs approximately 
+                        $233,610 for middle-income families. This doesn't include college expenses!
+                    </p>
+                    
+                    <div class="cost-breakdown">
+                        <div class="cost-category">
+                            <h4>🏠 Housing (29%)</h4>
+                            <p>$67,747 over 18 years</p>
+                            <ul>
+                                <li>Larger home or extra bedroom</li>
+                                <li>Child-proofing and safety upgrades</li>
+                                <li>Utilities for additional person</li>
+                            </ul>
+                        </div>
+                        <div class="cost-category">
+                            <h4>🍎 Food (18%)</h4>
+                            <p>$42,050 over 18 years</p>
+                            <ul>
+                                <li>Formula and baby food</li>
+                                <li>Growing appetites as they age</li>
+                                <li>School lunches and snacks</li>
+                            </ul>
+                        </div>
+                        <div class="cost-category">
+                            <h4>👕 Clothing (16%)</h4>
+                            <p>$37,378 over 18 years</p>
+                            <ul>
+                                <li>Constant size changes</li>
+                                <li>School uniforms and sports gear</li>
+                                <li>Seasonal clothing needs</li>
+                            </ul>
+                        </div>
+                        <div class="cost-category">
+                            <h4>🏥 Healthcare (9%)</h4>
+                            <p>$21,025 over 18 years</p>
+                            <ul>
+                                <li>Regular checkups and vaccinations</li>
+                                <li>Dental and vision care</li>
+                                <li>Unexpected medical expenses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Age-Based Cost Progression</h3>
+                    <table class="age-cost-table">
+                        <tr>
+                            <th>Age Range</th>
+                            <th>Annual Cost</th>
+                            <th>Major Expenses</th>
+                        </tr>
+                        <tr>
+                            <td>0-2 years</td>
+                            <td>$12,680</td>
+                            <td>Diapers, formula, childcare</td>
+                        </tr>
+                        <tr>
+                            <td>3-5 years</td>
+                            <td>$12,730</td>
+                            <td>Preschool, toys, activities</td>
+                        </tr>
+                        <tr>
+                            <td>6-8 years</td>
+                            <td>$12,890</td>
+                            <td>School supplies, sports, lessons</td>
+                        </tr>
+                        <tr>
+                            <td>9-11 years</td>
+                            <td>$13,180</td>
+                            <td>Electronics, camps, hobbies</td>
+                        </tr>
+                        <tr>
+                            <td>12-14 years</td>
+                            <td>$13,900</td>
+                            <td>Technology, social activities</td>
+                        </tr>
+                        <tr>
+                            <td>15-17 years</td>
+                            <td>$14,480</td>
+                            <td>Car, insurance, college prep</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Cost Reality Check</h3>
+                    <div class="quiz-question">
+                        <p><strong>What's the largest expense category for raising children?</strong></p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. Food</label>
+                            <label><input type="radio" name="q1" value="b"> B. Housing</label>
+                            <label><input type="radio" name="q1" value="c"> C. Clothing</label>
+                            <label><input type="radio" name="q1" value="d"> D. Healthcare</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: Baby's First Year Budget</h2>
+                
+                <div class="lesson-section">
+                    <h3>👶 Essential First-Year Expenses</h3>
+                    <div class="first-year-costs">
+                        <div class="cost-item">
+                            <h4>🍼 Feeding</h4>
+                            <p><strong>$1,200-2,400/year</strong></p>
+                            <ul>
+                                <li>Formula: $1,500-3,000 if not breastfeeding</li>
+                                <li>Baby food: $600-900</li>
+                                <li>Bottles, sippy cups: $100-200</li>
+                            </ul>
+                        </div>
+                        <div class="cost-item">
+                            <h4>👶 Diapers & Wipes</h4>
+                            <p><strong>$2,500-3,000/year</strong></p>
+                            <ul>
+                                <li>Disposable diapers: $2,000-2,500</li>
+                                <li>Wipes and supplies: $300-500</li>
+                                <li>Cloth diapers: $800-1,000 upfront</li>
+                            </ul>
+                        </div>
+                        <div class="cost-item">
+                            <h4>👕 Clothing</h4>
+                            <p><strong>$600-1,200/year</strong></p>
+                            <ul>
+                                <li>Rapid size changes (every 2-3 months)</li>
+                                <li>Season-specific clothing</li>
+                                <li>Hand-me-downs can save 50-70%</li>
+                            </ul>
+                        </div>
+                        <div class="cost-item">
+                            <h4>🛏️ Gear & Furniture</h4>
+                            <p><strong>$1,000-3,000 one-time</strong></p>
+                            <ul>
+                                <li>Crib and mattress: $200-800</li>
+                                <li>Car seat: $150-400</li>
+                                <li>Stroller: $100-600</li>
+                                <li>High chair, bouncer, toys: $300-600</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💡 Money-Saving Strategies</h3>
+                    <div class="savings-strategies">
+                        <div class="strategy-card">
+                            <h4>🎁 Baby Registry</h4>
+                            <p>Let friends and family help with big-ticket items</p>
+                            <ul>
+                                <li>Research before creating registry</li>
+                                <li>Include various price points</li>
+                                <li>Ask for diapers in larger sizes</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-card">
+                            <h4>♻️ Buy Used/Rent</h4>
+                            <p>Babies outgrow things quickly</p>
+                            <ul>
+                                <li>Facebook Marketplace, consignment stores</li>
+                                <li>Rent expensive items (high chairs, toys)</li>
+                                <li>Always check safety recalls</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-card">
+                            <h4>🏪 Smart Shopping</h4>
+                            <p>Strategic purchasing saves hundreds</p>
+                            <ul>
+                                <li>Buy diapers/formula in bulk</li>
+                                <li>Use store loyalty programs</li>
+                                <li>Generic brands often 30-50% cheaper</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Create Your Baby Budget</h3>
+                    <p>Plan monthly expenses for your baby's first year:</p>
+                    <textarea class="exercise-input" placeholder="List your monthly baby expenses and total budget..."></textarea>
+                    <button class="btn btn-secondary">Calculate</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: Education Savings Strategy</h2>
+                
+                <div class="lesson-section">
+                    <h3>🎓 College Cost Reality</h3>
+                    <p>College costs have increased faster than inflation for decades. Early planning is essential.</p>
+                    
+                    <div class="college-costs">
+                        <table class="college-cost-table">
+                            <tr>
+                                <th>School Type</th>
+                                <th>Current Annual Cost</th>
+                                <th>18-Year Projection</th>
+                            </tr>
+                            <tr>
+                                <td>Community College</td>
+                                <td>$3,800</td>
+                                <td>$7,600 (2 years)</td>
+                            </tr>
+                            <tr>
+                                <td>In-State Public</td>
+                                <td>$10,950</td>
+                                <td>$87,600 (4 years)</td>
+                            </tr>
+                            <tr>
+                                <td>Out-of-State Public</td>
+                                <td>$28,240</td>
+                                <td>$225,920 (4 years)</td>
+                            </tr>
+                            <tr>
+                                <td>Private College</td>
+                                <td>$39,400</td>
+                                <td>$315,200 (4 years)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 529 Education Savings Plans</h3>
+                    <div class="plan-529-benefits">
+                        <div class="benefit-item">
+                            <h4>📈 Tax Advantages</h4>
+                            <ul>
+                                <li>Tax-free growth on investments</li>
+                                <li>Tax-free withdrawals for qualified expenses</li>
+                                <li>State tax deductions in many states</li>
+                            </ul>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🎯 Investment Options</h4>
+                            <ul>
+                                <li>Age-based portfolios (automatic rebalancing)</li>
+                                <li>Static portfolios (you choose allocation)</li>
+                                <li>Low fees (often under 0.5%)</li>
+                            </ul>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🔄 Flexibility</h4>
+                            <ul>
+                                <li>Can change beneficiary to siblings</li>
+                                <li>Covers K-12 tuition ($10,000/year)</li>
+                                <li>Trade school and apprenticeships qualify</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Savings Target Calculator</h3>
+                    <div class="savings-calculator">
+                        <h4>How much should you save monthly?</h4>
+                        <div class="calculation-examples">
+                            <div class="calc-example">
+                                <h5>Goal: $100,000 in 18 years</h5>
+                                <p><strong>Monthly savings needed: $275</strong></p>
+                                <p>Assumes 7% annual return</p>
+                            </div>
+                            <div class="calc-example">
+                                <h5>Goal: $200,000 in 18 years</h5>
+                                <p><strong>Monthly savings needed: $550</strong></p>
+                                <p>Assumes 7% annual return</p>
+                            </div>
+                            <div class="calc-example">
+                                <h5>Goal: $300,000 in 18 years</h5>
+                                <p><strong>Monthly savings needed: $825</strong></p>
+                                <p>Assumes 7% annual return</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Education Savings Plan</h3>
+                    <p>Set your child's education savings goal and monthly contribution:</p>
+                    <textarea class="exercise-input" placeholder="Your education savings strategy..."></textarea>
+                    <button class="btn btn-secondary">Plan</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Teaching Kids About Money</h2>
+                
+                <div class="lesson-section">
+                    <h3>🎯 Age-Appropriate Money Lessons</h3>
+                    <div class="age-lessons">
+                        <div class="age-group">
+                            <h4>👶 Ages 3-5: Basic Concepts</h4>
+                            <ul>
+                                <li>Money is used to buy things</li>
+                                <li>Different coins and bills have different values</li>
+                                <li>We work to earn money</li>
+                                <li>Sometimes we have to wait to buy things we want</li>
+                            </ul>
+                            <p><strong>Activities:</strong> Play store, count coins, save pennies in jar</p>
+                        </div>
+                        <div class="age-group">
+                            <h4>🎒 Ages 6-10: Money Management</h4>
+                            <ul>
+                                <li>Difference between needs and wants</li>
+                                <li>How to make choices with limited money</li>
+                                <li>Basic budgeting concepts</li>
+                                <li>The value of saving for bigger goals</li>
+                            </ul>
+                            <p><strong>Activities:</strong> Allowance system, savings jars (spend/save/give)</p>
+                        </div>
+                        <div class="age-group">
+                            <h4>📱 Ages 11-14: Financial Skills</h4>
+                            <ul>
+                                <li>How banks work and compound interest</li>
+                                <li>Comparison shopping and looking for deals</li>
+                                <li>Basic investing concepts</li>
+                                <li>Understanding advertising and peer pressure</li>
+                            </ul>
+                            <p><strong>Activities:</strong> Bank account, track spending, investment games</p>
+                        </div>
+                        <div class="age-group">
+                            <h4>🚗 Ages 15-18: Real-World Prep</h4>
+                            <ul>
+                                <li>Getting a job and managing paychecks</li>
+                                <li>Understanding credit and building credit responsibly</li>
+                                <li>College financing and student loans</li>
+                                <li>Apartment hunting and living expenses</li>
+                            </ul>
+                            <p><strong>Activities:</strong> Part-time job, checking account, budget for car/college</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Allowance vs. Chores Strategy</h3>
+                    <div class="allowance-approaches">
+                        <div class="approach-option">
+                            <h4>🏠 Chore-Based Allowance</h4>
+                            <p><strong>Pros:</strong> Teaches work-reward connection</p>
+                            <p><strong>Cons:</strong> May expect payment for all help</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> $1-2 per age per week<br>
+                                8-year-old earns $8-16/week for age-appropriate chores
+                            </div>
+                        </div>
+                        <div class="approach-option">
+                            <h4>👨‍👩‍👧‍👦 Unconditional Allowance</h4>
+                            <p><strong>Pros:</strong> Separates money lessons from family contributions</p>
+                            <p><strong>Cons:</strong> Less clear work-money connection</p>
+                            <div class="example-box">
+                                <strong>Example:</strong> Fixed amount based on age<br>
+                                Plus extra opportunities to earn through additional tasks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Money Values to Teach</h3>
+                    <div class="money-values">
+                        <div class="value-item">
+                            <h4>💝 Generosity</h4>
+                            <p>Encourage giving to charity or helping others</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>⏳ Delayed Gratification</h4>
+                            <p>Saving for bigger, better purchases</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>🤔 Smart Decision Making</h4>
+                            <p>Comparing options and avoiding impulse buys</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>💪 Work Ethic</h4>
+                            <p>Money comes from effort and value creation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Child Tax Benefits</h2>
+                
+                <div class="lesson-section">
+                    <h3>🎁 Child Tax Credit</h3>
+                    <p>The Child Tax Credit can significantly reduce your tax burden.</p>
+                    
+                    <div class="tax-credit-details">
+                        <div class="credit-info">
+                            <h4>💰 Credit Amount</h4>
+                            <ul>
+                                <li><strong>$2,000 per child</strong> under 17</li>
+                                <li><strong>$500 per dependent</strong> 17-24 (full-time student)</li>
+                                <li>Up to $1,500 refundable per child</li>
+                            </ul>
+                        </div>
+                        <div class="credit-info">
+                            <h4>📊 Income Limits (2024)</h4>
+                            <ul>
+                                <li>Single filers: Phases out at $200,000</li>
+                                <li>Married filing jointly: Phases out at $400,000</li>
+                                <li>Reduces by $50 for every $1,000 over limit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>👶 Child and Dependent Care Credit</h3>
+                    <div class="care-credit-info">
+                        <h4>Qualifying Expenses:</h4>
+                        <ul>
+                            <li>Daycare and preschool</li>
+                            <li>After-school programs</li>
+                            <li>Summer day camps</li>
+                            <li>Babysitter expenses (while working)</li>
+                        </ul>
+                        
+                        <div class="credit-calculation">
+                            <h4>💰 Credit Calculation</h4>
+                            <table class="credit-table">
+                                <tr>
+                                    <th>Income Level</th>
+                                    <th>Credit Rate</th>
+                                    <th>Max Credit</th>
+                                </tr>
+                                <tr>
+                                    <td>Under $15,000</td>
+                                    <td>35%</td>
+                                    <td>$2,100 (1 child), $4,200 (2+)</td>
+                                </tr>
+                                <tr>
+                                    <td>$15,000-$43,000</td>
+                                    <td>35-20%</td>
+                                    <td>Sliding scale</td>
+                                </tr>
+                                <tr>
+                                    <td>Over $43,000</td>
+                                    <td>20%</td>
+                                    <td>$1,200 (1 child), $2,400 (2+)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📚 Education Tax Benefits</h3>
+                    <div class="education-benefits">
+                        <div class="benefit-type">
+                            <h4>🎓 American Opportunity Credit</h4>
+                            <ul>
+                                <li>Up to $2,500 per student per year</li>
+                                <li>First 4 years of college</li>
+                                <li>40% refundable (up to $1,000)</li>
+                                <li>Covers tuition, fees, books, supplies</li>
+                            </ul>
+                        </div>
+                        <div class="benefit-type">
+                            <h4>📖 Lifetime Learning Credit</h4>
+                            <ul>
+                                <li>Up to $2,000 per tax return</li>
+                                <li>No limit on number of years</li>
+                                <li>Covers tuition and fees only</li>
+                                <li>For undergraduate, graduate, professional courses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Lesson 6: Protecting Your Children</h2>
+                
+                <div class="lesson-section">
+                    <h3>🛡️ Life Insurance for Parents</h3>
+                    <p>Having children dramatically increases your life insurance needs.</p>
+                    
+                    <div class="insurance-calculation">
+                        <h4>📊 Coverage Calculation with Children</h4>
+                        <div class="coverage-formula">
+                            <div class="formula-component">
+                                <h5>Base Coverage</h5>
+                                <p>10x annual income</p>
+                            </div>
+                            <div class="formula-component">
+                                <h5>+ Child Expenses</h5>
+                                <p>$250,000 per child (birth to independence)</p>
+                            </div>
+                            <div class="formula-component">
+                                <h5>+ Education Costs</h5>
+                                <p>$100,000-300,000 per child</p>
+                            </div>
+                            <div class="formula-component">
+                                <h5>+ Outstanding Debts</h5>
+                                <p>Mortgage, loans, credit cards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="example-calculation">
+                            <h4>Example: Family with 2 children</h4>
+                            <ul>
+                                <li>Income replacement: $75,000 × 10 = $750,000</li>
+                                <li>Child expenses: $250,000 × 2 = $500,000</li>
+                                <li>Education costs: $150,000 × 2 = $300,000</li>
+                                <li>Mortgage balance: $200,000</li>
+                                <li><strong>Total needed: $1,750,000</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📄 Legal Documents for Parents</h3>
+                    <div class="legal-documents">
+                        <div class="document-type">
+                            <h4>👥 Guardian Designation</h4>
+                            <ul>
+                                <li>Choose who raises your children</li>
+                                <li>Consider lifestyle, values, location</li>
+                                <li>Discuss with chosen guardians first</li>
+                                <li>Name backup guardians</li>
+                                <li>Update as circumstances change</li>
+                            </ul>
+                        </div>
+                        <div class="document-type">
+                            <h4>💰 Financial Guardian</h4>
+                            <ul>
+                                <li>May be different from child guardian</li>
+                                <li>Manages inheritance and insurance proceeds</li>
+                                <li>Consider financial expertise</li>
+                                <li>Can name corporate trustee</li>
+                            </ul>
+                        </div>
+                        <div class="document-type">
+                            <h4>📋 Will and Trust</h4>
+                            <ul>
+                                <li>Specify asset distribution</li>
+                                <li>Set up trusts for minor children</li>
+                                <li>Age-based distributions (25, 30, 35)</li>
+                                <li>Educational and health provisions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Complete Child Financial Plan</h3>
+                    <div class="financial-plan-checklist">
+                        <div class="plan-section">
+                            <h4>✅ Immediate Needs (Birth-Age 5)</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Increase life insurance coverage
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Update will and designate guardians
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Start 529 education savings
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Adjust budget for child expenses
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Review health insurance family coverage
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="plan-section">
+                            <h4>📚 School Age (6-17)</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Increase 529 contributions
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Teach age-appropriate money lessons
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Plan for activity and sports costs
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Review and update insurance annually
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Consider college planning strategies
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>🎉 Final Project</h3>
+                    <div class="final-project">
+                        <h4>Create Your Child Financial Protection Plan</h4>
+                        <ol>
+                            <li>Calculate your total life insurance needs</li>
+                            <li>Set up 529 education savings plan</li>
+                            <li>Create or update your will and guardianship documents</li>
+                            <li>Plan age-appropriate money education</li>
+                            <li>Set annual review schedule for all child-related finances</li>
+                        </ol>
+                        <p><strong>Congratulations! Your children's financial future is secure! 👶💰</strong></p>
+                    </div>
+                    <textarea class="exercise-input" placeholder="Your complete child financial plan..."></textarea>
+                    <button class="btn btn-primary">Complete Course</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Secure Your Children's Future?</h2>
+            <p>Get personalized guidance for your family financial planning</p>
+            <a href="../index.html#contact" class="btn btn-primary">Start Planning</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Correct! Excellent!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Not quite right. Try again!</p>';
+        }
+    }
+    </script>
+</body>
+</html>
