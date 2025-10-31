@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mục Tiêu Tiết Kiệm - Tài Chính Gia Đình</title>
+    <meta name="description" content="Lập kế hoạch tiết kiệm để đạt được mục tiêu tài chính.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Trang Chủ</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tool-header">
+        <div class="container">
+            <h1>🎯 Mục Tiêu Tiết Kiệm</h1>
+            <p>Lập kế hoạch tiết kiệm để đạt được mục tiêu của bạn</p>
+        </div>
+    </section>
+
+    <div class="tool-container">
+        <div class="calculator-card">
+            <h2>Đặt Mục Tiêu Của Bạn</h2>
+            
+            <div class="input-group">
+                <label>Tên mục tiêu:</label>
+                <input type="text" id="goal-name" placeholder="Ví dụ: Mua nhà, Du lịch, Quỹ khẩn cấp">
+            </div>
+
+            <div class="input-group">
+                <label>Số tiền mục tiêu (VNĐ):</label>
+                <input type="number" id="goal-amount" placeholder="Ví dụ: 500000000">
+            </div>
+
+            <div class="input-group">
+                <label>Số tiền hiện có (VNĐ):</label>
+                <input type="number" id="current-savings" placeholder="Ví dụ: 50000000">
+            </div>
+
+            <div class="input-group">
+                <label>Thời hạn (tháng):</label>
+                <input type="number" id="time-frame" placeholder="Ví dụ: 36">
+            </div>
+
+            <div class="input-group">
+                <label>Lãi suất dự kiến (%/năm):</label>
+                <input type="number" step="0.1" id="expected-return" placeholder="Ví dụ: 6">
+            </div>
+
+            <button class="calculate-btn" onclick="calculateSavingsGoal()">Tính Toán Kế Hoạch</button>
+
+            <div id="savings-results" class="results-section" style="display: none;">
+                <h3>Kế Hoạch Tiết Kiệm</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <h4>Cần tiết kiệm mỗi tháng</h4>
+                        <span id="monthly-savings-needed" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Tổng tiền cần gửi</h4>
+                        <span id="total-to-save" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Lãi dự kiến</h4>
+                        <span id="expected-interest" class="result-amount"></span>
+                    </div>
+                </div>
+                <div id="goal-advice" class="recommendations"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/i18n.js"></script>
+    <script>
+    function calculateSavingsGoal() {
+        const goalName = document.getElementById('goal-name').value || 'Mục tiêu';
+        const goalAmount = parseFloat(document.getElementById('goal-amount').value) || 0;
+        const currentSavings = parseFloat(document.getElementById('current-savings').value) || 0;
+        const months = parseFloat(document.getElementById('time-frame').value) || 0;
+        const annualRate = parseFloat(document.getElementById('expected-return').value) || 0;
+
+        const monthlyRate = annualRate / 100 / 12;
+        const amountNeeded = goalAmount - currentSavings;
+        
+        let monthlySavings;
+        if (monthlyRate > 0) {
+            monthlySavings = amountNeeded * monthlyRate / (Math.pow(1 + monthlyRate, months) - 1);
+        } else {
+            monthlySavings = amountNeeded / months;
+        }
+
+        const totalToSave = monthlySavings * months;
+        const expectedInterest = goalAmount - currentSavings - totalToSave;
+
+        document.getElementById('monthly-savings-needed').textContent = monthlySavings.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+        document.getElementById('total-to-save').textContent = totalToSave.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+        document.getElementById('expected-interest').textContent = expectedInterest.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+
+        let advice = '<h4>Lời Khuyên:</h4><ul>';
+        advice += '<li>🎯 Mục tiêu: ' + goalName + '</li>';
+        advice += '<li>📅 Bạn cần tiết kiệm đều đặn trong ' + months + ' tháng</li>';
+        advice += '<li>💡 Hãy thiết lập chuyển khoản tự động để đảm bảo đúng tiến độ</li>';
+        if (monthlySavings > 10000000) {
+            advice += '<li>⚠️ Số tiền cần tiết kiệm mỗi tháng khá cao. Cân nhắc kéo dài thời gian hoặc tăng lãi suất đầu tư</li>';
+        }
+        advice += '</ul>';
+        document.getElementById('goal-advice').innerHTML = advice;
+        document.getElementById('savings-results').style.display = 'block';
+    }
+    </script>
+</body>
+</html>

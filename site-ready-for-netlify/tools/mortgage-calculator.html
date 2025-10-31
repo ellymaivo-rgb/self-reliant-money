@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Vay Mua Nhà - Tài Chính Gia Đình</title>
+    <meta name="description" content="Tính toán khoản vay, lãi suất và khả năng chi trả khi mua nhà.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Trang Chủ</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tool-header">
+        <div class="container">
+            <h1>🏠 Máy Tính Vay Mua Nhà</h1>
+            <p>Tính toán khoản vay và khả năng chi trả hàng tháng</p>
+        </div>
+    </section>
+
+    <div class="tool-container">
+        <div class="calculator-card">
+            <h2>Thông Tin Khoản Vay</h2>
+            
+            <div class="input-group">
+                <label>Giá trị bất động sản (VNĐ):</label>
+                <input type="number" id="property-value" placeholder="Ví dụ: 3000000000">
+            </div>
+
+            <div class="input-group">
+                <label>Vốn tự có (VNĐ):</label>
+                <input type="number" id="down-payment" placeholder="Ví dụ: 600000000">
+            </div>
+
+            <div class="input-group">
+                <label>Lãi suất (%/năm):</label>
+                <input type="number" step="0.1" id="interest-rate" placeholder="Ví dụ: 9.5">
+            </div>
+
+            <div class="input-group">
+                <label>Thời hạn vay (năm):</label>
+                <input type="number" id="loan-term" placeholder="Ví dụ: 20">
+            </div>
+
+            <button class="calculate-btn" onclick="calculateMortgage()">Tính Toán</button>
+
+            <div id="mortgage-results" class="results-section" style="display: none;">
+                <h3>Kết Quả</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <h4>Số tiền vay</h4>
+                        <span id="loan-amount" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Trả hàng tháng</h4>
+                        <span id="monthly-payment" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Tổng lãi phải trả</h4>
+                        <span id="total-interest" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Tổng cộng</h4>
+                        <span id="total-payment" class="result-amount"></span>
+                    </div>
+                </div>
+                <div id="mortgage-advice" class="recommendations"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/i18n.js"></script>
+    <script>
+    function calculateMortgage() {
+        const propertyValue = parseFloat(document.getElementById('property-value').value) || 0;
+        const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
+        const annualRate = parseFloat(document.getElementById('interest-rate').value) || 0;
+        const years = parseFloat(document.getElementById('loan-term').value) || 0;
+
+        const loanAmount = propertyValue - downPayment;
+        const monthlyRate = annualRate / 100 / 12;
+        const numPayments = years * 12;
+
+        const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+                              (Math.pow(1 + monthlyRate, numPayments) - 1);
+        
+        const totalPayment = monthlyPayment * numPayments;
+        const totalInterest = totalPayment - loanAmount;
+
+        document.getElementById('loan-amount').textContent = loanAmount.toLocaleString('vi-VN') + ' VNĐ';
+        document.getElementById('monthly-payment').textContent = monthlyPayment.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+        document.getElementById('total-interest').textContent = totalInterest.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+        document.getElementById('total-payment').textContent = totalPayment.toLocaleString('vi-VN', {maximumFractionDigits: 0}) + ' VNĐ';
+
+        let advice = '<h4>Lời Khuyên:</h4><ul>';
+        const downPaymentPercent = (downPayment / propertyValue * 100).toFixed(1);
+        if (downPaymentPercent < 20) {
+            advice += '<li>⚠️ Vốn tự có dưới 20%. Hãy cố gắng tăng vốn tự có để giảm lãi suất và khoản vay</li>';
+        } else {
+            advice += '<li>✅ Vốn tự có tốt (' + downPaymentPercent + '%)</li>';
+        }
+        advice += '<li>💡 Khoản trả hàng tháng nên chiếm tối đa 30-35% thu nhập</li>';
+        advice += '</ul>';
+        document.getElementById('mortgage-advice').innerHTML = advice;
+        document.getElementById('mortgage-results').style.display = 'block';
+    }
+    </script>
+</body>
+</html>

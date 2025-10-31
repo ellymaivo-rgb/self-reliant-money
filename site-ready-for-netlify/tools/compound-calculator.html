@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Lãi Kép - Tài Chính Gia Đình</title>
+    <meta name="description" content="Tính toán lợi nhuận đầu tư với lãi kép. Công cụ miễn phí giúp bạn lập kế hoạch đầu tư dài hạn.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Khóa Học</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Công Cụ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Liên Hệ</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / 
+                <a href="../index.html#tools">Công cụ</a> / 
+                <span>Máy tính lãi kép</span>
+            </div>
+            <h1>📈 Máy Tính Lãi Kép</h1>
+            <p class="tool-subtitle">Khám phá sức mạnh của lãi kép trong đầu tư dài hạn</p>
+        </div>
+    </section>
+
+    <!-- Calculator Tool -->
+    <div class="tool-container">
+        <div class="tool-main">
+            <!-- Input Section -->
+            <div class="calculator-section">
+                <h2>Thông Tin Đầu Tư</h2>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="initial-amount">
+                            <span class="label-text">Số tiền ban đầu</span>
+                            <span class="label-icon">💰</span>
+                        </label>
+                        <input type="number" id="initial-amount" placeholder="10,000,000" min="0">
+                        <span class="input-unit">VNĐ</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthly-contribution">
+                            <span class="label-text">Đóng góp hàng tháng</span>
+                            <span class="label-icon">📅</span>
+                        </label>
+                        <input type="number" id="monthly-contribution" placeholder="1,000,000" min="0">
+                        <span class="input-unit">VNĐ/tháng</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="annual-rate">
+                            <span class="label-text">Lãi suất hàng năm</span>
+                            <span class="label-icon">📊</span>
+                        </label>
+                        <input type="number" id="annual-rate" placeholder="8" min="0" max="100" step="0.1">
+                        <span class="input-unit">%/năm</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="investment-years">
+                            <span class="label-text">Thời gian đầu tư</span>
+                            <span class="label-icon">⏰</span>
+                        </label>
+                        <input type="number" id="investment-years" placeholder="10" min="1" max="50">
+                        <span class="input-unit">năm</span>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="compound-frequency">
+                            <span class="label-text">Tần suất tính lãi</span>
+                            <span class="label-icon">🔄</span>
+                        </label>
+                        <select id="compound-frequency">
+                            <option value="12">Hàng tháng</option>
+                            <option value="4">Hàng quý</option>
+                            <option value="2">Nửa năm</option>
+                            <option value="1">Hàng năm</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calculator-actions">
+                    <button onclick="calculateCompound()" class="calculate-btn">
+                        🧮 Tính Toán
+                    </button>
+                    <button onclick="clearCalculator()" class="clear-btn">
+                        🗑️ Xóa Tất Cả
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <h2>Kết Quả Tính Toán</h2>
+                
+                <div class="results-summary">
+                    <div class="result-card primary">
+                        <div class="result-icon">💎</div>
+                        <div class="result-content">
+                            <h3>Tổng Giá Trị Cuối Kỳ</h3>
+                            <p class="result-amount" id="final-amount">0 VNĐ</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">💸</div>
+                        <div class="result-content">
+                            <h3>Tổng Số Tiền Đóng Góp</h3>
+                            <p class="result-amount" id="total-contributions">0 VNĐ</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">📈</div>
+                        <div class="result-content">
+                            <h3>Tổng Lãi Kiếm Được</h3>
+                            <p class="result-amount success" id="total-interest">0 VNĐ</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-icon">🎯</div>
+                        <div class="result-content">
+                            <h3>Tỷ Lệ Lãi/Vốn</h3>
+                            <p class="result-amount" id="interest-ratio">0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <h3>📊 Biểu Đồ Tăng Trưởng</h3>
+                    <canvas id="growthChart" width="800" height="400"></canvas>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color contributions"></span>
+                            <span>Vốn đóng góp</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color interest"></span>
+                            <span>Lãi suất tích lũy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yearly Breakdown -->
+                <div class="breakdown-section">
+                    <h3>📋 Bảng Chi Tiết Theo Năm</h3>
+                    <div class="breakdown-controls">
+                        <button onclick="toggleBreakdown()" id="breakdown-toggle" class="toggle-btn">
+                            Hiển Thị Chi Tiết
+                        </button>
+                        <button onclick="exportToCSV()" class="export-btn">
+                            📤 Xuất Excel
+                        </button>
+                    </div>
+                    <div class="breakdown-table" id="breakdown-table" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Năm</th>
+                                    <th>Đóng Góp Trong Năm</th>
+                                    <th>Lãi Trong Năm</th>
+                                    <th>Tổng Vốn Gốc</th>
+                                    <th>Tổng Giá Trị</th>
+                                </tr>
+                            </thead>
+                            <tbody id="breakdown-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Sidebar -->
+        <div class="info-sidebar">
+            <div class="info-card">
+                <h3>💡 Lãi Kép Là Gì?</h3>
+                <p>
+                    Lãi kép là việc tính lãi trên cả số tiền gốc và số lãi đã tích lũy từ những kỳ trước. 
+                    Đây được coi là "kỳ quan thứ 8 của thế giới" bởi Albert Einstein.
+                </p>
+                
+                <div class="formula-box">
+                    <h4>Công Thức:</h4>
+                    <p class="formula">A = P(1 + r/n)^(nt)</p>
+                    <ul class="formula-legend">
+                        <li><strong>A:</strong> Số tiền cuối kỳ</li>
+                        <li><strong>P:</strong> Số tiền ban đầu</li>
+                        <li><strong>r:</strong> Lãi suất hàng năm</li>
+                        <li><strong>n:</strong> Số lần tính lãi/năm</li>
+                        <li><strong>t:</strong> Số năm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>🎯 Mẹo Đầu Tư Thông Minh</h3>
+                <ul class="tips-list">
+                    <li>✅ Bắt đầu đầu tư càng sớm càng tốt</li>
+                    <li>✅ Đầu tư đều đặn mỗi tháng</li>
+                    <li>✅ Kiên nhẫn với đầu tư dài hạn</li>
+                    <li>✅ Tái đầu tư lợi nhuận</li>
+                    <li>✅ Đa dạng hóa danh mục</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>🇻🇳 Các Kênh Đầu Tư Phổ Biến</h3>
+                <div class="investment-options">
+                    <div class="investment-item">
+                        <span class="investment-name">Tiết kiệm ngân hàng</span>
+                        <span class="investment-rate">4-6%/năm</span>
+                    </div>
+                    <div class="investment-item">
+                        <span class="investment-name">Trái phiếu chính phủ</span>
+                        <span class="investment-rate">4-7%/năm</span>
+                    </div>
+                    <div class="investment-item">
+                        <span class="investment-name">Quỹ đầu tư</span>
+                        <span class="investment-rate">8-12%/năm</span>
+                    </div>
+                    <div class="investment-item">
+                        <span class="investment-name">Chứng khoán</span>
+                        <span class="investment-rate">10-15%/năm</span>
+                    </div>
+                    <div class="investment-item">
+                        <span class="investment-name">Bất động sản</span>
+                        <span class="investment-rate">8-20%/năm</span>
+                    </div>
+                </div>
+                <p class="risk-warning">
+                    ⚠️ <em>Lưu ý: Tỷ suất sinh lời cao thường đi kèm với rủi ro cao.</em>
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>📚 Ví Dụ Thực Tế</h3>
+                <div class="example-scenario">
+                    <h4>Tình huống: Vợ chồng trẻ 28 tuổi</h4>
+                    <ul>
+                        <li>Vốn ban đầu: 50 triệu VNĐ</li>
+                        <li>Đóng góp: 3 triệu VNĐ/tháng</li>
+                        <li>Lãi suất: 10%/năm</li>
+                        <li>Thời gian: 25 năm</li>
+                    </ul>
+                    <div class="example-result">
+                        <strong>Kết quả: ~3.2 tỷ VNĐ</strong><br>
+                        <span class="example-note">Đủ để nghỉ hưu thoải mái!</span>
+                    </div>
+                </div>
+                <button onclick="loadExampleData()" class="load-example-btn">
+                    📝 Áp Dụng Ví Dụ
+                </button>
+            </div>
+
+            <div class="info-card">
+                <h3>🔗 Công Cụ Khác</h3>
+                <div class="related-tools">
+                    <a href="budget-calculator.html" class="tool-link">
+                        <span class="tool-icon">🧮</span>
+                        <span class="tool-name">Máy Tính Ngân Sách</span>
+                    </a>
+                    <a href="mortgage-calculator.html" class="tool-link">
+                        <span class="tool-icon">🏠</span>
+                        <span class="tool-name">Tính Vay Mua Nhà</span>
+                    </a>
+                    <a href="savings-goal.html" class="tool-link">
+                        <span class="tool-icon">🎯</span>
+                        <span class="tool-name">Mục Tiêu Tiết Kiệm</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Công Cụ Khác</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Máy Tính Ngân Sách</a></li>
+                        <li><a href="mortgage-calculator.html">Vay Mua Nhà</a></li>
+                        <li><a href="savings-goal.html">Mục Tiêu Tiết Kiệm</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/i18n.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/compound-calculator.js"></script>
+</body>
+</html>

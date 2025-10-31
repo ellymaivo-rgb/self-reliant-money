@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Sách Gia Đình - Tài Chính Gia Đình</title>
+    <meta name="description" content="Học cách lập và quản lý ngân sách hiệu quả cho gia đình. Khóa học chi tiết về quản lý tài chính cá nhân.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/course.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Khóa Học</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Công Cụ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Liên Hệ</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../en/index.html'">🌐 EN</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / 
+                <a href="../index.html#courses">Khóa học</a> / 
+                <span>Ngân sách gia đình</span>
+            </div>
+            <h1>📊 Ngân Sách Gia Đình</h1>
+            <p class="course-subtitle">Nền tảng của sự thành công tài chính</p>
+            <div class="course-meta">
+                <span class="course-level">Cơ Bản</span>
+                <span class="course-duration">6 bài học</span>
+                <span class="course-time">3 giờ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 bài học hoàn thành</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Tại Sao Cần Ngân Sách?</h4>
+                            <span class="lesson-duration">25 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>Quy Tắc 50/30/20</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Theo Dõi Chi Tiêu</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Tiết Kiệm Hiệu Quả</h4>
+                            <span class="lesson-duration">30 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Quản Lý Nợ</h4>
+                            <span class="lesson-duration">25 phút</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Lập Kế Hoạch Dài Hạn</h4>
+                            <span class="lesson-duration">35 phút</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content" id="lesson-1">
+                <h2>Bài 1: Tại Sao Cần Ngân Sách?</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Chào mừng bạn đến với khóa học về ngân sách gia đình! Trong bài học đầu tiên này, 
+                        chúng ta sẽ tìm hiểu tại sao việc lập ngân sách lại quan trọng đến vậy đối với 
+                        các cặp đôi trẻ ở độ tuổi 28-35.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>💡 Ngân Sách Là Gì?</h3>
+                    <p>
+                        Ngân sách gia đình là một kế hoạch tài chính chi tiết giúp bạn:
+                    </p>
+                    <ul class="content-list">
+                        <li>✅ Biết tiền của mình đang đi đâu</li>
+                        <li>✅ Kiểm soát chi tiêu một cách có ý thức</li>
+                        <li>✅ Đảm bảo có đủ tiền cho những mục tiêu quan trọng</li>
+                        <li>✅ Tránh được tình trạng "hết tiền cuối tháng"</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3>📊 Thống Kê Đáng Quan Tâm</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">78%</div>
+                            <div class="stat-text">các gia đình Việt Nam không có ngân sách rõ ràng</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">65%</div>
+                            <div class="stat-text">chi tiêu cho các khoản không cần thiết</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.2 triệu</div>
+                            <div class="stat-text">VNĐ tiết kiệm được mỗi tháng khi có ngân sách</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎯 Lợi Ích Của Ngân Sách Đối Với Cặp Đôi</h3>
+                    
+                    <div class="benefit-card">
+                        <h4>1. Giảm Căng Thẳng Tài Chính</h4>
+                        <p>
+                            Khi biết rõ tình hình tài chính, bạn sẽ cảm thấy an tâm hơn và tránh được 
+                            những cuộc cãi vã về tiền bạc - nguyên nhân hàng đầu gây chia rẽ trong hôn nhân.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h4>2. Đạt Được Mục Tiêu Chung</h4>
+                        <p>
+                            Ngân sách giúp cả hai người có cùng tầm nhìn về tương lai và cùng nhau 
+                            hướng tới những mục tiêu như mua nhà, có con, du lịch...
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h4>3. Chuẩn Bị Cho Tương Lai</h4>
+                        <p>
+                            Ở độ tuổi 28-35, đây là thời điểm vàng để xây dựng nền tảng tài chính. 
+                            Ngân sách giúp bạn tối ưu hóa thu nhập và chuẩn bị cho những giai đoạn quan trọng.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🚫 Những Sai Lầm Phổ Biến</h3>
+                    <div class="mistake-list">
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>Nghĩ rằng ngân sách quá phức tạp</h4>
+                                <p>Thực tế: Bạn chỉ cần 15 phút mỗi tuần để theo dõi</p>
+                            </div>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>"Thu nhập không đủ cao để cần ngân sách"</h4>
+                                <p>Thực tế: Ngân sách quan trọng ở mọi mức thu nhập</p>
+                            </div>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>Chỉ tập trung vào việc cắt giảm chi tiêu</h4>
+                                <p>Thực tế: Ngân sách còn giúp tối ưu hóa và tăng thu nhập</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>🧠 Kiểm Tra Hiểu Biết</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu hỏi:</strong> Theo bạn, lợi ích lớn nhất của ngân sách đối với cặp đôi trẻ là gì?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Tiết kiệm nhiều tiền hơn</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Giảm căng thẳng và có mục tiêu chung</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>Theo dõi chi tiêu chi tiết</span>
+                            </label>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkAnswer('q1', 'b')">Kiểm Tra Đáp Án</button>
+                        <div class="answer-feedback" id="q1-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Bài Tập Thực Hành</h3>
+                    <div class="exercise-card">
+                        <h4>Bài tập 1: Đánh giá tình hình hiện tại</h4>
+                        <p>Hãy cùng người yêu/vợ chồng thảo luận và trả lời những câu hỏi sau:</p>
+                        <ol>
+                            <li>Tháng vừa rồi, hai bạn đã chi tiêu bao nhiều tiền?</li>
+                            <li>Chi tiêu lớn nhất của gia đình là gì?</li>
+                            <li>Có khoản chi nào khiến bạn bất ngờ không?</li>
+                            <li>Mục tiêu tài chính lớn nhất của hai bạn là gì?</li>
+                            <li>Hiện tại hai bạn có tiết kiệm được bao nhiều mỗi tháng?</li>
+                        </ol>
+                        <p><em>Ghi chú: Đây là bước đầu quan trọng để hiểu rõ tình hình tài chính hiện tại.</em></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 2 Content (Hidden by default) -->
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Bài 2: Quy Tắc 50/30/20 - Công Thức Ngân Sách Đơn Giản</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Quy tắc 50/30/20 là một trong những phương pháp lập ngân sách đơn giản và hiệu quả nhất, 
+                        đặc biệt phù hợp với các cặp đôi mới bắt đầu quản lý tài chính chung.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎯 Quy Tắc 50/30/20 Là Gì?</h3>
+                    <p>
+                        Đây là cách phân chia thu nhập sau thuế thành 3 phần:
+                    </p>
+                    
+                    <div class="rule-breakdown">
+                        <div class="rule-item">
+                            <div class="rule-percentage">50%</div>
+                            <div class="rule-content">
+                                <h4>Chi Phí Thiết Yếu</h4>
+                                <p>Nhà ở, điện nước, thực phẩm, giao thông, bảo hiểm y tế, tiền thập phân</p>
+                                <ul>
+                                    <li>Tiền thập phân (10% thu nhập)</li>
+                                    <li>Tiền thuê nhà/trả góp nhà</li>
+                                    <li>Hóa đơn điện, nước, gas, internet</li>
+                                    <li>Chi phí ăn uống cơ bản</li>
+                                    <li>Phương tiện đi lại</li>
+                                    <li>Bảo hiểm bắt buộc</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <div class="rule-percentage">30%</div>
+                            <div class="rule-content">
+                                <h4>Chi Phí Linh Hoạt</h4>
+                                <p>Giải trí, ăn uống ngoài, mua sắm, sở thích cá nhân</p>
+                                <ul>
+                                    <li>Ăn uống ngoài, café</li>
+                                    <li>Phim ảnh, du lịch</li>
+                                    <li>Quần áo, mỹ phẩm</li>
+                                    <li>Sở thích, hobby</li>
+                                    <li>Quà tặng</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <div class="rule-percentage">20%</div>
+                            <div class="rule-content">
+                                <h4>Tiết Kiệm & Đầu Tư</h4>
+                                <p>Quỹ khẩn cấp, đầu tư, trả nợ thêm, mục tiêu dài hạn</p>
+                                <ul>
+                                    <li>Quỹ khẩn cấp (6 tháng chi phí)</li>
+                                    <li>Đầu tư dài hạn</li>
+                                    <li>Trả nợ thêm</li>
+                                    <li>Tiết kiệm mua nhà</li>
+                                    <li>Quỹ hưu trí</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💰 Ví Dụ Thực Tế Cho Cặp Đôi</h3>
+                    <div class="example-card">
+                        <h4>Gia đình Anh Minh - Chị Hoa (29 tuổi, Hà Nội)</h4>
+                        <p><strong>Thu nhập ròng/tháng:</strong> 30,000,000 VNĐ</p>
+                        
+                        <div class="budget-example">
+                            <div class="budget-item">
+                                <span class="budget-category">Chi phí thiết yếu (50%)</span>
+                                <span class="budget-amount">15,000,000 VNĐ</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Tiền thập phân: 3,000,000 VNĐ</li>
+                                    <li>Thuê nhà: 6,000,000 VNĐ</li>
+                                    <li>Điện nước: 800,000 VNĐ</li>
+                                    <li>Thực phẩm: 4,000,000 VNĐ</li>
+                                    <li>Giao thông: 1,500,000 VNĐ</li>
+                                    <li>Bảo hiểm: 700,000 VNĐ</li>
+                                </ul>
+                            </div>
+
+                            <div class="budget-item">
+                                <span class="budget-category">Chi phí linh hoạt (30%)</span>
+                                <span class="budget-amount">9,000,000 VNĐ</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Ăn uống ngoài: 3,000,000 VNĐ</li>
+                                    <li>Giải trí: 2,000,000 VNĐ</li>
+                                    <li>Mua sắm: 2,500,000 VNĐ</li>
+                                    <li>Sở thích: 1,500,000 VNĐ</li>
+                                </ul>
+                            </div>
+
+                            <div class="budget-item">
+                                <span class="budget-category">Tiết kiệm & Đầu tư (20%)</span>
+                                <span class="budget-amount">6,000,000 VNĐ</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Quỹ khẩn cấp: 2,000,000 VNĐ</li>
+                                    <li>Tiết kiệm mua nhà: 3,000,000 VNĐ</li>
+                                    <li>Đầu tư: 1,000,000 VNĐ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🔧 Cách Điều Chỉnh Quy Tắc Theo Hoàn Cảnh</h3>
+                    
+                    <div class="adjustment-scenarios">
+                        <div class="scenario">
+                            <h4>🏠 Nếu chi phí nhà ở cao (>30% thu nhập)</h4>
+                            <p>Điều chỉnh thành: 60/25/15 tạm thời và tìm cách giảm chi phí nhà ở</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h4>💳 Nếu có nợ cao lãi suất</h4>
+                            <p>Điều chỉnh thành: 50/20/30 (30% để trả nợ nhanh)</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h4>💰 Nếu thu nhập cao và ổn định</h4>
+                            <p>Có thể tăng tỷ lệ tiết kiệm lên 25-30%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>🧮 Máy Tính Quy Tắc 50/30/20</h3>
+                    <div class="calculator-card">
+                        <div class="input-group">
+                            <label for="monthly-income">Thu nhập ròng hàng tháng (VNĐ):</label>
+                            <input type="number" id="monthly-income" placeholder="Nhập thu nhập của bạn">
+                        </div>
+                        <button onclick="calculate50_30_20()" class="calculate-btn">Tính Toán</button>
+                        
+                        <div id="calculation-results" class="results-grid" style="display: none;">
+                            <div class="result-item">
+                                <h4>Chi phí thiết yếu (50%)</h4>
+                                <span id="essential-amount" class="result-amount"></span>
+                            </div>
+                            <div class="result-item">
+                                <h4>Chi phí linh hoạt (30%)</h4>
+                                <span id="flexible-amount" class="result-amount"></span>
+                            </div>
+                            <div class="result-item">
+                                <h4>Tiết kiệm & Đầu tư (20%)</h4>
+                                <span id="savings-amount" class="result-amount"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Bài Tập Thực Hành</h3>
+                    <div class="exercise-card">
+                        <h4>Bài tập 2: Áp dụng quy tắc 50/30/20</h4>
+                        <ol>
+                            <li>Tính tổng thu nhập ròng hàng tháng của cả hai</li>
+                            <li>Phân chia theo tỷ lệ 50/30/20</li>
+                            <li>Liệt kê chi tiêu hiện tại vào từng nhóm</li>
+                            <li>So sánh với con số lý tưởng</li>
+                            <li>Xác định những khoản cần điều chỉnh</li>
+                        </ol>
+                        <p><em>Mẹo: Sử dụng máy tính ở trên để có con số cụ thể!</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Bài 3: Theo Dõi Chi Tiêu Hiệu Quả</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Việc theo dõi chi tiêu là chìa khóa để duy trì ngân sách thành công. 
+                        Hãy học cách ghi chép và phân tích chi tiêu của bạn một cách thông minh.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>📱 Các Phương Pháp Theo Dõi</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>📔 Ghi chép thủ công</h4>
+                            <ul>
+                                <li>Sổ tay nhỏ mang theo</li>
+                                <li>Ghi ngay sau khi chi tiêu</li>
+                                <li>Phân loại theo nhóm</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>📱 Ứng dụng di động</h4>
+                            <ul>
+                                <li>Money Lover, Misa MoneyKeeper</li>
+                                <li>Đồng bộ tự động với ngân hàng</li>
+                                <li>Báo cáo trực quan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🔍 Phân Tích Chi Tiêu</h3>
+                    <div class="analysis-tips">
+                        <div class="tip-item">
+                            <span class="tip-icon">📊</span>
+                            <p>Xem lại chi tiêu hàng tuần để phát hiện xu hướng</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🎯</span>
+                            <p>So sánh với ngân sách đã lập để điều chỉnh kịp thời</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">💡</span>
+                            <p>Tìm ra những khoản chi "ẩn" không cần thiết</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Bài Tập Thực Hành</h3>
+                    <div class="exercise-card">
+                        <h4>Bài tập 3: Theo dõi chi tiêu 1 tuần</h4>
+                        <ol>
+                            <li>Chọn phương pháp theo dõi phù hợp</li>
+                            <li>Ghi chép mọi khoản chi tiêu trong 7 ngày</li>
+                            <li>Phân loại theo các nhóm: Cần thiết, Linh hoạt, Khẩn cấp</li>
+                            <li>Tính tổng và so sánh với ngân sách tuần</li>
+                            <li>Rút ra 3 nhận xét về thói quen chi tiêu</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Bài 4: Xử Lý Nợ & Thẻ Tín Dụng</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Nợ có thể là công cụ hữu ích hoặc cạm bẫy tài chính. 
+                        Học cách quản lý nợ thông minh để nó phục vụ mục tiêu của bạn.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>⚖️ Phân Biệt Nợ Tốt & Nợ Xấu</h3>
+                    <div class="debt-comparison">
+                        <div class="debt-type good-debt">
+                            <h4>✅ Nợ Tốt</h4>
+                            <ul>
+                                <li>Vay mua nhà (lãi suất thấp)</li>
+                                <li>Vay học thêm kỹ năng</li>
+                                <li>Vay đầu tư kinh doanh</li>
+                                <li>Tạo ra tài sản có giá trị</li>
+                            </ul>
+                        </div>
+                        <div class="debt-type bad-debt">
+                            <h4>❌ Nợ Xấu</h4>
+                            <ul>
+                                <li>Nợ thẻ tín dụng (lãi cao)</li>
+                                <li>Vay tiêu dùng không cần thiết</li>
+                                <li>Vay mua xe sang vượt khả năng</li>
+                                <li>Không tạo ra thu nhập</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💳 Sử Dụng Thẻ Tín Dụng Thông Minh</h3>
+                    <div class="credit-tips">
+                        <div class="tip-card">
+                            <h4>Nguyên tắc 30%</h4>
+                            <p>Chỉ sử dụng tối đa 30% hạn mức thẻ để duy trì điểm tín dụng tốt</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Thanh toán đúng hạn</h4>
+                            <p>Luôn thanh toán ít nhất số tiền tối thiểu trước ngày đến hạn</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Tận dụng ưu đãi</h4>
+                            <p>Sử dụng cashback, điểm thưởng một cách có chiến lược</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Bài Tập Thực Hành</h3>
+                    <div class="exercise-card">
+                        <h4>Bài tập 4: Đánh giá tình hình nợ</h4>
+                        <ol>
+                            <li>Liệt kê tất cả khoản nợ hiện tại</li>
+                            <li>Phân loại thành nợ tốt/nợ xấu</li>
+                            <li>Sắp xếp ưu tiên trả nợ (lãi suất cao trước)</li>
+                            <li>Lập kế hoạch trả nợ trong ngân sách</li>
+                            <li>Xác định chiến lược sử dụng thẻ tín dụng</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Bài 5: Quỹ Khẩn Cấp & Tiết Kiệm</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Quỹ khẩn cấp là "bảo hiểm" tài chính của bạn. 
+                        Học cách xây dựng và duy trì quỹ này để đối phó với những bất ngờ.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🛡️ Tại Sao Cần Quỹ Khẩn Cấp?</h3>
+                    <div class="emergency-scenarios">
+                        <div class="scenario-card">
+                            <span class="scenario-icon">🏥</span>
+                            <h4>Y tế bất ngờ</h4>
+                            <p>Chi phí khám chữa bệnh, phẫu thuật không trong bảo hiểm</p>
+                        </div>
+                        <div class="scenario-card">
+                            <span class="scenario-icon">💼</span>
+                            <h4>Mất việc làm</h4>
+                            <p>Thời gian tìm việc mới, duy trì cuộc sống</p>
+                        </div>
+                        <div class="scenario-card">
+                            <span class="scenario-icon">🏠</span>
+                            <h4>Sửa chữa nhà cửa</h4>
+                            <p>Thiết bị hỏng, sửa chữa khẩn cấp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💰 Xây Dựng Quỹ Khẩn Cấp</h3>
+                    <div class="fund-building">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Xác định mục tiêu</h4>
+                                <p>3-6 tháng chi phí sinh hoạt (15-30 triệu cho cặp đôi trẻ)</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Bắt đầu từ nhỏ</h4>
+                                <p>Mục tiêu đầu tiên: 1 triệu đồng trong 2 tháng</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Tự động hóa</h4>
+                                <p>Chuyển tiền tự động mỗi ngày lương về tài khoản riêng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Bài Tập Thực Hành</h3>
+                    <div class="exercise-card">
+                        <h4>Bài tập 5: Lập kế hoạch quỹ khẩn cấp</h4>
+                        <ol>
+                            <li>Tính tổng chi phí sinh hoạt cơ bản hàng tháng</li>
+                            <li>Xác định mục tiêu quỹ khẩn cấp (3-6 tháng)</li>
+                            <li>Chia thành các mục tiêu nhỏ (1-2-3-6 tháng)</li>
+                            <li>Quyết định số tiền tiết kiệm hàng tháng</li>
+                            <li>Chọn tài khoản tiết kiệm phù hợp (dễ rút, lãi suất ổn)</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Bài 6: Đánh Giá & Điều Chỉnh Ngân Sách</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Ngân sách không phải là bộ quy tắc cứng nhắc. 
+                        Học cách đánh giá hiệu quả và điều chỉnh linh hoạt theo hoàn cảnh.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>📊 Đánh Giá Hiệu Quả Ngân Sách</h3>
+                    <div class="evaluation-metrics">
+                        <div class="metric-card">
+                            <h4>🎯 Tỷ lệ đạt mục tiêu</h4>
+                            <p>Bao nhiêu % thời gian bạn tuân thủ ngân sách?</p>
+                            <div class="target-range">Mục tiêu: ≥ 80%</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>💰 Tỷ lệ tiết kiệm</h4>
+                            <p>Phần trăm thu nhập được tiết kiệm thực tế</p>
+                            <div class="target-range">Mục tiêu: ≥ 20%</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>😊 Mức độ hài lòng</h4>
+                            <p>Cảm thấy thoải mái với việc chi tiêu?</p>
+                            <div class="target-range">Mục tiêu: Cân bằng</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🔧 Điều Chỉnh Ngân Sách</h3>
+                    <div class="adjustment-guide">
+                        <div class="adjustment-scenario">
+                            <h4>💼 Thu nhập thay đổi</h4>
+                            <ul>
+                                <li>Tăng lương: Nâng tỷ lệ tiết kiệm trước khi tăng chi tiêu</li>
+                                <li>Giảm thu nhập: Cắt giảm chi phí linh hoạt trước</li>
+                            </ul>
+                        </div>
+                        <div class="adjustment-scenario">
+                            <h4>🎯 Mục tiêu mới</h4>
+                            <ul>
+                                <li>Mua nhà: Tăng tỷ lệ tiết kiệm, giảm chi tiêu giải trí</li>
+                                <li>Có con: Chuẩn bị quỹ riêng, tăng bảo hiểm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🚀 Từ Ngân Sách Đến Tự Do Tài Chính</h3>
+                    <div class="roadmap">
+                        <div class="milestone">
+                            <span class="milestone-number">1</span>
+                            <div class="milestone-content">
+                                <h4>Tháng 1-3: Làm quen</h4>
+                                <p>Theo dõi chi tiêu, thiết lập thói quen cơ bản</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">2</span>
+                            <div class="milestone-content">
+                                <h4>Tháng 4-6: Ổn định</h4>
+                                <p>Có quỹ khẩn cấp 1 tháng, trả hết nợ xấu</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">3</span>
+                            <div class="milestone-content">
+                                <h4>Năm 1-2: Phát triển</h4>
+                                <p>Quỹ khẩn cấp đầy đủ, bắt đầu đầu tư</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">4</span>
+                            <div class="milestone-content">
+                                <h4>Năm 3+: Tự do</h4>
+                                <p>Thu nhập thụ động, linh hoạt tài chính</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>🎉 Bài Tập Tổng Kết</h3>
+                    <div class="exercise-card">
+                        <h4>Tạo ngân sách hoàn chỉnh cho 3 tháng tới</h4>
+                        <ol>
+                            <li>Tổng hợp tất cả kiến thức từ 6 bài học</li>
+                            <li>Tạo bảng ngân sách chi tiết cho gia đình</li>
+                            <li>Đặt 3 mục tiêu tài chính cụ thể</li>
+                            <li>Lập kế hoạch theo dõi và điều chỉnh hàng tháng</li>
+                            <li>Cam kết thực hiện trong 90 ngày</li>
+                        </ol>
+                        <p><strong>Chúc mừng! Bạn đã hoàn thành khóa học Ngân Sách Gia Đình! 🎊</strong></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Bài Tiếp Theo →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Khóa Học Khác</h4>
+                    <ul>
+                        <li><a href="investing.html">Đầu Tư An Toàn</a></li>
+                        <li><a href="real-estate.html">Mua Nhà Thông Minh</a></li>
+                        <li><a href="insurance.html">Bảo Hiểm & Bảo Vệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/course.js"></script>
+    <script src="../scripts/i18n.js"></script>
+</body>
+</html>

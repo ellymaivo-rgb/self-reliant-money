@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Ngân Sách - Tài Chính Gia Đình</title>
+    <meta name="description" content="Công cụ lập ngân sách chi tiết cho gia đình và theo dõi chi tiêu hàng tháng.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Trang Chủ</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="toggleLanguage()">🌐 EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="tool-header">
+        <div class="container">
+            <h1>🧮 Máy Tính Ngân Sách</h1>
+            <p>Lập ngân sách chi tiết và theo dõi chi tiêu hàng tháng</p>
+        </div>
+    </section>
+
+    <div class="tool-container">
+        <div class="calculator-card">
+            <h2>Nhập Thông Tin Thu Nhập</h2>
+            <div class="input-group">
+                <label>Thu nhập hàng tháng (VNĐ):</label>
+                <input type="number" id="monthly-income" placeholder="Ví dụ: 20000000">
+            </div>
+
+            <h3>Chi Phí Thiết Yếu (50%)</h3>
+            <div class="input-group">
+                <label>Nhà ở (thuê/trả góp):</label>
+                <input type="number" id="housing" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Thực phẩm:</label>
+                <input type="number" id="food" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Giao thông:</label>
+                <input type="number" id="transport" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Điện nước, internet:</label>
+                <input type="number" id="utilities" placeholder="0">
+            </div>
+
+            <h3>Chi Phí Linh Hoạt (30%)</h3>
+            <div class="input-group">
+                <label>Ăn uống ngoài:</label>
+                <input type="number" id="dining" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Giải trí:</label>
+                <input type="number" id="entertainment" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Mua sắm:</label>
+                <input type="number" id="shopping" placeholder="0">
+            </div>
+
+            <h3>Tiết Kiệm & Đầu Tư (20%)</h3>
+            <div class="input-group">
+                <label>Tiết kiệm:</label>
+                <input type="number" id="savings" placeholder="0">
+            </div>
+            <div class="input-group">
+                <label>Đầu tư:</label>
+                <input type="number" id="investment" placeholder="0">
+            </div>
+
+            <button class="calculate-btn" onclick="calculateBudget()">Tính Toán Ngân Sách</button>
+
+            <div id="budget-results" class="results-section" style="display: none;">
+                <h3>Kết Quả Phân Tích</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <h4>Tổng Chi Tiêu</h4>
+                        <span id="total-spending" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Còn Lại</h4>
+                        <span id="remaining" class="result-amount"></span>
+                    </div>
+                    <div class="result-item">
+                        <h4>Tỷ Lệ Tiết Kiệm</h4>
+                        <span id="savings-rate" class="result-amount"></span>
+                    </div>
+                </div>
+                <div id="recommendations" class="recommendations"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/i18n.js"></script>
+    <script>
+    function calculateBudget() {
+        const income = parseFloat(document.getElementById('monthly-income').value) || 0;
+        const housing = parseFloat(document.getElementById('housing').value) || 0;
+        const food = parseFloat(document.getElementById('food').value) || 0;
+        const transport = parseFloat(document.getElementById('transport').value) || 0;
+        const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+        const dining = parseFloat(document.getElementById('dining').value) || 0;
+        const entertainment = parseFloat(document.getElementById('entertainment').value) || 0;
+        const shopping = parseFloat(document.getElementById('shopping').value) || 0;
+        const savings = parseFloat(document.getElementById('savings').value) || 0;
+        const investment = parseFloat(document.getElementById('investment').value) || 0;
+
+        const totalSpending = housing + food + transport + utilities + dining + entertainment + shopping + savings + investment;
+        const remaining = income - totalSpending;
+        const savingsRate = income > 0 ? ((savings + investment) / income * 100).toFixed(1) : 0;
+
+        document.getElementById('total-spending').textContent = totalSpending.toLocaleString('vi-VN') + ' VNĐ';
+        document.getElementById('remaining').textContent = remaining.toLocaleString('vi-VN') + ' VNĐ';
+        document.getElementById('savings-rate').textContent = savingsRate + '%';
+
+        let recommendations = '<h4>Khuyến Nghị:</h4><ul>';
+        if (savingsRate < 20) {
+            recommendations += '<li>⚠️ Tỷ lệ tiết kiệm thấp. Hãy cố gắng đạt ít nhất 20%</li>';
+        } else {
+            recommendations += '<li>✅ Tỷ lệ tiết kiệm tốt!</li>';
+        }
+        if (remaining < 0) {
+            recommendations += '<li>⚠️ Chi tiêu vượt thu nhập. Cần cắt giảm chi phí không cần thiết</li>';
+        }
+        recommendations += '</ul>';
+        document.getElementById('recommendations').innerHTML = recommendations;
+        document.getElementById('budget-results').style.display = 'block';
+    }
+    </script>
+</body>
+</html>

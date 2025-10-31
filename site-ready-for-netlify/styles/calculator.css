@@ -1,0 +1,681 @@
+/* Calculator-specific styles */
+.tool-header {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #ffd700;
+}
+
+.tool-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tool-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.tool-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+}
+
+/* Main Tool Area */
+.tool-main {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calculator-section {
+    padding: 2rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.calculator-section h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.input-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.label-text {
+    font-size: 0.95rem;
+}
+
+.label-icon {
+    font-size: 1.2rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    padding-right: 60px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #10b981;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+    pointer-events: none;
+    margin-top: 12px;
+}
+
+.calculator-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+}
+
+.clear-btn {
+    background: #f8fafc;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clear-btn:hover {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+/* Results Section */
+.results-section {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+}
+
+.results-section h2 {
+    color: #1e40af;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.results-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.result-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+}
+
+.result-card.primary {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    grid-column: 1 / -1;
+}
+
+.result-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.result-card.primary .result-icon {
+    opacity: 1;
+}
+
+.result-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-card.primary .result-content h3 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.result-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.result-card.primary .result-amount {
+    color: white;
+    font-size: 2rem;
+}
+
+.result-amount.success {
+    color: #10b981;
+}
+
+/* Chart Styles */
+.chart-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-color.contributions {
+    background: #3b82f6;
+}
+
+.legend-color.interest {
+    background: #10b981;
+}
+
+/* Breakdown Section */
+.breakdown-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.breakdown-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.breakdown-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.toggle-btn,
+.export-btn {
+    padding: 10px 20px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    color: #64748b;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover,
+.export-btn:hover {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.breakdown-table {
+    overflow-x: auto;
+}
+
+.breakdown-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+    padding: 12px;
+    text-align: right;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.breakdown-table th {
+    background: #f8fafc;
+    color: #2c3e50;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.breakdown-table td {
+    color: #475569;
+}
+
+.breakdown-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.breakdown-table tr:hover {
+    background: #f0f9ff;
+}
+
+/* Sidebar Styles */
+.info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #10b981;
+}
+
+.info-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.info-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.formula-box {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.formula-box h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.formula {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1e40af;
+    text-align: center;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.formula-legend {
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.formula-legend li {
+    margin-bottom: 0.25rem;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    padding: 0.5rem 0;
+    color: #475569;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.tips-list li:last-child {
+    border-bottom: none;
+}
+
+.investment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.investment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #10b981;
+}
+
+.investment-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.investment-rate {
+    font-weight: 600;
+    color: #10b981;
+}
+
+.risk-warning {
+    font-size: 0.85rem;
+    color: #f59e0b;
+    font-style: italic;
+    margin: 0;
+}
+
+.example-scenario {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.example-scenario h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.example-scenario ul {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.example-result {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.example-note {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.load-example-btn {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.load-example-btn:hover {
+    background: #2563eb;
+}
+
+.related-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tool-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tool-link:hover {
+    background: #f0f9ff;
+    border-color: #3b82f6;
+    transform: translateX(4px);
+}
+
+.tool-icon {
+    font-size: 1.2rem;
+}
+
+.tool-name {
+    font-weight: 500;
+}
+
+/* Animation for results */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-section {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Loading state */
+.calculating {
+    position: relative;
+    overflow: hidden;
+}
+
+.calculating::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tool-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .info-sidebar {
+        order: -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-header h1 {
+        font-size: 2rem;
+    }
+    
+    .input-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .calculator-actions {
+        flex-direction: column;
+    }
+    
+    .results-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .breakdown-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-container {
+        padding: 20px 15px;
+    }
+    
+    .calculator-section,
+    .results-section,
+    .breakdown-section {
+        padding: 1.5rem;
+    }
+    
+    .result-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .result-icon {
+        font-size: 2rem;
+    }
+    
+    .result-amount {
+        font-size: 1.25rem;
+    }
+    
+    .result-card.primary .result-amount {
+        font-size: 1.5rem;
+    }
+}

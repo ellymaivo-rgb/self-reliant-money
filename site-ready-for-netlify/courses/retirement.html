@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nghỉ Hưu Sớm - Tài Chính Gia Đình</title>
+    <meta name="description" content="Xây dựng kế hoạch nghỉ hưu sớm và đạt được tự do tài chính.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Trang Chủ</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Khóa Học</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Công Cụ</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Liên Hệ</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../en/index.html'">🌐 EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / 
+                <a href="../index.html#courses">Khóa học</a> / 
+                <span>Nghỉ hưu sớm</span>
+            </div>
+            <h1>🌅 Nghỉ Hưu Sớm</h1>
+            <p class="course-subtitle">Tự do tài chính và phong trào FIRE</p>
+            <div class="course-meta">
+                <span class="course-level">Nâng Cao</span>
+                <span class="course-duration">9 bài học</span>
+                <span class="course-time">5 giờ</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Tiến Độ Khóa Học</h3>
+                <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+                <span class="progress-text">0/6 bài học hoàn thành</span>
+            </div>
+            <div class="course-outline">
+                <h3>Nội Dung Khóa Học</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)"><span class="lesson-number">1</span><div class="lesson-info"><h4>FIRE là gì?</h4><span class="lesson-duration">25 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)"><span class="lesson-number">2</span><div class="lesson-info"><h4>Tính Số Vàng Nghỉ Hưu</h4><span class="lesson-duration">35 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)"><span class="lesson-number">3</span><div class="lesson-info"><h4>Chiến Lược Tiết Kiệm</h4><span class="lesson-duration">40 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)"><span class="lesson-number">4</span><div class="lesson-info"><h4>Danh Mục Hưu Trí</h4><span class="lesson-duration">45 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)"><span class="lesson-number">5</span><div class="lesson-info"><h4>Bảo Hiểm Hưu Trí</h4><span class="lesson-duration">30 phút</span></div></div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)"><span class="lesson-number">6</span><div class="lesson-info"><h4>Kế Hoạch Tài Chính Hưu Trí</h4><span class="lesson-duration">35 phút</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Bài 1: FIRE là gì?</h2>
+                <div class="lesson-section">
+                    <h3>🔥 Nguyên tắc cốt lõi</h3>
+                    <ul>
+                        <li>Tỷ lệ tiết kiệm cao (40-60%)</li>
+                        <li>Đầu tư dài hạn, chi phí thấp</li>
+                        <li>Tối ưu chi tiêu và lối sống</li>
+                    </ul>
+                </div>
+                <div class="quiz-section">
+                    <h3>📝 Quiz</h3>
+                    <div class="quiz-question">
+                        <p><strong>Câu 1:</strong> Tỷ lệ rút an toàn phổ biến là bao nhiêu?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. 2%</label>
+                            <label><input type="radio" name="q1" value="b"> B. 3%</label>
+                            <label><input type="radio" name="q1" value="c"> C. 4%</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1','c')">Kiểm Tra</button>
+                    <div class="quiz-result" style="display:none"></div>
+                </div>
+            </div>
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Bài 2: Tính Số Vàng Nghỉ Hưu</h2>
+                <div class="lesson-section">
+                    <h3>🧮 Công thức 25x</h3>
+                    <p>Nhu cầu chi tiêu hàng năm × 25 = Số tiền cần có để rút 4%/năm.</p>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Bài Tập</h3>
+                    <p>Nếu gia đình cần 600 triệu/năm, số tiền cần để nghỉ hưu là bao nhiêu?</p>
+                    <textarea class="exercise-input" placeholder="Câu trả lời..."></textarea>
+                    <button class="btn btn-secondary">Gửi Bài</button>
+                </div>
+            </div>
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Bài 3: Chiến Lược Tiết Kiệm Hưu Trí</h2>
+                <div class="lesson-section">
+                    <h3>📊 Các phương pháp tiết kiệm</h3>
+                    <ul>
+                        <li>Quỹ hưu trí tự nguyện</li>
+                        <li>Bảo hiểm nhân thọ dài hạn</li>
+                        <li>Tự đầu tư cổ phiếu/trái phiếu</li>
+                    </ul>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Lập kế hoạch</h3>
+                    <p>Phân bổ 30% thu nhập cho hưu trí, chọn phương pháp phù hợp.</p>
+                    <textarea class="exercise-input" placeholder="Kế hoạch tiết kiệm..."></textarea>
+                    <button class="btn btn-secondary">Lưu Kế Hoạch</button>
+                </div>
+            </div>
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Bài 4: Danh Mục Đầu Tư Hưu Trí</h2>
+                <div class="lesson-section">
+                    <h3>💼 Cấu trúc danh mục theo độ tuổi</h3>
+                    <ul>
+                        <li>20-30 tuổi: 80% cổ phiếu, 20% trái phiếu</li>
+                        <li>40-50 tuổi: 60% cổ phiếu, 40% trái phiếu</li>
+                        <li>55+ tuổi: 40% cổ phiếu, 60% trái phiếu</li>
+                    </ul>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Thực hành</h3>
+                    <p>Thiết kế danh mục đầu tư theo độ tuổi hiện tại của bạn.</p>
+                    <textarea class="exercise-input" placeholder="Danh mục đầu tư..."></textarea>
+                    <button class="btn btn-secondary">Phân Tích</button>
+                </div>
+            </div>
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Bài 5: Bảo Hiểm Hưu Trí</h2>
+                <div class="lesson-section">
+                    <h3>🛡️ Các loại bảo hiểm cần thiết</h3>
+                    <ul>
+                        <li>Bảo hiểm xã hội cơ bản</li>
+                        <li>Bảo hiểm hưu trí bổ sung</li>
+                        <li>Bảo hiểm sức khỏe cao tuổi</li>
+                    </ul>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Đánh giá</h3>
+                    <p>Kiểm tra mức đóng bảo hiểm hiện tại và lên kế hoạch bổ sung.</p>
+                    <textarea class="exercise-input" placeholder="Đánh giá bảo hiểm..."></textarea>
+                    <button class="btn btn-secondary">Tính Toán</button>
+                </div>
+            </div>
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Bài 6: Kế Hoạch Tài Chính Hưu Trí Tổng Thể</h2>
+                <div class="lesson-section">
+                    <h3>🎯 Roadmap hoàn chỉnh</h3>
+                    <ul>
+                        <li>Mốc 30 tuổi: 1x lương hàng năm</li>
+                        <li>Mốc 40 tuổi: 3x lương hàng năm</li>
+                        <li>Mốc 50 tuổi: 6x lương hàng năm</li>
+                        <li>Mốc 60 tuổi: 10x lương hàng năm</li>
+                    </ul>
+                </div>
+                <div class="exercise-section">
+                    <h3>✏️ Kế hoạch cá nhân</h3>
+                    <p>Lập kế hoạch hưu trí 25 năm tới với mức tiết kiệm và đầu tư cụ thể.</p>
+                    <textarea class="exercise-input" placeholder="Kế hoạch hưu trí cá nhân..."></textarea>
+                    <button class="btn btn-secondary">Hoàn Thành</button>
+                </div>
+            </div>
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Bài Trước</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Bài Tiếp →</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/course.js"></script>
+        <script src="../scripts/i18n.js"></script>
+        <script>
+            function checkAnswer(q,correct){
+                const sel=document.querySelector(`input[name="${q}"]:checked`);
+                const res=document.querySelector('.quiz-result');
+                res.style.display='block';
+                res.innerHTML = sel && sel.value===correct ? '<p style="color:green">✅ Chính xác!</p>' : '<p style="color:red">❌ Chưa đúng.</p>';
+            }
+        </script>
+</body>
+</html>
