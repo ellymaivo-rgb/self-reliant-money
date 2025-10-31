@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Nghỉ Hưu - Tài Chính Gia Đình</title>
+    <meta name="description" content="Lập kế hoạch tiết kiệm cho hưu trí và tính toán thời gian nghỉ hưu.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Khóa Học</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Công Cụ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Liên Hệ</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='en/tools/retirement-calculator.html'">🌐 EN</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Trang Chủ</a> / 
+                <a href="../index.html#tools">Công Cụ</a> / 
+                <span>Máy Tính Nghỉ Hưu</span>
+            </div>
+            <h1>🏖️ Máy Tính Nghỉ Hưu</h1>
+            <p class="tool-subtitle">Lập kế hoạch tiết kiệm cho hưu trí</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Máy Tính Kế Hoạch Nghỉ Hưu</h2>
+                    
+                    <div class="input-group">
+                        <label for="currentAge">Tuổi Hiện Tại</label>
+                        <input type="number" id="currentAge" value="30" min="18" max="80" step="1">
+                        <small>Tuổi hiện tại của bạn</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="retirementAge">Tuổi Dự Định Nghỉ Hưu</label>
+                        <input type="number" id="retirementAge" value="65" min="50" max="80" step="1">
+                        <small>Tuổi bạn dự định nghỉ hưu</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentIncome">Thu Nhập Hiện Tại (VND)</label>
+                        <input type="number" id="currentIncome" value="1500000000" min="0" step="1000000">
+                        <small>Thu nhập hàng năm hiện tại trước thuế</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="retirementIncome">Thu Nhập Mong Muốn Khi Hưu Trí (%)</label>
+                        <select id="retirementIncome">
+                            <option value="70">70% thu nhập hiện tại</option>
+                            <option value="80" selected>80% thu nhập hiện tại</option>
+                            <option value="90">90% thu nhập hiện tại</option>
+                            <option value="100">100% thu nhập hiện tại</option>
+                        </select>
+                        <small>Tỷ lệ % thu nhập hiện tại bạn cần khi nghỉ hưu</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentSavings">Tiết Kiệm Hưu Trí Hiện Tại (VND)</label>
+                        <input type="number" id="currentSavings" value="1250000000" min="0" step="1000000">
+                        <small>Số tiền đã tiết kiệm cho hưu trí (quỹ hưu trí, tích lũy, v.v.)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthlyContribution">Tiết Kiệm Hàng Tháng (VND)</label>
+                        <input type="number" id="monthlyContribution" value="12500000" min="0" step="500000">
+                        <small>Số tiền bạn dự định tiết kiệm mỗi tháng</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="expectedReturn">Lợi Nhuận Đầu Tư Kỳ Vọng (%)</label>
+                        <input type="number" id="expectedReturn" value="7" min="1" max="15" step="0.1">
+                        <small>Lợi nhuận hàng năm kỳ vọng từ đầu tư (6-8% là điển hình)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="inflationRate">Tỷ Lệ Lạm Phát (%)</label>
+                        <input type="number" id="inflationRate" value="4" min="1" max="10" step="0.1">
+                        <small>Tỷ lệ lạm phát hàng năm kỳ vọng</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateRetirement()">Tính Toán Nghỉ Hưu</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Kế Hoạch Nghỉ Hưu Của Bạn</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="totalSavings">0 VND</div>
+                                <div class="result-label">Dự Kiến Tiết Kiệm Khi Nghỉ Hưu</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="targetAmount">0 VND</div>
+                                <div class="result-label">Mục Tiêu Số Tiền Nghỉ Hưu</div>
+                            </div>
+                            <div class="result-card" id="shortfallCard">
+                                <div class="result-value" id="shortfall">0 VND</div>
+                                <div class="result-label" id="shortfallLabel">Thiếu Hụt Dự Kiến</div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-container">
+                            <canvas id="retirementChart"></canvas>
+                        </div>
+
+                        <!-- Retirement Details -->
+                        <div class="retirement-details">
+                            <h4>Phân Tích Nghỉ Hưu</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Số Năm Đến Nghỉ Hưu:</span>
+                                    <span class="detail-value" id="yearsToRetirement">35 năm</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Thu Nhập Hàng Năm Cần:</span>
+                                    <span class="detail-value" id="annualIncomeNeeded">1.200.000.000 VND</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Thu Nhập Hàng Tháng Cần:</span>
+                                    <span class="detail-value" id="monthlyIncomeNeeded">100.000.000 VND</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Tỷ Lệ Tiết Kiệm Hàng Tháng:</span>
+                                    <span class="detail-value" id="savingsRate">10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4% Rule Analysis -->
+                        <div class="rule-analysis">
+                            <h4>Quy Tắc Rút 4%</h4>
+                            <div class="rule-explanation">
+                                <p>Sử dụng quy tắc 4%, bạn có thể rút 4% tiết kiệm hưu trí hàng năm mà không cạn kiệt quỹ.</p>
+                                <div class="rule-calculation">
+                                    <div class="rule-item">
+                                        <span class="rule-label">Tiết Kiệm Dự Kiến:</span>
+                                        <span class="rule-value" id="projectedSavings">0 VND</span>
+                                    </div>
+                                    <div class="rule-item">
+                                        <span class="rule-label">Rút 4% Hàng Năm:</span>
+                                        <span class="rule-value" id="annualWithdrawal">0 VND</span>
+                                    </div>
+                                    <div class="rule-item">
+                                        <span class="rule-label">Thu Nhập Hàng Tháng Từ Tiết Kiệm:</span>
+                                        <span class="rule-value" id="monthlyFromSavings">0 VND</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scenarios -->
+                        <div class="scenarios-section">
+                            <h4>Các Tình Huống Giả Định</h4>
+                            <div class="scenario-cards">
+                                <div class="scenario-card">
+                                    <h5>Nghỉ Hưu Sớm 5 Năm</h5>
+                                    <div class="scenario-value" id="earlierRetirement">Cần +5.000.000 VND/tháng</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>Tiết Kiệm Thêm +2.5 Triệu/Tháng</h5>
+                                    <div class="scenario-value" id="extraSavings">+2.1 tỷ VND khi nghỉ hưu</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>Lợi Nhuận Cao Hơn 1%</h5>
+                                    <div class="scenario-value" id="higherReturns">+3.8 tỷ VND khi nghỉ hưu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Kiến Thức Cơ Bản Về Kế Hoạch Nghỉ Hưu</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🎯 Quy Tắc 25x</h3>
+                        <p>Quy tắc phổ biến là tiết kiệm 25 lần chi phí hàng năm cho nghỉ hưu. Điều này hỗ trợ quy tắc rút 4%.</p>
+                        <ul>
+                            <li>Tính toán chi phí hàng năm khi nghỉ hưu</li>
+                            <li>Nhân với 25 để có mục tiêu</li>
+                            <li>Điều chỉnh theo BHXH và lương hưu</li>
+                            <li>Xem xét và cập nhật định kỳ</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📊 Phân Bổ Tài Sản</h3>
+                        <p>Đa dạng hóa tiết kiệm hưu trí qua các loại tài sản khác nhau dựa trên tuổi và khả năng chịu rủi ro.</p>
+                        <ul>
+                            <li>Cổ phiếu cho tiềm năng tăng trưởng</li>
+                            <li>Trái phiếu cho sự ổn định và thu nhập</li>
+                            <li>Bất động sản chống lạm phát</li>
+                            <li>Điều chỉnh phân bổ theo tuổi</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🏛️ Các Loại Tài Khoản</h3>
+                        <p>Sử dụng các loại tài khoản hưu trí khác nhau một cách chiến lược để có lợi thế về thuế.</p>
+                        <ul>
+                            <li>Quỹ hưu trí doanh nghiệp</li>
+                            <li>Tài khoản tiết kiệm cá nhân</li>
+                            <li>Đầu tư cổ phiếu dài hạn</li>
+                            <li>Bảo hiểm nhân thọ có đầu tư</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>⏰ Bắt Đầu Sớm</h3>
+                        <p>Thời gian là tài sản lớn nhất trong kế hoạch nghỉ hưu nhờ vào lãi kép.</p>
+                        <ul>
+                            <li>Bắt đầu tiết kiệm càng sớm càng tốt</li>
+                            <li>Tăng tiết kiệm khi có tăng lương</li>
+                            <li>Tự động hóa việc tiết kiệm</li>
+                            <li>Tận dụng các chính sách hỗ trợ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Công Cụ Khác</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Máy Tính Lãi Kép</h4>
+                        <p>Xem sự tăng trưởng đầu tư theo thời gian</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Sử Dụng</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Máy Tính Ngân Sách</h4>
+                        <p>Lập kế hoạch ngân sách gia đình hàng tháng</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Sử Dụng</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">💰</div>
+                        <h4>Quỹ Khẩn Cấp</h4>
+                        <p>Tính tiền tiết kiệm khẩn cấp cần thiết</p>
+                        <a href="emergency-fund.html" class="btn btn-outline">Sử Dụng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Lập Kế Hoạch Nghỉ Hưu</h2>
+            <p>Học các chiến lược nghỉ hưu toàn diện qua khóa học chi tiết của chúng tôi</p>
+            <a href="../courses/retirement.html" class="btn btn-primary">Học Kế Hoạch Nghỉ Hưu</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Xây dựng tương lai tài chính vững chắc cho gia đình bạn</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Công Cụ Khác</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Máy Tính Ngân Sách</a></li>
+                        <li><a href="compound-calculator.html">Máy Tính Lãi Kép</a></li>
+                        <li><a href="mortgage-calculator.html">Máy Tính Vay Mua Nhà</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tìm Hiểu Thêm</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Ngân Sách Gia Đình</a></li>
+                        <li><a href="../courses/investing.html">Đầu Tư Cơ Bản</a></li>
+                        <li><a href="../courses/retirement.html">Kế Hoạch Nghỉ Hưu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tài Chính Gia Đình. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function calculateRetirement() {
+        const currentAge = parseInt(document.getElementById('currentAge').value) || 30;
+        const retirementAge = parseInt(document.getElementById('retirementAge').value) || 65;
+        const currentIncome = parseFloat(document.getElementById('currentIncome').value) || 1500000000;
+        const retirementIncomePercent = parseInt(document.getElementById('retirementIncome').value) || 80;
+        const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 1250000000;
+        const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value) || 12500000;
+        const expectedReturn = parseFloat(document.getElementById('expectedReturn').value) / 100 || 0.07;
+        const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100 || 0.04;
+        
+        const yearsToRetirement = retirementAge - currentAge;
+        const monthsToRetirement = yearsToRetirement * 12;
+        const monthlyReturn = expectedReturn / 12;
+        
+        // Calculate future value of current savings
+        const futureValueCurrent = currentSavings * Math.pow(1 + expectedReturn, yearsToRetirement);
+        
+        // Calculate future value of monthly contributions
+        let futureValueContributions = 0;
+        if (monthlyReturn > 0) {
+            futureValueContributions = monthlyContribution * ((Math.pow(1 + monthlyReturn, monthsToRetirement) - 1) / monthlyReturn);
+        } else {
+            futureValueContributions = monthlyContribution * monthsToRetirement;
+        }
+        
+        const totalSavings = futureValueCurrent + futureValueContributions;
+        
+        // Calculate needed retirement income (adjusted for inflation)
+        const futureIncome = currentIncome * Math.pow(1 + inflationRate, yearsToRetirement);
+        const neededAnnualIncome = futureIncome * (retirementIncomePercent / 100);
+        const neededMonthlyIncome = neededAnnualIncome / 12;
+        
+        // Using 4% rule to determine needed savings
+        const targetAmount = neededAnnualIncome * 25;
+        const shortfall = targetAmount - totalSavings;
+        
+        // Calculate savings rate
+        const savingsRate = (monthlyContribution * 12) / currentIncome * 100;
+        
+        // 4% rule calculations
+        const annualWithdrawal = totalSavings * 0.04;
+        const monthlyFromSavings = annualWithdrawal / 12;
+        
+        // Update results
+        document.getElementById('totalSavings').textContent = formatCurrencyVND(totalSavings);
+        document.getElementById('targetAmount').textContent = formatCurrencyVND(targetAmount);
+        document.getElementById('shortfall').textContent = formatCurrencyVND(Math.abs(shortfall));
+        document.getElementById('yearsToRetirement').textContent = `${yearsToRetirement} năm`;
+        document.getElementById('annualIncomeNeeded').textContent = formatCurrencyVND(neededAnnualIncome);
+        document.getElementById('monthlyIncomeNeeded').textContent = formatCurrencyVND(neededMonthlyIncome);
+        document.getElementById('savingsRate').textContent = `${savingsRate.toFixed(1)}%`;
+        document.getElementById('projectedSavings').textContent = formatCurrencyVND(totalSavings);
+        document.getElementById('annualWithdrawal').textContent = formatCurrencyVND(annualWithdrawal);
+        document.getElementById('monthlyFromSavings').textContent = formatCurrencyVND(monthlyFromSavings);
+        
+        // Update shortfall card styling
+        const shortfallCard = document.getElementById('shortfallCard');
+        const shortfallLabel = document.getElementById('shortfallLabel');
+        if (shortfall <= 0) {
+            shortfallCard.className = 'result-card surplus';
+            shortfallLabel.textContent = 'Thặng Dư';
+        } else {
+            shortfallCard.className = 'result-card deficit';
+            shortfallLabel.textContent = 'Thiếu Hụt';
+        }
+        
+        // Calculate scenarios
+        const earlierYears = yearsToRetirement - 5;
+        const earlierMonths = earlierYears * 12;
+        const earlierFutureValue = currentSavings * Math.pow(1 + expectedReturn, earlierYears);
+        const earlierTarget = neededAnnualIncome * 25;
+        const earlierNeeded = earlierTarget - earlierFutureValue;
+        const earlierMonthlyNeeded = earlierNeeded / (earlierMonths > 0 ? earlierMonths : 1);
+        const extraNeeded = earlierMonthlyNeeded - monthlyContribution;
+        
+        const extraMonthlySavings = monthlyContribution + 2500000;
+        const extraFutureValue = extraMonthlySavings * ((Math.pow(1 + monthlyReturn, monthsToRetirement) - 1) / monthlyReturn);
+        const extraTotal = futureValueCurrent + extraFutureValue;
+        const extraGain = extraTotal - totalSavings;
+        
+        const higherReturn = (expectedReturn + 0.01) / 12;
+        const higherFutureValue = monthlyContribution * ((Math.pow(1 + higherReturn, monthsToRetirement) - 1) / higherReturn);
+        const higherTotal = futureValueCurrent + higherFutureValue;
+        const higherGain = higherTotal - totalSavings;
+        
+        document.getElementById('earlierRetirement').textContent = extraNeeded > 0 ? `Cần +${formatCurrencyVND(extraNeeded)}/tháng` : 'Đủ điều kiện!';
+        document.getElementById('extraSavings').textContent = `+${formatCurrencyVND(extraGain)} khi nghỉ hưu`;
+        document.getElementById('higherReturns').textContent = `+${formatCurrencyVND(higherGain)} khi nghỉ hưu`;
+        
+        // Create chart
+        createRetirementChart(currentSavings, totalSavings, yearsToRetirement);
+    }
+    
+    function createRetirementChart(current, target, years) {
+        const ctx = document.getElementById('retirementChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.retirementChart) {
+            window.retirementChart.destroy();
+        }
+        
+        const data = [current];
+        const labels = ['Hiện Tại'];
+        
+        // Add data points every 5 years
+        for (let year = 5; year <= years; year += 5) {
+            const value = current * Math.pow(1.07, year); // Simplified calculation for chart
+            data.push(value);
+            labels.push(`Năm ${year}`);
+        }
+        
+        // Add final value
+        if (years % 5 !== 0) {
+            data.push(target);
+            labels.push(`Năm ${years}`);
+        }
+        
+        window.retirementChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Tiết Kiệm Dự Kiến',
+                    data: data,
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return formatCurrencyVND(value);
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatCurrencyVND(context.parsed.y);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function formatCurrencyVND(amount) {
+        if (amount >= 1000000000) {
+            return (amount / 1000000000).toFixed(1) + ' tỷ VND';
+        } else if (amount >= 1000000) {
+            return (amount / 1000000).toFixed(0) + ' triệu VND';
+        } else {
+            return new Intl.NumberFormat('vi-VN').format(amount) + ' VND';
+        }
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateRetirement();
+        
+        // Add event listeners for real-time calculation
+        const inputs = [
+            'currentAge', 'retirementAge', 'currentIncome', 'retirementIncome',
+            'currentSavings', 'monthlyContribution', 'expectedReturn', 'inflationRate'
+        ];
+        
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', calculateRetirement);
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

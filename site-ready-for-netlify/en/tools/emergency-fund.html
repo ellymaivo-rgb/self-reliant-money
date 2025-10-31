@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fund Calculator - Family Finance</title>
+    <meta name="description" content="Calculate how much you need to save for emergencies and unexpected expenses.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/emergency-fund.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Emergency Fund Calculator</span>
+            </div>
+            <h1>💰 Emergency Fund Calculator</h1>
+            <p class="tool-subtitle">Determine how much you should save for unexpected expenses and emergencies</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Emergency Fund Calculator</h2>
+                    
+                    <div class="input-group">
+                        <label for="monthlyExpenses">Monthly Essential Expenses ($)</label>
+                        <input type="number" id="monthlyExpenses" value="4000" min="0" step="100">
+                        <small>Include rent, groceries, utilities, insurance, and other necessities</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="months">Months of Coverage</label>
+                        <select id="months">
+                            <option value="3">3 months (minimum)</option>
+                            <option value="6" selected>6 months (recommended)</option>
+                            <option value="9">9 months (conservative)</option>
+                            <option value="12">12 months (very safe)</option>
+                        </select>
+                        <small>How many months of expenses to cover</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentSavings">Current Emergency Savings ($)</label>
+                        <input type="number" id="currentSavings" value="5000" min="0" step="100">
+                        <small>Amount you already have saved for emergencies</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="timeframe">Time to Build Fund (Months)</label>
+                        <input type="number" id="timeframe" value="12" min="1" max="60" step="1">
+                        <small>How long you want to take to build your emergency fund</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateEmergencyFund()">Calculate Emergency Fund</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Your Emergency Fund Plan</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="targetAmount">$24,000</div>
+                                <div class="result-label">Target Emergency Fund</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="stillNeed">$19,000</div>
+                                <div class="result-label">Still Need to Save</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="monthlySavings">$1,583</div>
+                                <div class="result-label">Monthly Savings Needed</div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <h4>Current Progress</h4>
+                                <span id="progressPercentage">21%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span id="currentAmount">$5,000</span>
+                                <span id="targetGoal">$24,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Recommendations -->
+                        <div class="recommendations">
+                            <h4>Recommendations by Income Stability</h4>
+                            <div class="recommendation-grid">
+                                <div class="recommendation-card">
+                                    <h5>🟢 Stable Job</h5>
+                                    <div class="recommendation-amount" id="stableAmount">$12,000</div>
+                                    <div class="recommendation-label">3 months expenses</div>
+                                </div>
+                                <div class="recommendation-card recommended">
+                                    <h5>🟡 Average Risk</h5>
+                                    <div class="recommendation-amount" id="averageAmount">$24,000</div>
+                                    <div class="recommendation-label">6 months expenses (recommended)</div>
+                                </div>
+                                <div class="recommendation-card">
+                                    <h5>🔴 High Risk Job</h5>
+                                    <div class="recommendation-amount" id="highRiskAmount">$48,000</div>
+                                    <div class="recommendation-label">12 months expenses</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Savings Strategies -->
+                        <div class="strategies-section">
+                            <h4>Savings Strategies</h4>
+                            <div class="strategy-cards">
+                                <div class="strategy-card">
+                                    <h5>💡 Start Small</h5>
+                                    <p>Begin with $1,000 mini emergency fund, then work toward full amount.</p>
+                                </div>
+                                <div class="strategy-card">
+                                    <h5>🔄 Automate Savings</h5>
+                                    <p>Set up automatic transfers to emergency fund on payday.</p>
+                                </div>
+                                <div class="strategy-card">
+                                    <h5>💳 Separate Account</h5>
+                                    <p>Keep emergency fund in high-yield savings account separate from checking.</p>
+                                </div>
+                                <div class="strategy-card">
+                                    <h5>🎯 Track Progress</h5>
+                                    <p>Review and celebrate milestones to stay motivated.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Emergency Fund Essentials</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🚨 What Qualifies as Emergency</h3>
+                        <p>True emergencies are unexpected, necessary, and urgent expenses that you cannot plan for.</p>
+                        <ul>
+                            <li>Job loss or reduced income</li>
+                            <li>Major medical expenses</li>
+                            <li>Essential home repairs</li>
+                            <li>Car repairs for work commute</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>💡 Where to Keep It</h3>
+                        <p>Emergency funds should be easily accessible but separate from daily spending accounts.</p>
+                        <ul>
+                            <li>High-yield savings account</li>
+                            <li>Money market account</li>
+                            <li>Short-term CDs (if accessible)</li>
+                            <li>NOT in checking or investment accounts</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📈 Building Your Fund</h3>
+                        <p>Start small and build consistently rather than waiting to save large amounts.</p>
+                        <ul>
+                            <li>Start with $500-1000 mini fund</li>
+                            <li>Save windfalls (tax refunds, bonuses)</li>
+                            <li>Cut non-essential expenses temporarily</li>
+                            <li>Consider side income to accelerate</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🔄 Maintaining Your Fund</h3>
+                        <p>Once built, maintain and protect your emergency fund for true emergencies only.</p>
+                        <ul>
+                            <li>Replenish after any use</li>
+                            <li>Adjust for lifestyle changes</li>
+                            <li>Review annually and increase if needed</li>
+                            <li>Don't use for vacations or wants</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Budget Calculator</h4>
+                        <p>Plan your monthly family budget</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h4>Savings Goal</h4>
+                        <p>Plan for specific financial goals</p>
+                        <a href="savings-goal.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Compound Calculator</h4>
+                        <p>See your investment growth over time</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Building Your Safety Net</h2>
+            <p>Learn comprehensive emergency planning through our detailed courses</p>
+            <a href="../courses/budgeting.html" class="btn btn-primary">Learn Financial Planning</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Budget Calculator</a></li>
+                        <li><a href="compound-calculator.html">Compound Calculator</a></li>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/insurance.html">Insurance Planning</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function calculateEmergencyFund() {
+        const monthlyExpenses = parseFloat(document.getElementById('monthlyExpenses').value) || 0;
+        const months = parseInt(document.getElementById('months').value) || 6;
+        const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 0;
+        const timeframe = parseInt(document.getElementById('timeframe').value) || 12;
+        
+        const targetAmount = monthlyExpenses * months;
+        const stillNeed = Math.max(targetAmount - currentSavings, 0);
+        const monthlySavings = stillNeed / timeframe;
+        const progressPercentage = targetAmount > 0 ? (currentSavings / targetAmount * 100) : 0;
+        
+        // Update results
+        document.getElementById('targetAmount').textContent = formatCurrency(targetAmount);
+        document.getElementById('stillNeed').textContent = formatCurrency(stillNeed);
+        document.getElementById('monthlySavings').textContent = formatCurrency(monthlySavings);
+        document.getElementById('progressPercentage').textContent = `${progressPercentage.toFixed(1)}%`;
+        document.getElementById('currentAmount').textContent = formatCurrency(currentSavings);
+        document.getElementById('targetGoal').textContent = formatCurrency(targetAmount);
+        
+        // Update progress bar
+        const progressFill = document.getElementById('progressFill');
+        progressFill.style.width = `${Math.min(progressPercentage, 100)}%`;
+        
+        // Update recommendations
+        document.getElementById('stableAmount').textContent = formatCurrency(monthlyExpenses * 3);
+        document.getElementById('averageAmount').textContent = formatCurrency(monthlyExpenses * 6);
+        document.getElementById('highRiskAmount').textContent = formatCurrency(monthlyExpenses * 12);
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateEmergencyFund();
+        
+        // Add event listeners for real-time calculation
+        const inputs = ['monthlyExpenses', 'months', 'currentSavings', 'timeframe'];
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', calculateEmergencyFund);
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

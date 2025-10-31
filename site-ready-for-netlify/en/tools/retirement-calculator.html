@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator - Family Finance</title>
+    <meta name="description" content="Plan how much you need to save for retirement and calculate your retirement timeline.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/retirement-calculator.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Retirement Calculator</span>
+            </div>
+            <h1>🏖️ Retirement Calculator</h1>
+            <p class="tool-subtitle">Plan how much you need to save for retirement</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Retirement Planning Calculator</h2>
+                    
+                    <div class="input-group">
+                        <label for="currentAge">Current Age</label>
+                        <input type="number" id="currentAge" value="30" min="18" max="80" step="1">
+                        <small>Your current age</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="retirementAge">Planned Retirement Age</label>
+                        <input type="number" id="retirementAge" value="65" min="50" max="80" step="1">
+                        <small>Age when you plan to retire</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentIncome">Current Annual Income ($)</label>
+                        <input type="number" id="currentIncome" value="60000" min="0" step="1000">
+                        <small>Your current annual income before taxes</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="retirementIncome">Desired Retirement Income (%)</label>
+                        <select id="retirementIncome">
+                            <option value="70">70% of current income</option>
+                            <option value="80" selected>80% of current income</option>
+                            <option value="90">90% of current income</option>
+                            <option value="100">100% of current income</option>
+                        </select>
+                        <small>What percentage of current income you'll need in retirement</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="currentSavings">Current Retirement Savings ($)</label>
+                        <input type="number" id="currentSavings" value="50000" min="0" step="1000">
+                        <small>Amount already saved for retirement (401k, IRA, etc.)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthlyContribution">Monthly Contribution ($)</label>
+                        <input type="number" id="monthlyContribution" value="500" min="0" step="50">
+                        <small>How much you plan to save each month</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="expectedReturn">Expected Annual Return (%)</label>
+                        <input type="number" id="expectedReturn" value="7" min="1" max="15" step="0.1">
+                        <small>Expected annual return on investments (6-8% is typical)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="inflationRate">Inflation Rate (%)</label>
+                        <input type="number" id="inflationRate" value="3" min="1" max="6" step="0.1">
+                        <small>Expected annual inflation rate</small>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculateRetirement()">Calculate Retirement</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Your Retirement Plan</h3>
+                        
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="totalSavings">$0</div>
+                                <div class="result-label">Projected Savings at Retirement</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="targetAmount">$0</div>
+                                <div class="result-label">Target Retirement Amount</div>
+                            </div>
+                            <div class="result-card" id="shortfallCard">
+                                <div class="result-value" id="shortfall">$0</div>
+                                <div class="result-label" id="shortfallLabel">Projected Shortfall</div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Container -->
+                        <div class="chart-container">
+                            <canvas id="retirementChart"></canvas>
+                        </div>
+
+                        <!-- Retirement Details -->
+                        <div class="retirement-details">
+                            <h4>Retirement Analysis</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Years to Retirement:</span>
+                                    <span class="detail-value" id="yearsToRetirement">35 years</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Annual Income Needed:</span>
+                                    <span class="detail-value" id="annualIncomeNeeded">$48,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Monthly Income Needed:</span>
+                                    <span class="detail-value" id="monthlyIncomeNeeded">$4,000</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Monthly Savings Rate:</span>
+                                    <span class="detail-value" id="savingsRate">10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4% Rule Analysis -->
+                        <div class="rule-analysis">
+                            <h4>4% Withdrawal Rule</h4>
+                            <div class="rule-explanation">
+                                <p>Using the 4% rule, you can safely withdraw 4% of your retirement savings annually without depleting your funds.</p>
+                                <div class="rule-calculation">
+                                    <div class="rule-item">
+                                        <span class="rule-label">Your Projected Savings:</span>
+                                        <span class="rule-value" id="projectedSavings">$0</span>
+                                    </div>
+                                    <div class="rule-item">
+                                        <span class="rule-label">4% Annual Withdrawal:</span>
+                                        <span class="rule-value" id="annualWithdrawal">$0</span>
+                                    </div>
+                                    <div class="rule-item">
+                                        <span class="rule-label">Monthly Income from Savings:</span>
+                                        <span class="rule-value" id="monthlyFromSavings">$0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scenarios -->
+                        <div class="scenarios-section">
+                            <h4>What If Scenarios</h4>
+                            <div class="scenario-cards">
+                                <div class="scenario-card">
+                                    <h5>Retire 5 Years Earlier</h5>
+                                    <div class="scenario-value" id="earlierRetirement">Need +$200/month</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>Save +$100/Month</h5>
+                                    <div class="scenario-value" id="extraSavings">+$85,000 at retirement</div>
+                                </div>
+                                <div class="scenario-card">
+                                    <h5>1% Higher Returns</h5>
+                                    <div class="scenario-value" id="higherReturns">+$150,000 at retirement</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Retirement Planning Essentials</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🎯 The 25x Rule</h3>
+                        <p>A common rule is to save 25 times your annual expenses for retirement. This supports the 4% withdrawal rule.</p>
+                        <ul>
+                            <li>Calculate annual retirement expenses</li>
+                            <li>Multiply by 25 for target amount</li>
+                            <li>Adjust for Social Security and pensions</li>
+                            <li>Review and update regularly</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📊 Asset Allocation</h3>
+                        <p>Diversify your retirement savings across different asset classes based on your age and risk tolerance.</p>
+                        <ul>
+                            <li>Stocks for growth potential</li>
+                            <li>Bonds for stability and income</li>
+                            <li>Real estate for inflation protection</li>
+                            <li>Adjust allocation as you age</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🏛️ Account Types</h3>
+                        <p>Use different retirement account types strategically for tax advantages.</p>
+                        <ul>
+                            <li>401(k): Employer match is free money</li>
+                            <li>Traditional IRA: Tax deduction now</li>
+                            <li>Roth IRA: Tax-free growth and withdrawals</li>
+                            <li>HSA: Triple tax advantage if available</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>⏰ Start Early</h3>
+                        <p>Time is your greatest asset in retirement planning due to compound interest.</p>
+                        <ul>
+                            <li>Start saving as early as possible</li>
+                            <li>Increase contributions with raises</li>
+                            <li>Automate your savings</li>
+                            <li>Take advantage of employer matching</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">📈</div>
+                        <h4>Compound Calculator</h4>
+                        <p>See your investment growth over time</p>
+                        <a href="compound-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🧮</div>
+                        <h4>Budget Calculator</h4>
+                        <p>Plan your monthly family budget</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">💰</div>
+                        <h4>Emergency Fund</h4>
+                        <p>Calculate emergency savings needed</p>
+                        <a href="emergency-fund.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Plan Your Retirement</h2>
+            <p>Learn comprehensive retirement strategies through our detailed course</p>
+            <a href="../courses/retirement.html" class="btn btn-primary">Learn Retirement Planning</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Budget Calculator</a></li>
+                        <li><a href="compound-calculator.html">Compound Calculator</a></li>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/retirement.html">Retirement Planning</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function calculateRetirement() {
+        const currentAge = parseInt(document.getElementById('currentAge').value) || 30;
+        const retirementAge = parseInt(document.getElementById('retirementAge').value) || 65;
+        const currentIncome = parseFloat(document.getElementById('currentIncome').value) || 60000;
+        const retirementIncomePercent = parseInt(document.getElementById('retirementIncome').value) || 80;
+        const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 50000;
+        const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value) || 500;
+        const expectedReturn = parseFloat(document.getElementById('expectedReturn').value) / 100 || 0.07;
+        const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100 || 0.03;
+        
+        const yearsToRetirement = retirementAge - currentAge;
+        const monthsToRetirement = yearsToRetirement * 12;
+        const monthlyReturn = expectedReturn / 12;
+        
+        // Calculate future value of current savings
+        const futureValueCurrent = currentSavings * Math.pow(1 + expectedReturn, yearsToRetirement);
+        
+        // Calculate future value of monthly contributions
+        let futureValueContributions = 0;
+        if (monthlyReturn > 0) {
+            futureValueContributions = monthlyContribution * ((Math.pow(1 + monthlyReturn, monthsToRetirement) - 1) / monthlyReturn);
+        } else {
+            futureValueContributions = monthlyContribution * monthsToRetirement;
+        }
+        
+        const totalSavings = futureValueCurrent + futureValueContributions;
+        
+        // Calculate needed retirement income (adjusted for inflation)
+        const futureIncome = currentIncome * Math.pow(1 + inflationRate, yearsToRetirement);
+        const neededAnnualIncome = futureIncome * (retirementIncomePercent / 100);
+        const neededMonthlyIncome = neededAnnualIncome / 12;
+        
+        // Using 4% rule to determine needed savings
+        const targetAmount = neededAnnualIncome * 25;
+        const shortfall = targetAmount - totalSavings;
+        
+        // Calculate savings rate
+        const savingsRate = (monthlyContribution * 12) / currentIncome * 100;
+        
+        // 4% rule calculations
+        const annualWithdrawal = totalSavings * 0.04;
+        const monthlyFromSavings = annualWithdrawal / 12;
+        
+        // Update results
+        document.getElementById('totalSavings').textContent = formatCurrency(totalSavings);
+        document.getElementById('targetAmount').textContent = formatCurrency(targetAmount);
+        document.getElementById('shortfall').textContent = formatCurrency(Math.abs(shortfall));
+        document.getElementById('yearsToRetirement').textContent = `${yearsToRetirement} years`;
+        document.getElementById('annualIncomeNeeded').textContent = formatCurrency(neededAnnualIncome);
+        document.getElementById('monthlyIncomeNeeded').textContent = formatCurrency(neededMonthlyIncome);
+        document.getElementById('savingsRate').textContent = `${savingsRate.toFixed(1)}%`;
+        document.getElementById('projectedSavings').textContent = formatCurrency(totalSavings);
+        document.getElementById('annualWithdrawal').textContent = formatCurrency(annualWithdrawal);
+        document.getElementById('monthlyFromSavings').textContent = formatCurrency(monthlyFromSavings);
+        
+        // Update shortfall card styling
+        const shortfallCard = document.getElementById('shortfallCard');
+        const shortfallLabel = document.getElementById('shortfallLabel');
+        if (shortfall <= 0) {
+            shortfallCard.className = 'result-card surplus';
+            shortfallLabel.textContent = 'Surplus';
+        } else {
+            shortfallCard.className = 'result-card deficit';
+            shortfallLabel.textContent = 'Shortfall';
+        }
+        
+        // Calculate scenarios
+        const earlierYears = yearsToRetirement - 5;
+        const earlierMonths = earlierYears * 12;
+        const earlierFutureValue = currentSavings * Math.pow(1 + expectedReturn, earlierYears);
+        const earlierTarget = neededAnnualIncome * 25;
+        const earlierNeeded = earlierTarget - earlierFutureValue;
+        const earlierMonthlyNeeded = earlierNeeded / (earlierMonths > 0 ? earlierMonths : 1);
+        const extraNeeded = earlierMonthlyNeeded - monthlyContribution;
+        
+        const extraMonthlySavings = monthlyContribution + 100;
+        const extraFutureValue = extraMonthlySavings * ((Math.pow(1 + monthlyReturn, monthsToRetirement) - 1) / monthlyReturn);
+        const extraTotal = futureValueCurrent + extraFutureValue;
+        const extraGain = extraTotal - totalSavings;
+        
+        const higherReturn = (expectedReturn + 0.01) / 12;
+        const higherFutureValue = monthlyContribution * ((Math.pow(1 + higherReturn, monthsToRetirement) - 1) / higherReturn);
+        const higherTotal = futureValueCurrent + higherFutureValue;
+        const higherGain = higherTotal - totalSavings;
+        
+        document.getElementById('earlierRetirement').textContent = extraNeeded > 0 ? `Need +${formatCurrency(extraNeeded)}/month` : 'On track!';
+        document.getElementById('extraSavings').textContent = `+${formatCurrency(extraGain)} at retirement`;
+        document.getElementById('higherReturns').textContent = `+${formatCurrency(higherGain)} at retirement`;
+        
+        // Create chart
+        createRetirementChart(currentSavings, totalSavings, yearsToRetirement);
+    }
+    
+    function createRetirementChart(current, target, years) {
+        const ctx = document.getElementById('retirementChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.retirementChart) {
+            window.retirementChart.destroy();
+        }
+        
+        const data = [current];
+        const labels = ['Current'];
+        
+        // Add data points every 5 years
+        for (let year = 5; year <= years; year += 5) {
+            const value = current * Math.pow(1.07, year); // Simplified calculation for chart
+            data.push(value);
+            labels.push(`Year ${year}`);
+        }
+        
+        // Add final value
+        if (years % 5 !== 0) {
+            data.push(target);
+            labels.push(`Year ${years}`);
+        }
+        
+        window.retirementChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Projected Savings',
+                    data: data,
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return formatCurrency(value);
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateRetirement();
+        
+        // Add event listeners for real-time calculation
+        const inputs = [
+            'currentAge', 'retirementAge', 'currentIncome', 'retirementIncome',
+            'currentSavings', 'monthlyContribution', 'expectedReturn', 'inflationRate'
+        ];
+        
+        inputs.forEach(inputId => {
+            const element = document.getElementById(inputId);
+            if (element) {
+                element.addEventListener('input', calculateRetirement);
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
