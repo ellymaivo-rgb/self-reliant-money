@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Budgeting - Self-Reliant Money</title>
+    <meta name="description" content="Learn how to create and manage an effective family budget. Comprehensive course on personal finance management.">
+    <link rel="stylesheet" href="/self-reliant-money/styles/main.css">
+    <link rel="stylesheet" href="/self-reliant-money/styles/course.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/budgeting.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Family Budgeting</span>
+            </div>
+            <h1>📊 Family Budgeting</h1>
+            <p class="course-subtitle">The Foundation of Financial Success</p>
+            <div class="course-meta">
+                <span class="course-level">Beginner</span>
+                <span class="course-duration">6 lessons</span>
+                <span class="course-time">3 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/6 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Why Do You Need a Budget?</h4>
+                            <span class="lesson-duration">25 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>The 50/30/20 Rule</h4>
+                            <span class="lesson-duration">30 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>Tracking Expenses</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Effective Saving</h4>
+                            <span class="lesson-duration">30 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Debt Management</h4>
+                            <span class="lesson-duration">25 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Long-term Planning</h4>
+                            <span class="lesson-duration">35 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content" id="lesson-1">
+                <h2>Lesson 1: Why Do You Need a Budget?</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Welcome to the Family Budgeting course! In this first lesson, 
+                        we'll explore why budgeting is so important for young couples aged 28-35.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>💡 What is a Budget?</h3>
+                    <p>
+                        A family budget is a detailed financial plan that helps you:
+                    </p>
+                    <ul class="content-list">
+                        <li>✅ Know where your money is going</li>
+                        <li>✅ Control spending consciously</li>
+                        <li>✅ Ensure you have enough for important goals</li>
+                        <li>✅ Avoid running out of money at month's end</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h3>📊 Important Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">78%</div>
+                            <div class="stat-text">of families don't have a clear budget</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">65%</div>
+                            <div class="stat-text">spend on unnecessary items</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">$400</div>
+                            <div class="stat-text">average monthly savings with proper budgeting</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎯 Benefits of Budgeting for Couples</h3>
+                    
+                    <div class="benefit-card">
+                        <h4>1. Reduce Financial Stress</h4>
+                        <p>
+                            When you understand your financial situation clearly, you'll feel more at peace 
+                            and avoid money-related arguments - the leading cause of relationship problems.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h4>2. Achieve Shared Goals</h4>
+                        <p>
+                            Budgeting helps both partners share the same vision for the future and work 
+                            together toward goals like buying a home, having children, or traveling.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <h4>3. Prepare for the Future</h4>
+                        <p>
+                            At age 28-35, this is the golden time to build your financial foundation. 
+                            Budgeting helps optimize your income and prepare for important life stages.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🚫 Common Mistakes</h3>
+                    <div class="mistake-list">
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>Thinking budgeting is too complicated</h4>
+                                <p>Reality: You only need 15 minutes per week to track</p>
+                            </div>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>"Income isn't high enough to need a budget"</h4>
+                                <p>Reality: Budgeting is important at every income level</p>
+                            </div>
+                        </div>
+                        <div class="mistake-item">
+                            <span class="mistake-icon">❌</span>
+                            <div>
+                                <h4>Only focusing on cutting expenses</h4>
+                                <p>Reality: Budgeting also helps optimize and increase income</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>🧠 Knowledge Check</h3>
+                    <div class="quiz-question">
+                        <p><strong>Question:</strong> What do you think is the biggest benefit of budgeting for young couples?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                <span>Save more money</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                <span>Reduce stress and have shared goals</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                <span>Track detailed expenses</span>
+                            </label>
+                        </div>
+                        <button class="check-answer-btn" onclick="checkAnswer('q1', 'b')">Check Answer</button>
+                        <div class="answer-feedback" id="q1-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>�� Practical Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Exercise 1: Assess your current situation</h4>
+                        <p>Discuss with your partner and answer these questions:</p>
+                        <ol>
+                            <li>How much did you spend last month?</li>
+                            <li>What was your family's biggest expense?</li>
+                            <li>Were there any expenses that surprised you?</li>
+                            <li>What is your biggest financial goal together?</li>
+                            <li>How much can you currently save each month?</li>
+                        </ol>
+                        <p><em>Note: This is an important first step to understand your current financial situation.</em></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Lesson 2 Content (Hidden by default) -->
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: The 50/30/20 Rule - Simple Budget Formula</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        The 50/30/20 rule is one of the simplest and most effective budgeting methods, 
+                        especially suitable for couples just starting to manage finances together.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🎯 What is the 50/30/20 Rule?</h3>
+                    <p>
+                        This is how to divide your after-tax income into 3 parts:
+                    </p>
+                    
+                    <div class="rule-breakdown">
+                        <div class="rule-item">
+                            <div class="rule-percentage">50%</div>
+                            <div class="rule-content">
+                                <h4>Essential Expenses</h4>
+                                <p>Housing, utilities, food, transportation, health insurance, tithing</p>
+                                <ul>
+                                    <li>Tithing (10% of income)</li>
+                                    <li>Rent/mortgage payments</li>
+                                    <li>Electricity, water, gas, internet bills</li>
+                                    <li>Basic food expenses</li>
+                                    <li>Transportation</li>
+                                    <li>Required insurance</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <div class="rule-percentage">30%</div>
+                            <div class="rule-content">
+                                <h4>Flexible Expenses</h4>
+                                <p>Entertainment, dining out, shopping, personal hobbies</p>
+                                <ul>
+                                    <li>Dining out, coffee</li>
+                                    <li>Movies, travel</li>
+                                    <li>Clothing, cosmetics</li>
+                                    <li>Hobbies, interests</li>
+                                    <li>Gifts</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rule-item">
+                            <div class="rule-percentage">20%</div>
+                            <div class="rule-content">
+                                <h4>Savings & Investment</h4>
+                                <p>Emergency fund, investments, extra debt payments, long-term goals</p>
+                                <ul>
+                                    <li>Emergency fund (6 months expenses)</li>
+                                    <li>Long-term investments</li>
+                                    <li>Extra debt payments</li>
+                                    <li>House down payment savings</li>
+                                    <li>Retirement fund</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💰 Real Example for Couples</h3>
+                    <div class="example-card">
+                        <h4>Mike & Sarah Family (29 years old, New York)</h4>
+                        <p><strong>Net monthly income:</strong> $6,000</p>
+                        
+                        <div class="budget-example">
+                            <div class="budget-item">
+                                <span class="budget-category">Essential expenses (50%)</span>
+                                <span class="budget-amount">$3,000</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Tithing: $600</li>
+                                    <li>Rent: $1,200</li>
+                                    <li>Utilities: $160</li>
+                                    <li>Food: $800</li>
+                                    <li>Transportation: $300</li>
+                                    <li>Insurance: $140</li>
+                                </ul>
+                            </div>
+
+                            <div class="budget-item">
+                                <span class="budget-category">Flexible expenses (30%)</span>
+                                <span class="budget-amount">$1,800</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Dining out: $600</li>
+                                    <li>Entertainment: $400</li>
+                                    <li>Shopping: $500</li>
+                                    <li>Hobbies: $300</li>
+                                </ul>
+                            </div>
+
+                            <div class="budget-item">
+                                <span class="budget-category">Savings & Investment (20%)</span>
+                                <span class="budget-amount">$1,200</span>
+                            </div>
+                            <div class="budget-details">
+                                <ul>
+                                    <li>Emergency fund: $400</li>
+                                    <li>House savings: $600</li>
+                                    <li>Investments: $200</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>�� How to Adjust the Rule by Circumstances</h3>
+                    
+                    <div class="adjustment-scenarios">
+                        <div class="scenario">
+                            <h4>🏠 If housing costs are high (>30% of income)</h4>
+                            <p>Adjust to: 60/25/15 temporarily and find ways to reduce housing costs</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h4>💳 If you have high-interest debt</h4>
+                            <p>Adjust to: 50/20/30 (30% to pay off debt quickly)</p>
+                        </div>
+                        
+                        <div class="scenario">
+                            <h4>💰 If you have high and stable income</h4>
+                            <p>You can increase savings rate to 25-30%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section">
+                    <h3>🧮 50/30/20 Rule Calculator</h3>
+                    <div class="calculator-card">
+                        <div class="input-group">
+                            <label for="monthly-income">Monthly net income ($):</label>
+                            <input type="number" id="monthly-income" placeholder="Enter your income">
+                        </div>
+                        <button onclick="calculate50_30_20()" class="calculate-btn">Calculate</button>
+                        
+                        <div id="calculation-results" class="results-grid" style="display: none;">
+                            <div class="result-item">
+                                <h4>Essential expenses (50%)</h4>
+                                <span id="essential-amount" class="result-amount"></span>
+                            </div>
+                            <div class="result-item">
+                                <h4>Flexible expenses (30%)</h4>
+                                <span id="flexible-amount" class="result-amount"></span>
+                            </div>
+                            <div class="result-item">
+                                <h4>Savings & Investment (20%)</h4>
+                                <span id="savings-amount" class="result-amount"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Practical Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Exercise 2: Apply the 50/30/20 rule</h4>
+                        <ol>
+                            <li>Calculate total monthly net income for both partners</li>
+                            <li>Divide according to the 50/30/20 ratio</li>
+                            <li>List current expenses in each category</li>
+                            <li>Compare with ideal numbers</li>
+                            <li>Identify areas that need adjustment</li>
+                        </ol>
+                        <p><em>Tip: Use the calculator above for specific numbers!</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: Effective Expense Tracking</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Expense tracking is the key to successful budget maintenance. 
+                        Learn how to record and analyze your spending intelligently.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>📱 Tracking Methods</h3>
+                    <div class="method-grid">
+                        <div class="method-card">
+                            <h4>📔 Manual recording</h4>
+                            <ul>
+                                <li>Small notebook to carry around</li>
+                                <li>Record immediately after spending</li>
+                                <li>Categorize by groups</li>
+                            </ul>
+                        </div>
+                        <div class="method-card">
+                            <h4>📱 Mobile apps</h4>
+                            <ul>
+                                <li>Mint, YNAB, PocketGuard</li>
+                                <li>Auto-sync with bank accounts</li>
+                                <li>Visual reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🔍 Expense Analysis</h3>
+                    <div class="analysis-tips">
+                        <div class="tip-item">
+                            <span class="tip-icon">📊</span>
+                            <p>Review weekly spending to identify trends</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">🎯</span>
+                            <p>Compare with budget to make timely adjustments</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">💡</span>
+                            <p>Find "hidden" unnecessary expenses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Practical Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Exercise 3: Track expenses for 1 week</h4>
+                        <ol>
+                            <li>Choose a suitable tracking method</li>
+                            <li>Record all expenses for 7 days</li>
+                            <li>Categorize into: Essential, Flexible, Emergency</li>
+                            <li>Calculate totals and compare with weekly budget</li>
+                            <li>Draw 3 conclusions about spending habits</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Handling Debt & Credit Cards</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        Debt can be a useful tool or a financial trap. 
+                        Learn how to manage debt smartly so it serves your goals.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>⚖️ Good Debt vs Bad Debt</h3>
+                    <div class="debt-comparison">
+                        <div class="debt-type good-debt">
+                            <h4>✅ Good Debt</h4>
+                            <ul>
+                                <li>Home mortgage (low interest)</li>
+                                <li>Education loans</li>
+                                <li>Business investment loans</li>
+                                <li>Creates valuable assets</li>
+                            </ul>
+                        </div>
+                        <div class="debt-type bad-debt">
+                            <h4>❌ Bad Debt</h4>
+                            <ul>
+                                <li>Credit card debt (high interest)</li>
+                                <li>Unnecessary consumer loans</li>
+                                <li>Luxury car loans beyond means</li>
+                                <li>Doesn't generate income</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💳 Smart Credit Card Usage</h3>
+                    <div class="credit-tips">
+                        <div class="tip-card">
+                            <h4>30% Rule</h4>
+                            <p>Only use maximum 30% of credit limit to maintain good credit score</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Pay on time</h4>
+                            <p>Always pay at least minimum amount before due date</p>
+                        </div>
+                        <div class="tip-card">
+                            <h4>Leverage rewards</h4>
+                            <p>Use cashback and points strategically</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Practical Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Exercise 4: Assess debt situation</h4>
+                        <ol>
+                            <li>List all current debts</li>
+                            <li>Categorize as good/bad debt</li>
+                            <li>Prioritize debt payment (high interest first)</li>
+                            <li>Create debt payment plan in budget</li>
+                            <li>Determine credit card usage strategy</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Emergency Fund & Savings</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        An emergency fund is your financial "insurance". 
+                        Learn how to build and maintain this fund to handle unexpected situations.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>🛡️ Why Do You Need an Emergency Fund?</h3>
+                    <div class="emergency-scenarios">
+                        <div class="scenario-card">
+                            <span class="scenario-icon">🏥</span>
+                            <h4>Unexpected medical costs</h4>
+                            <p>Treatment costs, surgery not covered by insurance</p>
+                        </div>
+                        <div class="scenario-card">
+                            <span class="scenario-icon">💼</span>
+                            <h4>Job loss</h4>
+                            <p>Time to find new job, maintain lifestyle</p>
+                        </div>
+                        <div class="scenario-card">
+                            <span class="scenario-icon">🏠</span>
+                            <h4>Home repairs</h4>
+                            <p>Equipment breakdown, emergency repairs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>💰 Building an Emergency Fund</h3>
+                    <div class="fund-building">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Set the target</h4>
+                                <p>3-6 months of living expenses ($3,000-6,000 for young couples)</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Start small</h4>
+                                <p>First goal: $1,000 in 2 months</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Automate</h4>
+                                <p>Auto-transfer money every payday to separate account</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>📝 Practical Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Exercise 5: Emergency fund plan</h4>
+                        <ol>
+                            <li>Calculate total monthly basic living expenses</li>
+                            <li>Set emergency fund target (3-6 months)</li>
+                            <li>Break into smaller goals (1-2-3-6 months)</li>
+                            <li>Decide monthly savings amount</li>
+                            <li>Choose suitable savings account (easy withdrawal, stable interest)</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Lesson 6: Budget Evaluation & Adjustment</h2>
+                
+                <div class="lesson-intro">
+                    <p class="intro-text">
+                        A budget is not a rigid set of rules. 
+                        Learn how to evaluate effectiveness and adjust flexibly according to circumstances.
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h3>📊 Budget Effectiveness Evaluation</h3>
+                    <div class="evaluation-metrics">
+                        <div class="metric-card">
+                            <h4>🎯 Goal achievement rate</h4>
+                            <p>What percentage of time do you stick to your budget?</p>
+                            <div class="target-range">Target: ≥ 80%</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>💰 Savings rate</h4>
+                            <p>Percentage of income actually saved</p>
+                            <div class="target-range">Target: ≥ 20%</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>😊 Satisfaction level</h4>
+                            <p>Feel comfortable with spending?</p>
+                            <div class="target-range">Target: Balanced</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🔧 Budget Adjustment</h3>
+                    <div class="adjustment-guide">
+                        <div class="adjustment-scenario">
+                            <h4>💼 Income changes</h4>
+                            <ul>
+                                <li>Salary increase: Raise savings rate before increasing spending</li>
+                                <li>Income decrease: Cut flexible expenses first</li>
+                            </ul>
+                        </div>
+                        <div class="adjustment-scenario">
+                            <h4>🎯 New goals</h4>
+                            <ul>
+                                <li>Buying house: Increase savings rate, reduce entertainment</li>
+                                <li>Having children: Prepare separate fund, increase insurance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>🚀 From Budget to Financial Freedom</h3>
+                    <div class="roadmap">
+                        <div class="milestone">
+                            <span class="milestone-number">1</span>
+                            <div class="milestone-content">
+                                <h4>Months 1-3: Getting familiar</h4>
+                                <p>Track expenses, establish basic habits</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">2</span>
+                            <div class="milestone-content">
+                                <h4>Months 4-6: Stabilizing</h4>
+                                <p>Have 1-month emergency fund, pay off bad debt</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">3</span>
+                            <div class="milestone-content">
+                                <h4>Years 1-2: Growing</h4>
+                                <p>Full emergency fund, start investing</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-number">4</span>
+                            <div class="milestone-content">
+                                <h4>Year 3+: Freedom</h4>
+                                <p>Passive income, financial flexibility</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <h3>🎉 Final Exercise</h3>
+                    <div class="exercise-card">
+                        <h4>Create complete budget for next 3 months</h4>
+                        <ol>
+                            <li>Synthesize all knowledge from 6 lessons</li>
+                            <li>Create detailed family budget sheet</li>
+                            <li>Set 3 specific financial goals</li>
+                            <li>Plan monthly tracking and adjustment</li>
+                            <li>Commit to implement for 90 days</li>
+                        </ol>
+                        <p><strong>Congratulations! You've completed the Family Budgeting course! 🎊</strong></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous Lesson</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next Lesson →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Build a strong financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Courses</h4>
+                    <ul>
+                        <li><a href="investing.html">Safe Investing</a></li>
+                        <li><a href="real-estate.html">Smart Home Buying</a></li>
+                        <li><a href="insurance.html">Insurance & Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Self-Reliant Money. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/self-reliant-money/scripts/main.js"></script>
+    <script src="/self-reliant-money/scripts/course.js"></script>
+    <script src="/self-reliant-money/scripts/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement - Family Finance</title>
+    <meta name="description" content="Prepare finances for a peaceful retirement and financial independence.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/course.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../courses/retirement.html'">🌐 VI</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#courses">Courses</a> / 
+                <span>Retirement</span>
+            </div>
+            <h1>🌅 Retirement</h1>
+            <p class="course-subtitle">Prepare finances for a peaceful retirement</p>
+            <div class="course-meta">
+                <span class="course-level">Advanced</span>
+                <span class="course-duration">7 lessons</span>
+                <span class="course-time">6 hours</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="course-container">
+        <div class="course-sidebar">
+            <div class="course-progress">
+                <h3>Course Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0/7 lessons completed</span>
+            </div>
+            
+            <div class="course-outline">
+                <h3>Course Content</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item active" data-lesson="1" onclick="showLesson(1)">
+                        <span class="lesson-number">1</span>
+                        <div class="lesson-info">
+                            <h4>Retirement Reality Check</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="2" onclick="showLesson(2)">
+                        <span class="lesson-number">2</span>
+                        <div class="lesson-info">
+                            <h4>401(k) & Employer Plans</h4>
+                            <span class="lesson-duration">55 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="3" onclick="showLesson(3)">
+                        <span class="lesson-number">3</span>
+                        <div class="lesson-info">
+                            <h4>IRA Strategies</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="4" onclick="showLesson(4)">
+                        <span class="lesson-number">4</span>
+                        <div class="lesson-info">
+                            <h4>Social Security Optimization</h4>
+                            <span class="lesson-duration">40 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="5" onclick="showLesson(5)">
+                        <span class="lesson-number">5</span>
+                        <div class="lesson-info">
+                            <h4>Healthcare in Retirement</h4>
+                            <span class="lesson-duration">45 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="6" onclick="showLesson(6)">
+                        <span class="lesson-number">6</span>
+                        <div class="lesson-info">
+                            <h4>Withdrawal Strategies</h4>
+                            <span class="lesson-duration">50 min</span>
+                        </div>
+                    </div>
+                    <div class="lesson-item" data-lesson="7" onclick="showLesson(7)">
+                        <span class="lesson-number">7</span>
+                        <div class="lesson-info">
+                            <h4>Estate Planning</h4>
+                            <span class="lesson-duration">55 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-main">
+            <div class="lesson-content active" id="lesson-1">
+                <h2>Lesson 1: Retirement Reality Check</h2>
+                
+                <div class="lesson-section">
+                    <h3>🔍 The Retirement Crisis</h3>
+                    <p>
+                        Most Americans are woefully unprepared for retirement. Understanding the reality 
+                        is the first step toward taking control of your financial future.
+                    </p>
+                    
+                    <div class="retirement-stats">
+                        <div class="stat-item">
+                            <h4>📊 Troubling Statistics</h4>
+                            <ul>
+                                <li>40% of Americans have less than $10,000 saved for retirement</li>
+                                <li>Average 401(k) balance: $65,000 (all ages)</li>
+                                <li>Social Security replaces only 40% of pre-retirement income</li>
+                                <li>Healthcare costs in retirement: $300,000+ per couple</li>
+                            </ul>
+                        </div>
+                        <div class="stat-item">
+                            <h4>💰 How Much Do You Need?</h4>
+                            <ul>
+                                <li>General rule: 10-12x final salary</li>
+                                <li>$50,000 income → $500,000-600,000 needed</li>
+                                <li>$100,000 income → $1,000,000-1,200,000 needed</li>
+                                <li>Earlier retirement requires even more</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Setting Your Retirement Goal</h3>
+                    <div class="goal-calculator">
+                        <h4>The 4% Rule</h4>
+                        <p>You can safely withdraw 4% of your retirement savings annually without running out of money.</p>
+                        
+                        <div class="calculation-examples">
+                            <div class="calc-example">
+                                <h5>Need $40,000/year in retirement?</h5>
+                                <p><strong>Savings needed: $1,000,000</strong></p>
+                                <p>$40,000 ÷ 4% = $1,000,000</p>
+                            </div>
+                            <div class="calc-example">
+                                <h5>Need $60,000/year in retirement?</h5>
+                                <p><strong>Savings needed: $1,500,000</strong></p>
+                                <p>$60,000 ÷ 4% = $1,500,000</p>
+                            </div>
+                            <div class="calc-example">
+                                <h5>Need $80,000/year in retirement?</h5>
+                                <p><strong>Savings needed: $2,000,000</strong></p>
+                                <p>$80,000 ÷ 4% = $2,000,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>⏰ The Power of Starting Early</h3>
+                    <table class="early-start-table">
+                        <tr>
+                            <th>Starting Age</th>
+                            <th>Monthly Savings</th>
+                            <th>Total Invested</th>
+                            <th>Value at 65</th>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>$500</td>
+                            <td>$240,000</td>
+                            <td>$1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td>$500</td>
+                            <td>$180,000</td>
+                            <td>$740,000</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td>$500</td>
+                            <td>$120,000</td>
+                            <td>$340,000</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td>$500</td>
+                            <td>$60,000</td>
+                            <td>$140,000</td>
+                        </tr>
+                    </table>
+                    <p><em>Assumes 8% annual return. Starting 10 years later cuts retirement savings in half!</em></p>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>📝 Reality Check Quiz</h3>
+                    <div class="quiz-question">
+                        <p><strong>Using the 4% rule, how much do you need saved to withdraw $50,000 annually in retirement?</strong></p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> A. $500,000</label>
+                            <label><input type="radio" name="q1" value="b"> B. $1,000,000</label>
+                            <label><input type="radio" name="q1" value="c"> C. $1,250,000</label>
+                            <label><input type="radio" name="q1" value="d"> D. $2,000,000</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkAnswer('q1', 'c')">Check Answer</button>
+                    <div class="quiz-result" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-2" style="display: none;">
+                <h2>Lesson 2: 401(k) & Employer Plans</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏢 Understanding Your 401(k)</h3>
+                    <p>Your employer's 401(k) plan is likely your most powerful retirement savings tool.</p>
+                    
+                    <div class="plan-401k-benefits">
+                        <div class="benefit-item">
+                            <h4>💰 Employer Match</h4>
+                            <p><strong>Free money!</strong> Always contribute enough to get full match</p>
+                            <ul>
+                                <li>Common match: 50% of first 6% you contribute</li>
+                                <li>$60,000 salary × 6% = $3,600 your contribution</li>
+                                <li>Employer adds $1,800 (50% match)</li>
+                                <li>Total: $5,400 annual retirement savings</li>
+                            </ul>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>📈 Tax Benefits</h4>
+                            <p>Traditional 401(k): Tax deduction now, pay taxes in retirement</p>
+                            <ul>
+                                <li>Reduces current taxable income</li>
+                                <li>Money grows tax-deferred</li>
+                                <li>Likely lower tax bracket in retirement</li>
+                            </ul>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🎯 High Contribution Limits</h4>
+                            <p>2024 limits allow substantial tax-advantaged savings</p>
+                            <ul>
+                                <li>Under 50: $23,000 annually</li>
+                                <li>50 and older: $30,500 annually (catch-up)</li>
+                                <li>Total with employer match can exceed $60,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🔄 Traditional vs. Roth 401(k)</h3>
+                    <table class="roth-comparison-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Traditional 401(k)</th>
+                            <th>Roth 401(k)</th>
+                        </tr>
+                        <tr>
+                            <td>Tax treatment</td>
+                            <td>Deduct now, pay later</td>
+                            <td>Pay now, tax-free later</td>
+                        </tr>
+                        <tr>
+                            <td>Current tax benefit</td>
+                            <td>Yes - reduces current taxes</td>
+                            <td>No immediate tax break</td>
+                        </tr>
+                        <tr>
+                            <td>Retirement withdrawals</td>
+                            <td>Fully taxable</td>
+                            <td>Tax-free</td>
+                        </tr>
+                        <tr>
+                            <td>Required distributions</td>
+                            <td>Yes, starting at 73</td>
+                            <td>Yes, starting at 73</td>
+                        </tr>
+                        <tr>
+                            <td>Best for</td>
+                            <td>High earners now, lower in retirement</td>
+                            <td>Young workers, expect higher future taxes</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Investment Selection Strategy</h3>
+                    <div class="investment-strategy">
+                        <h4>🎯 Age-Based Allocation</h4>
+                        <div class="allocation-by-age">
+                            <div class="age-allocation">
+                                <h5>20s-30s: Aggressive Growth</h5>
+                                <ul>
+                                    <li>90% stocks, 10% bonds</li>
+                                    <li>Focus on low-cost index funds</li>
+                                    <li>Maximum growth potential</li>
+                                </ul>
+                            </div>
+                            <div class="age-allocation">
+                                <h5>40s-50s: Balanced Approach</h5>
+                                <ul>
+                                    <li>70% stocks, 30% bonds</li>
+                                    <li>Gradually reduce risk</li>
+                                    <li>Maintain growth with stability</li>
+                                </ul>
+                            </div>
+                            <div class="age-allocation">
+                                <h5>60s+: Conservative</h5>
+                                <ul>
+                                    <li>50% stocks, 50% bonds</li>
+                                    <li>Capital preservation focus</li>
+                                    <li>Income generation priority</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Optimize Your 401(k)</h3>
+                    <p>Calculate your optimal 401(k) contribution strategy:</p>
+                    <textarea class="exercise-input" placeholder="Your salary, employer match, and contribution plan..."></textarea>
+                    <button class="btn btn-secondary">Calculate</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-3" style="display: none;">
+                <h2>Lesson 3: IRA Strategies</h2>
+                
+                <div class="lesson-section">
+                    <h3>💼 Individual Retirement Accounts (IRAs)</h3>
+                    <p>IRAs provide additional retirement savings opportunities beyond employer plans.</p>
+                    
+                    <div class="ira-types">
+                        <div class="ira-type">
+                            <h4>🏛️ Traditional IRA</h4>
+                            <ul>
+                                <li><strong>Tax deduction:</strong> Reduce current taxes</li>
+                                <li><strong>2024 limit:</strong> $7,000 ($8,000 if 50+)</li>
+                                <li><strong>Income limits:</strong> Deduction phases out with employer plan</li>
+                                <li><strong>Withdrawals:</strong> Taxed as ordinary income</li>
+                                <li><strong>RMDs:</strong> Required at age 73</li>
+                            </ul>
+                        </div>
+                        <div class="ira-type">
+                            <h4>🌟 Roth IRA</h4>
+                            <ul>
+                                <li><strong>Tax treatment:</strong> No deduction, tax-free growth</li>
+                                <li><strong>2024 limit:</strong> $7,000 ($8,000 if 50+)</li>
+                                <li><strong>Income limits:</strong> Phases out $138,000-$153,000 (single)</li>
+                                <li><strong>Withdrawals:</strong> Tax-free in retirement</li>
+                                <li><strong>RMDs:</strong> None during owner's lifetime</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🔄 Roth Conversion Strategies</h3>
+                    <div class="conversion-strategies">
+                        <h4>When to Consider Roth Conversions:</h4>
+                        <ul>
+                            <li><strong>Low-income years:</strong> Job loss, early retirement, sabbatical</li>
+                            <li><strong>Market downturns:</strong> Convert when account values are lower</li>
+                            <li><strong>Before RMDs begin:</strong> Convert traditional to Roth before age 73</li>
+                            <li><strong>Tax diversification:</strong> Have both traditional and Roth accounts</li>
+                        </ul>
+                        
+                        <div class="conversion-example">
+                            <h4>📝 Conversion Example</h4>
+                            <p>Convert $50,000 from traditional IRA to Roth IRA:</p>
+                            <ul>
+                                <li>Pay taxes on $50,000 as ordinary income</li>
+                                <li>Future growth and withdrawals are tax-free</li>
+                                <li>Best if expecting higher future tax rates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🏗️ Backdoor Roth Strategy</h3>
+                    <div class="backdoor-roth">
+                        <h4>For High-Income Earners</h4>
+                        <p>If you earn too much for direct Roth IRA contributions:</p>
+                        <ol>
+                            <li>Contribute $7,000 to non-deductible traditional IRA</li>
+                            <li>Immediately convert to Roth IRA</li>
+                            <li>Pay taxes only on any growth (minimal if immediate)</li>
+                            <li>Result: $7,000 in Roth IRA despite income limits</li>
+                        </ol>
+                        
+                        <div class="warning-box">
+                            <p><strong>Important:</strong> Pro-rata rule applies if you have other traditional IRA balances. Consult a tax professional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ IRA Strategy Planning</h3>
+                    <p>Determine your optimal IRA contribution and conversion strategy:</p>
+                    <textarea class="exercise-input" placeholder="Your income, current retirement accounts, and IRA strategy..."></textarea>
+                    <button class="btn btn-secondary">Plan</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-4" style="display: none;">
+                <h2>Lesson 4: Social Security Optimization</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏛️ Understanding Social Security</h3>
+                    <p>Social Security provides a foundation of retirement income, but timing your benefits is crucial.</p>
+                    
+                    <div class="ss-basics">
+                        <div class="ss-calculation">
+                            <h4>💰 Benefit Calculation</h4>
+                            <ul>
+                                <li>Based on highest 35 years of earnings</li>
+                                <li>Adjusted for inflation to current dollars</li>
+                                <li>Formula favors lower-income workers</li>
+                                <li>Maximum 2024 benefit: $4,873/month</li>
+                            </ul>
+                        </div>
+                        <div class="ss-timing">
+                            <h4>⏰ Claiming Age Impact</h4>
+                            <ul>
+                                <li><strong>Age 62:</strong> Earliest claim, 25-30% reduction</li>
+                                <li><strong>Full retirement age:</strong> 66-67 depending on birth year</li>
+                                <li><strong>Age 70:</strong> Maximum benefit, 132% of full amount</li>
+                                <li><strong>Delayed credits:</strong> 8% increase per year after full retirement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💑 Spousal Strategies</h3>
+                    <div class="spousal-strategies">
+                        <div class="strategy-option">
+                            <h4>👥 Spousal Benefits</h4>
+                            <ul>
+                                <li>Receive up to 50% of spouse's full benefit</li>
+                                <li>Available even if you never worked</li>
+                                <li>Can claim spousal benefit while delaying your own</li>
+                                <li>Best strategy depends on both spouses' benefits</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-option">
+                            <h4>💔 Survivor Benefits</h4>
+                            <ul>
+                                <li>Widow(er) receives 100% of deceased spouse's benefit</li>
+                                <li>Can claim survivor benefit while delaying your own</li>
+                                <li>Remarriage after age 60 doesn't affect benefits</li>
+                                <li>Planning consideration for claiming strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>📊 Claiming Strategy Examples</h3>
+                    <table class="claiming-examples-table">
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Optimal Strategy</th>
+                            <th>Reason</th>
+                        </tr>
+                        <tr>
+                            <td>Single, healthy, family longevity</td>
+                            <td>Wait until age 70</td>
+                            <td>Maximize lifetime benefits</td>
+                        </tr>
+                        <tr>
+                            <td>Single, poor health</td>
+                            <td>Claim at full retirement age or earlier</td>
+                            <td>Get benefits while you can</td>
+                        </tr>
+                        <tr>
+                            <td>Married, one high earner</td>
+                            <td>High earner delays to 70</td>
+                            <td>Maximizes survivor benefit</td>
+                        </tr>
+                        <tr>
+                            <td>Married, similar benefits</td>
+                            <td>One claims early, other delays</td>
+                            <td>Hedge against longevity risk</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💼 Working in Retirement</h3>
+                    <div class="earnings-test">
+                        <h4>Social Security Earnings Test</h4>
+                        <p>If you claim before full retirement age and continue working:</p>
+                        <ul>
+                            <li><strong>2024 limit:</strong> $22,320 annually</li>
+                            <li><strong>Penalty:</strong> $1 withheld for every $2 over limit</li>
+                            <li><strong>Year of full retirement:</strong> Higher limit, $1 for $3 over</li>
+                            <li><strong>After full retirement:</strong> No earnings limit</li>
+                        </ul>
+                        
+                        <div class="good-news-box">
+                            <p><strong>Good news:</strong> Withheld benefits are returned as higher monthly payments once you reach full retirement age!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-5" style="display: none;">
+                <h2>Lesson 5: Healthcare in Retirement</h2>
+                
+                <div class="lesson-section">
+                    <h3>🏥 Healthcare Cost Reality</h3>
+                    <p>Healthcare is often retirees' largest and most unpredictable expense.</p>
+                    
+                    <div class="healthcare-costs">
+                        <div class="cost-projection">
+                            <h4>💰 Lifetime Healthcare Costs</h4>
+                            <ul>
+                                <li><strong>Average couple:</strong> $315,000 in retirement</li>
+                                <li><strong>Long-term care:</strong> Additional $138,000 average</li>
+                                <li><strong>Inflation rate:</strong> Healthcare costs rise 5-7% annually</li>
+                                <li><strong>Medicare gaps:</strong> Significant out-of-pocket expenses</li>
+                            </ul>
+                        </div>
+                        <div class="cost-categories">
+                            <h4>📋 Major Cost Categories</h4>
+                            <ul>
+                                <li>Medicare premiums and deductibles</li>
+                                <li>Prescription drugs (especially specialty medications)</li>
+                                <li>Dental and vision care (not covered by Medicare)</li>
+                                <li>Long-term care services</li>
+                                <li>Medical equipment and home modifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🩺 Medicare Basics</h3>
+                    <div class="medicare-parts">
+                        <div class="medicare-part">
+                            <h4>Part A - Hospital Insurance</h4>
+                            <ul>
+                                <li><strong>Coverage:</strong> Inpatient hospital, skilled nursing</li>
+                                <li><strong>Cost:</strong> Premium-free for most (paid via payroll taxes)</li>
+                                <li><strong>Deductible:</strong> $1,632 per benefit period (2024)</li>
+                            </ul>
+                        </div>
+                        <div class="medicare-part">
+                            <h4>Part B - Medical Insurance</h4>
+                            <ul>
+                                <li><strong>Coverage:</strong> Doctor visits, outpatient care</li>
+                                <li><strong>Cost:</strong> $174.70/month standard premium (2024)</li>
+                                <li><strong>Deductible:</strong> $240 annually</li>
+                            </ul>
+                        </div>
+                        <div class="medicare-part">
+                            <h4>Part C - Medicare Advantage</h4>
+                            <ul>
+                                <li><strong>Coverage:</strong> Alternative to Parts A & B</li>
+                                <li><strong>Benefits:</strong> Often includes prescription drugs</li>
+                                <li><strong>Limitations:</strong> Network restrictions</li>
+                            </ul>
+                        </div>
+                        <div class="medicare-part">
+                            <h4>Part D - Prescription Drugs</h4>
+                            <ul>
+                                <li><strong>Coverage:</strong> Prescription medications</li>
+                                <li><strong>Cost:</strong> Varies by plan and income</li>
+                                <li><strong>Penalty:</strong> Late enrollment increases costs permanently</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💊 Health Savings Account (HSA) Strategy</h3>
+                    <div class="hsa-retirement">
+                        <h4>HSA as Retirement Account</h4>
+                        <p>HSAs offer triple tax advantages, making them the best retirement account for healthcare costs:</p>
+                        
+                        <div class="hsa-benefits">
+                            <div class="hsa-benefit">
+                                <h5>📥 Tax Deductible</h5>
+                                <p>Contributions reduce current taxable income</p>
+                            </div>
+                            <div class="hsa-benefit">
+                                <h5>📈 Tax-Free Growth</h5>
+                                <p>Investments grow without tax consequences</p>
+                            </div>
+                            <div class="hsa-benefit">
+                                <h5>📤 Tax-Free Withdrawals</h5>
+                                <p>For qualified medical expenses, any age</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hsa-strategy">
+                            <h4>💡 HSA Retirement Strategy</h4>
+                            <ol>
+                                <li>Maximize HSA contributions annually</li>
+                                <li>Invest HSA funds for long-term growth</li>
+                                <li>Pay current medical expenses out-of-pocket if possible</li>
+                                <li>Save receipts for future reimbursements</li>
+                                <li>Use HSA as healthcare-focused retirement fund</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🏠 Long-Term Care Planning</h3>
+                    <div class="ltc-planning">
+                        <h4>📊 Long-Term Care Statistics</h4>
+                        <ul>
+                            <li>70% of people over 65 will need long-term care</li>
+                            <li>Average nursing home cost: $108,405 annually</li>
+                            <li>Average home care: $61,776 annually</li>
+                            <li>Average length of need: 3 years</li>
+                        </ul>
+                        
+                        <div class="ltc-options">
+                            <h4>🛡️ Long-Term Care Funding Options</h4>
+                            <div class="funding-option">
+                                <h5>Self-Insurance</h5>
+                                <p>Save $300,000+ specifically for long-term care</p>
+                            </div>
+                            <div class="funding-option">
+                                <h5>Traditional LTC Insurance</h5>
+                                <p>Pure insurance, use-it-or-lose-it premiums</p>
+                            </div>
+                            <div class="funding-option">
+                                <h5>Hybrid Life/LTC Policies</h5>
+                                <p>Combines life insurance with long-term care benefits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-6" style="display: none;">
+                <h2>Lesson 6: Retirement Withdrawal Strategies</h2>
+                
+                <div class="lesson-section">
+                    <h3>💰 The 4% Rule Explained</h3>
+                    <p>The 4% rule provides a framework for sustainable retirement withdrawals.</p>
+                    
+                    <div class="four-percent-rule">
+                        <h4>📊 How It Works</h4>
+                        <ol>
+                            <li>Withdraw 4% of your portfolio in year 1 of retirement</li>
+                            <li>Adjust subsequent withdrawals for inflation</li>
+                            <li>Historically successful for 30-year retirements</li>
+                            <li>Based on 50% stock, 50% bond portfolio</li>
+                        </ol>
+                        
+                        <div class="rule-example">
+                            <h4>💡 Example Application</h4>
+                            <p><strong>Portfolio value:</strong> $1,000,000</p>
+                            <p><strong>Year 1 withdrawal:</strong> $40,000 (4%)</p>
+                            <p><strong>Year 2 withdrawal:</strong> $41,200 (adjusted for 3% inflation)</p>
+                            <p><strong>Year 3 withdrawal:</strong> $42,436 (adjusted for inflation)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Tax-Efficient Withdrawal Order</h3>
+                    <div class="withdrawal-order">
+                        <h4>📋 Generally Optimal Sequence</h4>
+                        <div class="withdrawal-step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h5>Taxable Accounts First</h5>
+                                <p>Brokerage accounts, savings, CDs</p>
+                                <ul>
+                                    <li>Most flexible access</li>
+                                    <li>Capital gains rates often lower than ordinary income</li>
+                                    <li>No required distributions</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="withdrawal-step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h5>Tax-Deferred Accounts</h5>
+                                <p>Traditional 401(k), traditional IRA</p>
+                                <ul>
+                                    <li>Taxed as ordinary income</li>
+                                    <li>Required distributions begin at 73</li>
+                                    <li>May be in lower tax bracket in retirement</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="withdrawal-step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h5>Tax-Free Accounts Last</h5>
+                                <p>Roth IRA, Roth 401(k)</p>
+                                <ul>
+                                    <li>Tax-free withdrawals</li>
+                                    <li>No required distributions (Roth IRA)</li>
+                                    <li>Maximum tax-free growth time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🔄 Dynamic Withdrawal Strategies</h3>
+                    <div class="dynamic-strategies">
+                        <div class="strategy-option">
+                            <h4>📊 Guardrails Strategy</h4>
+                            <p>Adjust withdrawals based on portfolio performance</p>
+                            <ul>
+                                <li>Increase withdrawals when portfolio grows significantly</li>
+                                <li>Decrease withdrawals during market downturns</li>
+                                <li>Typically allows higher initial withdrawal rates</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-option">
+                            <h4>🎯 Bucket Strategy</h4>
+                            <p>Divide portfolio into time-based buckets</p>
+                            <ul>
+                                <li><strong>Bucket 1:</strong> 1-3 years expenses in cash/bonds</li>
+                                <li><strong>Bucket 2:</strong> 4-10 years in moderate investments</li>
+                                <li><strong>Bucket 3:</strong> 10+ years in growth investments</li>
+                                <li>Refill buckets during good market years</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-option">
+                            <h4>💼 Bond Ladder Strategy</h4>
+                            <p>Create predictable income stream</p>
+                            <ul>
+                                <li>Buy bonds/CDs maturing in different years</li>
+                                <li>Provides guaranteed income regardless of market</li>
+                                <li>Reinvest or spend principal as bonds mature</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>✏️ Design Your Withdrawal Strategy</h3>
+                    <p>Create your personalized retirement withdrawal plan:</p>
+                    <textarea class="exercise-input" placeholder="Your portfolio allocation and withdrawal strategy..."></textarea>
+                    <button class="btn btn-secondary">Design</button>
+                </div>
+            </div>
+
+            <div class="lesson-content" id="lesson-7" style="display: none;">
+                <h2>Lesson 7: Estate Planning Essentials</h2>
+                
+                <div class="lesson-section">
+                    <h3>📋 Essential Estate Planning Documents</h3>
+                    <div class="estate-documents">
+                        <div class="document-type">
+                            <h4>📜 Last Will and Testament</h4>
+                            <ul>
+                                <li>Specifies asset distribution after death</li>
+                                <li>Names guardian for minor children</li>
+                                <li>Designates executor to handle estate</li>
+                                <li>Goes through probate court process</li>
+                                <li>Update after major life events</li>
+                            </ul>
+                        </div>
+                        <div class="document-type">
+                            <h4>🏦 Revocable Living Trust</h4>
+                            <ul>
+                                <li>Avoids probate court</li>
+                                <li>Provides privacy (not public record)</li>
+                                <li>Manages assets if you become incapacitated</li>
+                                <li>More expensive to set up than will</li>
+                                <li>Must transfer assets into trust</li>
+                            </ul>
+                        </div>
+                        <div class="document-type">
+                            <h4>💉 Advance Healthcare Directives</h4>
+                            <ul>
+                                <li><strong>Living will:</strong> End-of-life medical preferences</li>
+                                <li><strong>Healthcare proxy:</strong> Person to make medical decisions</li>
+                                <li><strong>HIPAA authorization:</strong> Access to medical records</li>
+                                <li>Critical for family peace of mind</li>
+                            </ul>
+                        </div>
+                        <div class="document-type">
+                            <h4>💰 Financial Power of Attorney</h4>
+                            <ul>
+                                <li>Authorizes someone to handle finances</li>
+                                <li>Essential if you become incapacitated</li>
+                                <li>Can be limited or broad in scope</li>
+                                <li>Choose trustworthy, financially responsible person</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>💰 Tax-Efficient Wealth Transfer</h3>
+                    <div class="wealth-transfer">
+                        <h4>🎁 Annual Gift Tax Exclusion</h4>
+                        <p>2024 limits allow tax-free wealth transfer during your lifetime:</p>
+                        <ul>
+                            <li><strong>Annual exclusion:</strong> $18,000 per recipient</li>
+                            <li><strong>Married couples:</strong> $36,000 combined per recipient</li>
+                            <li><strong>Lifetime exemption:</strong> $13.61 million per person (2024)</li>
+                            <li><strong>Strategy:</strong> Gift appreciating assets to reduce estate taxes</li>
+                        </ul>
+                        
+                        <div class="transfer-strategies">
+                            <h4>🎯 Advanced Strategies</h4>
+                            <div class="strategy-item">
+                                <h5>529 Plan Superfunding</h5>
+                                <p>Contribute 5 years' worth of gifts ($90,000) at once to education accounts</p>
+                            </div>
+                            <div class="strategy-item">
+                                <h5>Grantor Retained Annuity Trust (GRAT)</h5>
+                                <p>Transfer appreciation on assets to heirs while retaining income stream</p>
+                            </div>
+                            <div class="strategy-item">
+                                <h5>Charitable Remainder Trust</h5>
+                                <p>Provide income during lifetime, remainder goes to charity (tax deduction)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>👨‍👩‍👧‍👦 Beneficiary Designations</h3>
+                    <div class="beneficiary-planning">
+                        <h4>🎯 Critical Accounts to Review</h4>
+                        <ul>
+                            <li>401(k) and other employer retirement plans</li>
+                            <li>Traditional and Roth IRAs</li>
+                            <li>Life insurance policies</li>
+                            <li>Bank and brokerage accounts</li>
+                            <li>Health Savings Accounts (HSAs)</li>
+                        </ul>
+                        
+                        <div class="beneficiary-tips">
+                            <h4>💡 Beneficiary Best Practices</h4>
+                            <ul>
+                                <li><strong>Primary and contingent:</strong> Name backup beneficiaries</li>
+                                <li><strong>Be specific:</strong> Use full names and relationships</li>
+                                <li><strong>Update regularly:</strong> After marriage, divorce, births, deaths</li>
+                                <li><strong>Consider percentages:</strong> Instead of dollar amounts</li>
+                                <li><strong>Minor children:</strong> Consider trust or custodial accounts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-section">
+                    <h3>🎯 Estate Planning Action Steps</h3>
+                    <div class="action-checklist">
+                        <div class="checklist-section">
+                            <h4>✅ Immediate Actions</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Review and update all beneficiary designations
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Create or update basic will
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Complete advance healthcare directives
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Designate financial power of attorney
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Organize important documents for family access
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-section">
+                            <h4>📈 Advanced Planning</h4>
+                            <div class="checklist-items">
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Consider revocable living trust
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Explore gifting strategies
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Review life insurance needs
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Plan charitable giving strategies
+                                </label>
+                                <label class="checklist-item">
+                                    <input type="checkbox"> Consult estate planning attorney
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-section">
+                    <h3>🎉 Final Project</h3>
+                    <div class="final-project">
+                        <h4>Create Your Complete Retirement Plan</h4>
+                        <ol>
+                            <li>Calculate your retirement savings target</li>
+                            <li>Optimize your 401(k) and IRA contributions</li>
+                            <li>Plan your Social Security claiming strategy</li>
+                            <li>Estimate healthcare costs and HSA strategy</li>
+                            <li>Design your withdrawal strategy</li>
+                            <li>Complete basic estate planning documents</li>
+                            <li>Set annual review schedule</li>
+                        </ol>
+                        <p><strong>Congratulations! You're ready for a secure and comfortable retirement! 🌅💰</strong></p>
+                    </div>
+                    <textarea class="exercise-input" placeholder="Your comprehensive retirement plan..."></textarea>
+                    <button class="btn btn-primary">Complete Course</button>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="btn btn-secondary prev-lesson" onclick="prevLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">← Previous</button>
+                <button class="btn btn-primary next-lesson" onclick="nextLesson()" style="background: #ffd700; border-color: #ffd700; color: #2c3e50; font-weight: bold; font-size: 16px;">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Secure Your Retirement?</h2>
+            <p>Get personalized retirement planning guidance from our experts</p>
+            <a href="../index.html#contact" class="btn btn-primary">Start Planning</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/course.js"></script>
+    <script>
+    function checkAnswer(question, correct) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        const result = document.querySelector('.quiz-result');
+        result.style.display = 'block';
+        if (selected && selected.value === correct) {
+            result.innerHTML = '<p style="color: green;">✅ Correct! Great work!</p>';
+        } else {
+            result.innerHTML = '<p style="color: red;">❌ Not quite right. Try again!</p>';
+        }
+    }
+    </script>
+</body>
+</html>
