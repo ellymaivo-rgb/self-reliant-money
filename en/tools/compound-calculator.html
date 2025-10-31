@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator - Family Finance</title>
+    <meta name="description" content="Calculate investment returns with compound interest. Free tool to help you plan long-term investments.">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#courses" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#tools" class="nav-link">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item"><button class="lang-toggle" onclick="window.location.href='../../tools/compound-calculator.html'">🌐 VI</button></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <section class="tool-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / 
+                <a href="../index.html#tools">Tools</a> / 
+                <span>Compound calculator</span>
+            </div>
+            <h1>💰 Compound Interest Calculator</h1>
+            <p class="tool-subtitle">See how your money can grow with the power of compound interest</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <h2>Investment Calculator</h2>
+                    <form id="compoundForm">
+                        <div class="input-group">
+                            <label for="initialAmount">Initial Investment ($)</label>
+                            <input type="number" id="initialAmount" value="10000" min="0" step="100">
+                            <small>Amount you invest initially</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="monthlyContribution">Monthly Contribution ($)</label>
+                            <input type="number" id="monthlyContribution" value="500" min="0" step="50">
+                            <small>Amount added monthly</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="annualReturn">Annual Return Rate (%)</label>
+                            <input type="number" id="annualReturn" value="8" min="0" max="50" step="0.1">
+                            <small>Expected annual return (8-10% is typical for stocks)</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="years">Investment Period (Years)</label>
+                            <input type="number" id="years" value="20" min="1" max="50" step="1">
+                            <small>How long will you invest?</small>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="calculateCompound()">Calculate Growth</button>
+                    </form>
+                </div>
+
+                <div class="calculator-results">
+                    <div id="results" class="results-container">
+                        <h3>Your Investment Growth</h3>
+                        <div class="result-cards">
+                            <div class="result-card">
+                                <div class="result-value" id="finalAmount">$0</div>
+                                <div class="result-label">Final Amount</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="totalContributed">$0</div>
+                                <div class="result-label">Total Invested</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-value" id="totalGains">$0</div>
+                                <div class="result-label">Investment Gains</div>
+                            </div>
+                        </div>
+
+                        <div class="chart-container">
+                            <canvas id="compoundChart"></canvas>
+                        </div>
+
+                        <div class="breakdown-table">
+                            <h4>Year-by-Year Breakdown</h4>
+                            <div id="yearlyBreakdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="education-section">
+        <div class="container">
+            <div class="education-content">
+                <h2>Understanding Compound Interest</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>🚀 The Power of Time</h3>
+                        <p>Starting early is the most powerful factor in building wealth. Even small amounts can grow significantly over time due to compound interest.</p>
+                        <ul>
+                            <li>$500/month from age 25 → $1.6M at 65</li>
+                            <li>$500/month from age 35 → $740K at 65</li>
+                            <li>Starting 10 years later costs $860K!</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>📈 Rate of Return Matters</h3>
+                        <p>Small differences in return rates make huge differences over time. That's why choosing good investments is crucial.</p>
+                        <ul>
+                            <li>6% annual return → $1.0M after 30 years</li>
+                            <li>8% annual return → $1.5M after 30 years</li>
+                            <li>10% annual return → $2.3M after 30 years</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>💪 Consistency Pays Off</h3>
+                        <p>Regular monthly contributions are more important than timing the market. Dollar-cost averaging reduces risk.</p>
+                        <ul>
+                            <li>Automatic investing removes emotion</li>
+                            <li>Buy more shares when prices are low</li>
+                            <li>Buy fewer shares when prices are high</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>🎯 Real-World Examples</h3>
+                        <p>See how compound interest works in different scenarios:</p>
+                        <ul>
+                            <li><strong>Emergency Fund:</strong> 4% in high-yield savings</li>
+                            <li><strong>Conservative:</strong> 6% in bond funds</li>
+                            <li><strong>Balanced:</strong> 8% in mixed portfolio</li>
+                            <li><strong>Aggressive:</strong> 10% in stock funds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <div class="tools-grid">
+                <h3>🔗 Other Tools</h3>
+                <div class="tool-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon">💰</div>
+                        <h4>Budget Calculator</h4>
+                        <p>Plan your monthly family budget</p>
+                        <a href="budget-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🏠</div>
+                        <h4>Mortgage Calculator</h4>
+                        <p>Calculate home loan payments</p>
+                        <a href="mortgage-calculator.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">🎯</div>
+                        <h4>Savings Goal</h4>
+                        <p>Plan for specific financial goals</p>
+                        <a href="savings-goal.html" class="btn btn-outline">Use Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Investing?</h2>
+            <p>Learn more about building wealth through our comprehensive courses</p>
+            <a href="../index.html#courses" class="btn btn-primary">View Courses</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><img src="../../assets/logo.svg" alt="Self-Reliant Money Logo" class="logo-icon">Self-Reliant Money</h3>
+                    <p>Building a solid financial future for your family</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Other Tools</h4>
+                    <ul>
+                        <li><a href="budget-calculator.html">Budget Calculator</a></li>
+                        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                        <li><a href="savings-goal.html">Savings Goal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="../courses/budgeting.html">Family Budgeting</a></li>
+                        <li><a href="../courses/investing.html">Basic Investing</a></li>
+                        <li><a href="../courses/real-estate.html">Real Estate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    function calculateCompound() {
+        const initialAmount = parseFloat(document.getElementById('initialAmount').value) || 0;
+        const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value) || 0;
+        const annualReturn = parseFloat(document.getElementById('annualReturn').value) / 100 || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+        
+        const monthlyRate = annualReturn / 12;
+        const totalMonths = years * 12;
+        
+        let balance = initialAmount;
+        let totalContributed = initialAmount;
+        const yearlyData = [];
+        
+        for (let month = 1; month <= totalMonths; month++) {
+            balance = balance * (1 + monthlyRate) + monthlyContribution;
+            totalContributed += monthlyContribution;
+            
+            if (month % 12 === 0) {
+                yearlyData.push({
+                    year: month / 12,
+                    balance: balance,
+                    contributed: totalContributed
+                });
+            }
+        }
+        
+        const finalAmount = balance;
+        const totalGains = finalAmount - totalContributed;
+        
+        // Update results
+        document.getElementById('finalAmount').textContent = formatCurrency(finalAmount);
+        document.getElementById('totalContributed').textContent = formatCurrency(totalContributed);
+        document.getElementById('totalGains').textContent = formatCurrency(totalGains);
+        
+        // Create chart
+        createChart(yearlyData);
+        
+        // Create yearly breakdown table
+        createBreakdownTable(yearlyData);
+    }
+    
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    function createChart(data) {
+        const ctx = document.getElementById('compoundChart').getContext('2d');
+        
+        // Destroy existing chart if it exists
+        if (window.compoundChart) {
+            window.compoundChart.destroy();
+        }
+        
+        window.compoundChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(d => `Year ${d.year}`),
+                datasets: [{
+                    label: 'Investment Balance',
+                    data: data.map(d => d.balance),
+                    borderColor: '#4A90A4',
+                    backgroundColor: 'rgba(74, 144, 164, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Total Contributed',
+                    data: data.map(d => d.contributed),
+                    borderColor: '#ffd700',
+                    backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                    fill: false,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return formatCurrency(value);
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    function createBreakdownTable(data) {
+        const container = document.getElementById('yearlyBreakdown');
+        let tableHTML = `
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Balance</th>
+                        <th>Total Contributed</th>
+                        <th>Investment Gains</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        
+        data.forEach(row => {
+            const gains = row.balance - row.contributed;
+            tableHTML += `
+                <tr>
+                    <td>${row.year}</td>
+                    <td>${formatCurrency(row.balance)}</td>
+                    <td>${formatCurrency(row.contributed)}</td>
+                    <td>${formatCurrency(gains)}</td>
+                </tr>
+            `;
+        });
+        
+        tableHTML += '</tbody></table>';
+        container.innerHTML = tableHTML;
+    }
+    
+    // Calculate on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        calculateCompound();
+        
+        // Add event listeners for real-time calculation
+        const inputs = ['initialAmount', 'monthlyContribution', 'annualReturn', 'years'];
+        inputs.forEach(inputId => {
+            document.getElementById(inputId).addEventListener('input', calculateCompound);
+        });
+    });
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    });
+    </script>
+</body>
+</html>
